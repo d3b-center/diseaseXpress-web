@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { PageHeader } from 'shared/components/pageHeader/PageHeader';
 import { PageFooter } from 'shared/components/pageFooter/PageFooter';
 import styles from './styles.module.scss';
@@ -8,7 +8,7 @@ interface IContainerProps {
   children: React.ReactNode;
 }
 
-export default class App extends Component<IContainerProps, {}> {
+export default class App extends React.Component<IContainerProps, {}> {
   render() {
     return (
       <div className="App">

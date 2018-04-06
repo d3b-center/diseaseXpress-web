@@ -1,10 +1,15 @@
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var CopyWebpackPlugin = require('copy-webpack-plugin');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 var webpack = require('webpack');
 const dotenv   = require('dotenv');
 const path     = require('path');
 
 const NODE_ENV = process.env.NODE_ENV || 'development';
+
+const isDev = NODE_ENV === 'development';
+const isTest = NODE_ENV === 'test';
 
 const join     = path.join;
 const resolve  = path.resolve;
@@ -34,13 +39,21 @@ var config = {
 
     'entry': [
         `babel-polyfill`,
-       'bootstrap-loader',
-        `./src/router.jsx`
-       
+       // 'bootstrap-loader',
+        `./src/router.jsx`,
+        'font-awesome-webpack'
     ],
-    'output': {
+    // 'output': {
+    //     path: path.resolve(__dirname, 'dist'),
+    //     filename: "bundle.js"
+    // },
+    output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: "bundle.js"
+        filename: 'reactapp/[name].app.js',
+        chunkFilename: 'reactapp/[name].[chunkhash].chunk.js',
+       // cssFilename: 'reactapp/app.css',
+       // hash: false,
+        publicPath: '/',
     },
 
     'resolve': {
@@ -63,6 +76,19 @@ var config = {
         new webpack.ProvidePlugin({
             $: "jquery",
             jQuery: "jquery"
+        }),
+        new webpack.IgnorePlugin(/vertx/),
+        new webpack.DllReferencePlugin({
+            context: '.',
+            manifest: require('./common-dist/common-manifest.json')
+        }),
+        new CopyWebpackPlugin([
+            {from: './common-dist', to: 'reactapp'},
+            {from: './src/globalStyles/prefixed-bootstrap.min.css', to: 'reactapp/prefixed-bootstrap.min.css'},
+        ]),
+        new ExtractTextPlugin({
+            filename:'reactapp/styles.css',
+            allChunks: true
         })
     ],
 
@@ -177,39 +203,9 @@ var config = {
                 }]
             },
             {
-                test: /\.module\.scss$/,
-                use:[
-                    'style-loader',
-                    {
-                        loader:'css-loader',
-                        options: {
-                            modules:true,
-                            importLoaders:2,
-                            localIdentName:'[name]__[local]__[hash:base64:5]'
-                        }
-                    },
-                    'sass-loader',
-                    sassResourcesLoader
-                ]
-    
-            },
-            {
-                test: /\.css$/,
-                use: ['style-loader','css-loader']
-            },
-
-            {
-                test: /\.scss$/,
-                exclude: /\.module\.scss/,
-                use:[
-                    'style-loader',
-                    'css-loader',
-                    'sass-loader',
-                    sassResourcesLoader
-                ]
+                test: /\.js$/,
+                loader: 'ify-loader'
             }
-
-
         ]
     },
     devServer: {
@@ -223,11 +219,127 @@ var config = {
         https:false,
         host:'localhost',
         headers: {"Access-Control-Allow-Origin": "*"},
-        stats:'errors-only',
-        port: devPort
+        stats:'errors-only'
     },
 
 
 };
+
+if (isDev || isTest) {
+
+    config.devtool = 'source-map';
+
+    config.module.rules.push(
+        {
+            test: /\.module\.scss$/,
+            use:[
+                'style-loader',
+                {
+                    loader:'css-loader',
+                    options: {
+                        modules:true,
+                        importLoaders:2,
+                        localIdentName:'[name]__[local]__[hash:base64:5]'
+                    }
+                },
+                'sass-loader',
+                sassResourcesLoader
+            ]
+
+        }
+    );
+
+    config.module.rules.push(
+        {
+            test: /\.css$/,
+            use: ['style-loader','css-loader']
+        }
+    );
+
+    config.module.rules.push(
+        {
+            test: /\.scss$/,
+            exclude: /\.module\.scss/,
+            use:[
+                'style-loader',
+                'css-loader',
+                'sass-loader',
+                sassResourcesLoader
+            ]
+        }
+    );
+
+    config.devServer.port = devPort;
+    //config.devServer.hostname = devHost;
+
+    // force hot module reloader to hit absolute path so it can load
+    // from dev server
+    config.output.publicPath = '//localhost:4000/';
+
+} else {
+
+    config.devtool = 'cheap-module-source-map';
+
+    config.module.rules.push(
+        {
+            test: /\.module\.scss$/,
+            use: ExtractTextPlugin.extract({
+                fallback:'style-loader',
+                use:[
+                    {
+                        loader: 'css-loader',
+                        options:{
+                            modules:true,
+                            importLoaders:2,
+                            localIdentName:'[name]__[local]__[hash:base64:5]'
+                        }
+                    },
+                    'sass-loader',
+                    sassResourcesLoader
+                ]
+            })
+        }
+    );
+
+    config.module.rules.push(
+        {
+            test: /\.scss$/,
+            exclude: /\.module\.scss/,
+            use: ExtractTextPlugin.extract({
+                fallback:'style-loader',
+                use:[
+                    'css-loader',
+                    'sass-loader',
+                    sassResourcesLoader
+                ]
+            })
+        }
+    );
+
+    config.module.rules.push(
+        {
+            test: /\.css/,
+            loader: ExtractTextPlugin.extract({
+                fallback:'style-loader',
+                use:'css-loader'
+            })
+        }
+    );
+
+    config.plugins.push(
+        new webpack.DefinePlugin({
+            'process.env': {
+                'NODE_ENV': `"${process.env.NODE_ENV || 'production'}"`
+            }
+        }),
+        new webpack.optimize.UglifyJsPlugin({
+            compress: {
+                warnings: false
+            },
+            sourceMap: true,
+            comments: false
+        })
+    );
+}
 
 module.exports = config;

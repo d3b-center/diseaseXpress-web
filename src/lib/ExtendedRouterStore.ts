@@ -16,7 +16,6 @@ export default class ExtendedRouterStore extends RouterStore {
                 newQuery[k] = v;
             }
         });
-        console.log(this.location.pathname)
 
         // put a leading slash if there isn't one
         path = URL.resolve('/', path);

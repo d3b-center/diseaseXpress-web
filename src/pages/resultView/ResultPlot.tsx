@@ -9,7 +9,7 @@ import ReactSelect from 'react-select';
 import { ButtonGroup, Radio } from 'react-bootstrap';
 import { COLORS } from 'shared/components/global/GlobalStores';
 const Select = require('react-select');
-const Plot = require('react-plotly.js');
+import Plot from 'react-plotly.js';
 
 export interface IBoxContentProps {
 	queryParams: {

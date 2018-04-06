@@ -1,0 +1,6411 @@
+@charset "UTF-8";
+.disease-express {
+  /*!
+   * Bootstrap v3.3.7 (http://getbootstrap.com)
+   * Copyright 2011-2016 Twitter, Inc.
+   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+   */
+  /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
+  /*! Source: https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css */
+}
+.disease-express html {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+.disease-express body {
+  margin: 0;
+}
+.disease-express article,
+.disease-express aside,
+.disease-express details,
+.disease-express figcaption,
+.disease-express figure,
+.disease-express footer,
+.disease-express header,
+.disease-express hgroup,
+.disease-express main,
+.disease-express menu,
+.disease-express nav,
+.disease-express section,
+.disease-express summary {
+  display: block;
+}
+.disease-express audio,
+.disease-express canvas,
+.disease-express progress,
+.disease-express video {
+  display: inline-block;
+  vertical-align: baseline;
+}
+.disease-express audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+.disease-express [hidden],
+.disease-express template {
+  display: none;
+}
+.disease-express a {
+  background-color: transparent;
+}
+.disease-express a:active,
+.disease-express a:hover {
+  outline: 0;
+}
+.disease-express abbr[title] {
+  border-bottom: 1px dotted;
+}
+.disease-express b,
+.disease-express strong {
+  font-weight: bold;
+}
+.disease-express dfn {
+  font-style: italic;
+}
+.disease-express h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+.disease-express mark {
+  background: #ff0;
+  color: #000;
+}
+.disease-express small {
+  font-size: 80%;
+}
+.disease-express sub,
+.disease-express sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+.disease-express sup {
+  top: -0.5em;
+}
+.disease-express sub {
+  bottom: -0.25em;
+}
+.disease-express img {
+  border: 0;
+}
+.disease-express svg:not(:root) {
+  overflow: hidden;
+}
+.disease-express figure {
+  margin: 1em 40px;
+}
+.disease-express hr {
+  box-sizing: content-box;
+  height: 0;
+}
+.disease-express pre {
+  overflow: auto;
+}
+.disease-express code,
+.disease-express kbd,
+.disease-express pre,
+.disease-express samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+.disease-express button,
+.disease-express input,
+.disease-express optgroup,
+.disease-express select,
+.disease-express textarea {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+.disease-express button {
+  overflow: visible;
+}
+.disease-express button,
+.disease-express select {
+  text-transform: none;
+}
+.disease-express button,
+.disease-express html input[type=button],
+.disease-express input[type=reset],
+.disease-express input[type=submit] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+.disease-express button[disabled],
+.disease-express html input[disabled] {
+  cursor: default;
+}
+.disease-express button::-moz-focus-inner,
+.disease-express input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+.disease-express input {
+  line-height: normal;
+}
+.disease-express input[type=checkbox],
+.disease-express input[type=radio] {
+  box-sizing: border-box;
+  padding: 0;
+}
+.disease-express input[type=number]::-webkit-inner-spin-button,
+.disease-express input[type=number]::-webkit-outer-spin-button {
+  height: auto;
+}
+.disease-express input[type=search] {
+  -webkit-appearance: textfield;
+  box-sizing: content-box;
+}
+.disease-express input[type=search]::-webkit-search-cancel-button,
+.disease-express input[type=search]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+.disease-express fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+.disease-express legend {
+  border: 0;
+  padding: 0;
+}
+.disease-express textarea {
+  overflow: auto;
+}
+.disease-express optgroup {
+  font-weight: bold;
+}
+.disease-express table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+.disease-express td,
+.disease-express th {
+  padding: 0;
+}
+@media print {
+  .disease-express *,
+.disease-express *:before,
+.disease-express *:after {
+    background: transparent !important;
+    color: #000 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+  .disease-express a,
+.disease-express a:visited {
+    text-decoration: underline;
+  }
+  .disease-express a[href]:after {
+    content: " (" attr(href) ")";
+  }
+  .disease-express abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+  .disease-express a[href^="#"]:after,
+.disease-express a[href^="javascript:"]:after {
+    content: "";
+  }
+  .disease-express pre,
+.disease-express blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+  .disease-express thead {
+    display: table-header-group;
+  }
+  .disease-express tr,
+.disease-express img {
+    page-break-inside: avoid;
+  }
+  .disease-express img {
+    max-width: 100% !important;
+  }
+  .disease-express p,
+.disease-express h2,
+.disease-express h3 {
+    orphans: 3;
+    widows: 3;
+  }
+  .disease-express h2,
+.disease-express h3 {
+    page-break-after: avoid;
+  }
+  .disease-express .navbar {
+    display: none;
+  }
+  .disease-express .btn > .caret,
+.disease-express .dropup > .btn > .caret {
+    border-top-color: #000 !important;
+  }
+  .disease-express .label {
+    border: 1px solid #000;
+  }
+  .disease-express .table {
+    border-collapse: collapse !important;
+  }
+  .disease-express .table td,
+.disease-express .table th {
+    background-color: #fff !important;
+  }
+  .disease-express .table-bordered th,
+.disease-express .table-bordered td {
+    border: 1px solid #ddd !important;
+  }
+}
+@font-face {
+  font-family: "Glyphicons Halflings";
+  src: url("../fonts/bootstrap/glyphicons-halflings-regular.eot");
+  src: url("../fonts/bootstrap/glyphicons-halflings-regular.eot?#iefix") format("embedded-opentype"), url("../fonts/bootstrap/glyphicons-halflings-regular.woff2") format("woff2"), url("../fonts/bootstrap/glyphicons-halflings-regular.woff") format("woff"), url("../fonts/bootstrap/glyphicons-halflings-regular.ttf") format("truetype"), url("../fonts/bootstrap/glyphicons-halflings-regular.svg#glyphicons_halflingsregular") format("svg");
+}
+.disease-express .glyphicon {
+  position: relative;
+  top: 1px;
+  display: inline-block;
+  font-family: "Glyphicons Halflings";
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.disease-express .glyphicon-asterisk:before {
+  content: "*";
+}
+.disease-express .glyphicon-plus:before {
+  content: "+";
+}
+.disease-express .glyphicon-euro:before,
+.disease-express .glyphicon-eur:before {
+  content: "€";
+}
+.disease-express .glyphicon-minus:before {
+  content: "−";
+}
+.disease-express .glyphicon-cloud:before {
+  content: "☁";
+}
+.disease-express .glyphicon-envelope:before {
+  content: "✉";
+}
+.disease-express .glyphicon-pencil:before {
+  content: "✏";
+}
+.disease-express .glyphicon-glass:before {
+  content: "";
+}
+.disease-express .glyphicon-music:before {
+  content: "";
+}
+.disease-express .glyphicon-search:before {
+  content: "";
+}
+.disease-express .glyphicon-heart:before {
+  content: "";
+}
+.disease-express .glyphicon-star:before {
+  content: "";
+}
+.disease-express .glyphicon-star-empty:before {
+  content: "";
+}
+.disease-express .glyphicon-user:before {
+  content: "";
+}
+.disease-express .glyphicon-film:before {
+  content: "";
+}
+.disease-express .glyphicon-th-large:before {
+  content: "";
+}
+.disease-express .glyphicon-th:before {
+  content: "";
+}
+.disease-express .glyphicon-th-list:before {
+  content: "";
+}
+.disease-express .glyphicon-ok:before {
+  content: "";
+}
+.disease-express .glyphicon-remove:before {
+  content: "";
+}
+.disease-express .glyphicon-zoom-in:before {
+  content: "";
+}
+.disease-express .glyphicon-zoom-out:before {
+  content: "";
+}
+.disease-express .glyphicon-off:before {
+  content: "";
+}
+.disease-express .glyphicon-signal:before {
+  content: "";
+}
+.disease-express .glyphicon-cog:before {
+  content: "";
+}
+.disease-express .glyphicon-trash:before {
+  content: "";
+}
+.disease-express .glyphicon-home:before {
+  content: "";
+}
+.disease-express .glyphicon-file:before {
+  content: "";
+}
+.disease-express .glyphicon-time:before {
+  content: "";
+}
+.disease-express .glyphicon-road:before {
+  content: "";
+}
+.disease-express .glyphicon-download-alt:before {
+  content: "";
+}
+.disease-express .glyphicon-download:before {
+  content: "";
+}
+.disease-express .glyphicon-upload:before {
+  content: "";
+}
+.disease-express .glyphicon-inbox:before {
+  content: "";
+}
+.disease-express .glyphicon-play-circle:before {
+  content: "";
+}
+.disease-express .glyphicon-repeat:before {
+  content: "";
+}
+.disease-express .glyphicon-refresh:before {
+  content: "";
+}
+.disease-express .glyphicon-list-alt:before {
+  content: "";
+}
+.disease-express .glyphicon-lock:before {
+  content: "";
+}
+.disease-express .glyphicon-flag:before {
+  content: "";
+}
+.disease-express .glyphicon-headphones:before {
+  content: "";
+}
+.disease-express .glyphicon-volume-off:before {
+  content: "";
+}
+.disease-express .glyphicon-volume-down:before {
+  content: "";
+}
+.disease-express .glyphicon-volume-up:before {
+  content: "";
+}
+.disease-express .glyphicon-qrcode:before {
+  content: "";
+}
+.disease-express .glyphicon-barcode:before {
+  content: "";
+}
+.disease-express .glyphicon-tag:before {
+  content: "";
+}
+.disease-express .glyphicon-tags:before {
+  content: "";
+}
+.disease-express .glyphicon-book:before {
+  content: "";
+}
+.disease-express .glyphicon-bookmark:before {
+  content: "";
+}
+.disease-express .glyphicon-print:before {
+  content: "";
+}
+.disease-express .glyphicon-camera:before {
+  content: "";
+}
+.disease-express .glyphicon-font:before {
+  content: "";
+}
+.disease-express .glyphicon-bold:before {
+  content: "";
+}
+.disease-express .glyphicon-italic:before {
+  content: "";
+}
+.disease-express .glyphicon-text-height:before {
+  content: "";
+}
+.disease-express .glyphicon-text-width:before {
+  content: "";
+}
+.disease-express .glyphicon-align-left:before {
+  content: "";
+}
+.disease-express .glyphicon-align-center:before {
+  content: "";
+}
+.disease-express .glyphicon-align-right:before {
+  content: "";
+}
+.disease-express .glyphicon-align-justify:before {
+  content: "";
+}
+.disease-express .glyphicon-list:before {
+  content: "";
+}
+.disease-express .glyphicon-indent-left:before {
+  content: "";
+}
+.disease-express .glyphicon-indent-right:before {
+  content: "";
+}
+.disease-express .glyphicon-facetime-video:before {
+  content: "";
+}
+.disease-express .glyphicon-picture:before {
+  content: "";
+}
+.disease-express .glyphicon-map-marker:before {
+  content: "";
+}
+.disease-express .glyphicon-adjust:before {
+  content: "";
+}
+.disease-express .glyphicon-tint:before {
+  content: "";
+}
+.disease-express .glyphicon-edit:before {
+  content: "";
+}
+.disease-express .glyphicon-share:before {
+  content: "";
+}
+.disease-express .glyphicon-check:before {
+  content: "";
+}
+.disease-express .glyphicon-move:before {
+  content: "";
+}
+.disease-express .glyphicon-step-backward:before {
+  content: "";
+}
+.disease-express .glyphicon-fast-backward:before {
+  content: "";
+}
+.disease-express .glyphicon-backward:before {
+  content: "";
+}
+.disease-express .glyphicon-play:before {
+  content: "";
+}
+.disease-express .glyphicon-pause:before {
+  content: "";
+}
+.disease-express .glyphicon-stop:before {
+  content: "";
+}
+.disease-express .glyphicon-forward:before {
+  content: "";
+}
+.disease-express .glyphicon-fast-forward:before {
+  content: "";
+}
+.disease-express .glyphicon-step-forward:before {
+  content: "";
+}
+.disease-express .glyphicon-eject:before {
+  content: "";
+}
+.disease-express .glyphicon-chevron-left:before {
+  content: "";
+}
+.disease-express .glyphicon-chevron-right:before {
+  content: "";
+}
+.disease-express .glyphicon-plus-sign:before {
+  content: "";
+}
+.disease-express .glyphicon-minus-sign:before {
+  content: "";
+}
+.disease-express .glyphicon-remove-sign:before {
+  content: "";
+}
+.disease-express .glyphicon-ok-sign:before {
+  content: "";
+}
+.disease-express .glyphicon-question-sign:before {
+  content: "";
+}
+.disease-express .glyphicon-info-sign:before {
+  content: "";
+}
+.disease-express .glyphicon-screenshot:before {
+  content: "";
+}
+.disease-express .glyphicon-remove-circle:before {
+  content: "";
+}
+.disease-express .glyphicon-ok-circle:before {
+  content: "";
+}
+.disease-express .glyphicon-ban-circle:before {
+  content: "";
+}
+.disease-express .glyphicon-arrow-left:before {
+  content: "";
+}
+.disease-express .glyphicon-arrow-right:before {
+  content: "";
+}
+.disease-express .glyphicon-arrow-up:before {
+  content: "";
+}
+.disease-express .glyphicon-arrow-down:before {
+  content: "";
+}
+.disease-express .glyphicon-share-alt:before {
+  content: "";
+}
+.disease-express .glyphicon-resize-full:before {
+  content: "";
+}
+.disease-express .glyphicon-resize-small:before {
+  content: "";
+}
+.disease-express .glyphicon-exclamation-sign:before {
+  content: "";
+}
+.disease-express .glyphicon-gift:before {
+  content: "";
+}
+.disease-express .glyphicon-leaf:before {
+  content: "";
+}
+.disease-express .glyphicon-fire:before {
+  content: "";
+}
+.disease-express .glyphicon-eye-open:before {
+  content: "";
+}
+.disease-express .glyphicon-eye-close:before {
+  content: "";
+}
+.disease-express .glyphicon-warning-sign:before {
+  content: "";
+}
+.disease-express .glyphicon-plane:before {
+  content: "";
+}
+.disease-express .glyphicon-calendar:before {
+  content: "";
+}
+.disease-express .glyphicon-random:before {
+  content: "";
+}
+.disease-express .glyphicon-comment:before {
+  content: "";
+}
+.disease-express .glyphicon-magnet:before {
+  content: "";
+}
+.disease-express .glyphicon-chevron-up:before {
+  content: "";
+}
+.disease-express .glyphicon-chevron-down:before {
+  content: "";
+}
+.disease-express .glyphicon-retweet:before {
+  content: "";
+}
+.disease-express .glyphicon-shopping-cart:before {
+  content: "";
+}
+.disease-express .glyphicon-folder-close:before {
+  content: "";
+}
+.disease-express .glyphicon-folder-open:before {
+  content: "";
+}
+.disease-express .glyphicon-resize-vertical:before {
+  content: "";
+}
+.disease-express .glyphicon-resize-horizontal:before {
+  content: "";
+}
+.disease-express .glyphicon-hdd:before {
+  content: "";
+}
+.disease-express .glyphicon-bullhorn:before {
+  content: "";
+}
+.disease-express .glyphicon-bell:before {
+  content: "";
+}
+.disease-express .glyphicon-certificate:before {
+  content: "";
+}
+.disease-express .glyphicon-thumbs-up:before {
+  content: "";
+}
+.disease-express .glyphicon-thumbs-down:before {
+  content: "";
+}
+.disease-express .glyphicon-hand-right:before {
+  content: "";
+}
+.disease-express .glyphicon-hand-left:before {
+  content: "";
+}
+.disease-express .glyphicon-hand-up:before {
+  content: "";
+}
+.disease-express .glyphicon-hand-down:before {
+  content: "";
+}
+.disease-express .glyphicon-circle-arrow-right:before {
+  content: "";
+}
+.disease-express .glyphicon-circle-arrow-left:before {
+  content: "";
+}
+.disease-express .glyphicon-circle-arrow-up:before {
+  content: "";
+}
+.disease-express .glyphicon-circle-arrow-down:before {
+  content: "";
+}
+.disease-express .glyphicon-globe:before {
+  content: "";
+}
+.disease-express .glyphicon-wrench:before {
+  content: "";
+}
+.disease-express .glyphicon-tasks:before {
+  content: "";
+}
+.disease-express .glyphicon-filter:before {
+  content: "";
+}
+.disease-express .glyphicon-briefcase:before {
+  content: "";
+}
+.disease-express .glyphicon-fullscreen:before {
+  content: "";
+}
+.disease-express .glyphicon-dashboard:before {
+  content: "";
+}
+.disease-express .glyphicon-paperclip:before {
+  content: "";
+}
+.disease-express .glyphicon-heart-empty:before {
+  content: "";
+}
+.disease-express .glyphicon-link:before {
+  content: "";
+}
+.disease-express .glyphicon-phone:before {
+  content: "";
+}
+.disease-express .glyphicon-pushpin:before {
+  content: "";
+}
+.disease-express .glyphicon-usd:before {
+  content: "";
+}
+.disease-express .glyphicon-gbp:before {
+  content: "";
+}
+.disease-express .glyphicon-sort:before {
+  content: "";
+}
+.disease-express .glyphicon-sort-by-alphabet:before {
+  content: "";
+}
+.disease-express .glyphicon-sort-by-alphabet-alt:before {
+  content: "";
+}
+.disease-express .glyphicon-sort-by-order:before {
+  content: "";
+}
+.disease-express .glyphicon-sort-by-order-alt:before {
+  content: "";
+}
+.disease-express .glyphicon-sort-by-attributes:before {
+  content: "";
+}
+.disease-express .glyphicon-sort-by-attributes-alt:before {
+  content: "";
+}
+.disease-express .glyphicon-unchecked:before {
+  content: "";
+}
+.disease-express .glyphicon-expand:before {
+  content: "";
+}
+.disease-express .glyphicon-collapse-down:before {
+  content: "";
+}
+.disease-express .glyphicon-collapse-up:before {
+  content: "";
+}
+.disease-express .glyphicon-log-in:before {
+  content: "";
+}
+.disease-express .glyphicon-flash:before {
+  content: "";
+}
+.disease-express .glyphicon-log-out:before {
+  content: "";
+}
+.disease-express .glyphicon-new-window:before {
+  content: "";
+}
+.disease-express .glyphicon-record:before {
+  content: "";
+}
+.disease-express .glyphicon-save:before {
+  content: "";
+}
+.disease-express .glyphicon-open:before {
+  content: "";
+}
+.disease-express .glyphicon-saved:before {
+  content: "";
+}
+.disease-express .glyphicon-import:before {
+  content: "";
+}
+.disease-express .glyphicon-export:before {
+  content: "";
+}
+.disease-express .glyphicon-send:before {
+  content: "";
+}
+.disease-express .glyphicon-floppy-disk:before {
+  content: "";
+}
+.disease-express .glyphicon-floppy-saved:before {
+  content: "";
+}
+.disease-express .glyphicon-floppy-remove:before {
+  content: "";
+}
+.disease-express .glyphicon-floppy-save:before {
+  content: "";
+}
+.disease-express .glyphicon-floppy-open:before {
+  content: "";
+}
+.disease-express .glyphicon-credit-card:before {
+  content: "";
+}
+.disease-express .glyphicon-transfer:before {
+  content: "";
+}
+.disease-express .glyphicon-cutlery:before {
+  content: "";
+}
+.disease-express .glyphicon-header:before {
+  content: "";
+}
+.disease-express .glyphicon-compressed:before {
+  content: "";
+}
+.disease-express .glyphicon-earphone:before {
+  content: "";
+}
+.disease-express .glyphicon-phone-alt:before {
+  content: "";
+}
+.disease-express .glyphicon-tower:before {
+  content: "";
+}
+.disease-express .glyphicon-stats:before {
+  content: "";
+}
+.disease-express .glyphicon-sd-video:before {
+  content: "";
+}
+.disease-express .glyphicon-hd-video:before {
+  content: "";
+}
+.disease-express .glyphicon-subtitles:before {
+  content: "";
+}
+.disease-express .glyphicon-sound-stereo:before {
+  content: "";
+}
+.disease-express .glyphicon-sound-dolby:before {
+  content: "";
+}
+.disease-express .glyphicon-sound-5-1:before {
+  content: "";
+}
+.disease-express .glyphicon-sound-6-1:before {
+  content: "";
+}
+.disease-express .glyphicon-sound-7-1:before {
+  content: "";
+}
+.disease-express .glyphicon-copyright-mark:before {
+  content: "";
+}
+.disease-express .glyphicon-registration-mark:before {
+  content: "";
+}
+.disease-express .glyphicon-cloud-download:before {
+  content: "";
+}
+.disease-express .glyphicon-cloud-upload:before {
+  content: "";
+}
+.disease-express .glyphicon-tree-conifer:before {
+  content: "";
+}
+.disease-express .glyphicon-tree-deciduous:before {
+  content: "";
+}
+.disease-express .glyphicon-cd:before {
+  content: "";
+}
+.disease-express .glyphicon-save-file:before {
+  content: "";
+}
+.disease-express .glyphicon-open-file:before {
+  content: "";
+}
+.disease-express .glyphicon-level-up:before {
+  content: "";
+}
+.disease-express .glyphicon-copy:before {
+  content: "";
+}
+.disease-express .glyphicon-paste:before {
+  content: "";
+}
+.disease-express .glyphicon-alert:before {
+  content: "";
+}
+.disease-express .glyphicon-equalizer:before {
+  content: "";
+}
+.disease-express .glyphicon-king:before {
+  content: "";
+}
+.disease-express .glyphicon-queen:before {
+  content: "";
+}
+.disease-express .glyphicon-pawn:before {
+  content: "";
+}
+.disease-express .glyphicon-bishop:before {
+  content: "";
+}
+.disease-express .glyphicon-knight:before {
+  content: "";
+}
+.disease-express .glyphicon-baby-formula:before {
+  content: "";
+}
+.disease-express .glyphicon-tent:before {
+  content: "⛺";
+}
+.disease-express .glyphicon-blackboard:before {
+  content: "";
+}
+.disease-express .glyphicon-bed:before {
+  content: "";
+}
+.disease-express .glyphicon-apple:before {
+  content: "";
+}
+.disease-express .glyphicon-erase:before {
+  content: "";
+}
+.disease-express .glyphicon-hourglass:before {
+  content: "⌛";
+}
+.disease-express .glyphicon-lamp:before {
+  content: "";
+}
+.disease-express .glyphicon-duplicate:before {
+  content: "";
+}
+.disease-express .glyphicon-piggy-bank:before {
+  content: "";
+}
+.disease-express .glyphicon-scissors:before {
+  content: "";
+}
+.disease-express .glyphicon-bitcoin:before {
+  content: "";
+}
+.disease-express .glyphicon-btc:before {
+  content: "";
+}
+.disease-express .glyphicon-xbt:before {
+  content: "";
+}
+.disease-express .glyphicon-yen:before {
+  content: "¥";
+}
+.disease-express .glyphicon-jpy:before {
+  content: "¥";
+}
+.disease-express .glyphicon-ruble:before {
+  content: "₽";
+}
+.disease-express .glyphicon-rub:before {
+  content: "₽";
+}
+.disease-express .glyphicon-scale:before {
+  content: "";
+}
+.disease-express .glyphicon-ice-lolly:before {
+  content: "";
+}
+.disease-express .glyphicon-ice-lolly-tasted:before {
+  content: "";
+}
+.disease-express .glyphicon-education:before {
+  content: "";
+}
+.disease-express .glyphicon-option-horizontal:before {
+  content: "";
+}
+.disease-express .glyphicon-option-vertical:before {
+  content: "";
+}
+.disease-express .glyphicon-menu-hamburger:before {
+  content: "";
+}
+.disease-express .glyphicon-modal-window:before {
+  content: "";
+}
+.disease-express .glyphicon-oil:before {
+  content: "";
+}
+.disease-express .glyphicon-grain:before {
+  content: "";
+}
+.disease-express .glyphicon-sunglasses:before {
+  content: "";
+}
+.disease-express .glyphicon-text-size:before {
+  content: "";
+}
+.disease-express .glyphicon-text-color:before {
+  content: "";
+}
+.disease-express .glyphicon-text-background:before {
+  content: "";
+}
+.disease-express .glyphicon-object-align-top:before {
+  content: "";
+}
+.disease-express .glyphicon-object-align-bottom:before {
+  content: "";
+}
+.disease-express .glyphicon-object-align-horizontal:before {
+  content: "";
+}
+.disease-express .glyphicon-object-align-left:before {
+  content: "";
+}
+.disease-express .glyphicon-object-align-vertical:before {
+  content: "";
+}
+.disease-express .glyphicon-object-align-right:before {
+  content: "";
+}
+.disease-express .glyphicon-triangle-right:before {
+  content: "";
+}
+.disease-express .glyphicon-triangle-left:before {
+  content: "";
+}
+.disease-express .glyphicon-triangle-bottom:before {
+  content: "";
+}
+.disease-express .glyphicon-triangle-top:before {
+  content: "";
+}
+.disease-express .glyphicon-console:before {
+  content: "";
+}
+.disease-express .glyphicon-superscript:before {
+  content: "";
+}
+.disease-express .glyphicon-subscript:before {
+  content: "";
+}
+.disease-express .glyphicon-menu-left:before {
+  content: "";
+}
+.disease-express .glyphicon-menu-right:before {
+  content: "";
+}
+.disease-express .glyphicon-menu-down:before {
+  content: "";
+}
+.disease-express .glyphicon-menu-up:before {
+  content: "";
+}
+.disease-express * {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.disease-express *:before,
+.disease-express *:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.disease-express html {
+  font-size: 10px;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+.disease-express body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.428571429;
+  color: #333333;
+  background-color: #fff;
+}
+.disease-express input,
+.disease-express button,
+.disease-express select,
+.disease-express textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+.disease-express a {
+  color: #337ab7;
+  text-decoration: none;
+}
+.disease-express a:hover, .disease-express a:focus {
+  color: #23527c;
+  text-decoration: underline;
+}
+.disease-express a:focus {
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+.disease-express figure {
+  margin: 0;
+}
+.disease-express img {
+  vertical-align: middle;
+}
+.disease-express .img-responsive {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+.disease-express .img-rounded {
+  border-radius: 6px;
+}
+.disease-express .img-thumbnail {
+  padding: 4px;
+  line-height: 1.428571429;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  -webkit-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  display: inline-block;
+  max-width: 100%;
+  height: auto;
+}
+.disease-express .img-circle {
+  border-radius: 50%;
+}
+.disease-express hr {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 0;
+  border-top: 1px solid #eeeeee;
+}
+.disease-express .sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+.disease-express .sr-only-focusable:active, .disease-express .sr-only-focusable:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
+}
+.disease-express [role=button] {
+  cursor: pointer;
+}
+.disease-express h1, .disease-express h2, .disease-express h3, .disease-express h4, .disease-express h5, .disease-express h6,
+.disease-express .h1, .disease-express .h2, .disease-express .h3, .disease-express .h4, .disease-express .h5, .disease-express .h6 {
+  font-family: inherit;
+  font-weight: 500;
+  line-height: 1.1;
+  color: inherit;
+}
+.disease-express h1 small,
+.disease-express h1 .small, .disease-express h2 small,
+.disease-express h2 .small, .disease-express h3 small,
+.disease-express h3 .small, .disease-express h4 small,
+.disease-express h4 .small, .disease-express h5 small,
+.disease-express h5 .small, .disease-express h6 small,
+.disease-express h6 .small,
+.disease-express .h1 small,
+.disease-express .h1 .small, .disease-express .h2 small,
+.disease-express .h2 .small, .disease-express .h3 small,
+.disease-express .h3 .small, .disease-express .h4 small,
+.disease-express .h4 .small, .disease-express .h5 small,
+.disease-express .h5 .small, .disease-express .h6 small,
+.disease-express .h6 .small {
+  font-weight: normal;
+  line-height: 1;
+  color: #777777;
+}
+.disease-express h1, .disease-express .h1,
+.disease-express h2, .disease-express .h2,
+.disease-express h3, .disease-express .h3 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+.disease-express h1 small,
+.disease-express h1 .small, .disease-express .h1 small,
+.disease-express .h1 .small,
+.disease-express h2 small,
+.disease-express h2 .small, .disease-express .h2 small,
+.disease-express .h2 .small,
+.disease-express h3 small,
+.disease-express h3 .small, .disease-express .h3 small,
+.disease-express .h3 .small {
+  font-size: 65%;
+}
+.disease-express h4, .disease-express .h4,
+.disease-express h5, .disease-express .h5,
+.disease-express h6, .disease-express .h6 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.disease-express h4 small,
+.disease-express h4 .small, .disease-express .h4 small,
+.disease-express .h4 .small,
+.disease-express h5 small,
+.disease-express h5 .small, .disease-express .h5 small,
+.disease-express .h5 .small,
+.disease-express h6 small,
+.disease-express h6 .small, .disease-express .h6 small,
+.disease-express .h6 .small {
+  font-size: 75%;
+}
+.disease-express h1, .disease-express .h1 {
+  font-size: 36px;
+}
+.disease-express h2, .disease-express .h2 {
+  font-size: 30px;
+}
+.disease-express h3, .disease-express .h3 {
+  font-size: 24px;
+}
+.disease-express h4, .disease-express .h4 {
+  font-size: 18px;
+}
+.disease-express h5, .disease-express .h5 {
+  font-size: 14px;
+}
+.disease-express h6, .disease-express .h6 {
+  font-size: 12px;
+}
+.disease-express p {
+  margin: 0 0 10px;
+}
+.disease-express .lead {
+  margin-bottom: 20px;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.4;
+}
+@media (min-width: 768px) {
+  .disease-express .lead {
+    font-size: 21px;
+  }
+}
+.disease-express small,
+.disease-express .small {
+  font-size: 85%;
+}
+.disease-express mark,
+.disease-express .mark {
+  background-color: #fcf8e3;
+  padding: 0.2em;
+}
+.disease-express .text-left {
+  text-align: left;
+}
+.disease-express .text-right {
+  text-align: right;
+}
+.disease-express .text-center {
+  text-align: center;
+}
+.disease-express .text-justify {
+  text-align: justify;
+}
+.disease-express .text-nowrap {
+  white-space: nowrap;
+}
+.disease-express .text-lowercase {
+  text-transform: lowercase;
+}
+.disease-express .text-uppercase, .disease-express .initialism {
+  text-transform: uppercase;
+}
+.disease-express .text-capitalize {
+  text-transform: capitalize;
+}
+.disease-express .text-muted {
+  color: #777777;
+}
+.disease-express .text-primary {
+  color: #337ab7;
+}
+.disease-express a.text-primary:hover,
+.disease-express a.text-primary:focus {
+  color: #286090;
+}
+.disease-express .text-success {
+  color: #3c763d;
+}
+.disease-express a.text-success:hover,
+.disease-express a.text-success:focus {
+  color: #2b542c;
+}
+.disease-express .text-info {
+  color: #31708f;
+}
+.disease-express a.text-info:hover,
+.disease-express a.text-info:focus {
+  color: #245269;
+}
+.disease-express .text-warning {
+  color: #8a6d3b;
+}
+.disease-express a.text-warning:hover,
+.disease-express a.text-warning:focus {
+  color: #66512c;
+}
+.disease-express .text-danger {
+  color: #a94442;
+}
+.disease-express a.text-danger:hover,
+.disease-express a.text-danger:focus {
+  color: #843534;
+}
+.disease-express .bg-primary {
+  color: #fff;
+}
+.disease-express .bg-primary {
+  background-color: #337ab7;
+}
+.disease-express a.bg-primary:hover,
+.disease-express a.bg-primary:focus {
+  background-color: #286090;
+}
+.disease-express .bg-success {
+  background-color: #dff0d8;
+}
+.disease-express a.bg-success:hover,
+.disease-express a.bg-success:focus {
+  background-color: #c1e2b3;
+}
+.disease-express .bg-info {
+  background-color: #d9edf7;
+}
+.disease-express a.bg-info:hover,
+.disease-express a.bg-info:focus {
+  background-color: #afd9ee;
+}
+.disease-express .bg-warning {
+  background-color: #fcf8e3;
+}
+.disease-express a.bg-warning:hover,
+.disease-express a.bg-warning:focus {
+  background-color: #f7ecb5;
+}
+.disease-express .bg-danger {
+  background-color: #f2dede;
+}
+.disease-express a.bg-danger:hover,
+.disease-express a.bg-danger:focus {
+  background-color: #e4b9b9;
+}
+.disease-express .page-header {
+  padding-bottom: 9px;
+  margin: 40px 0 20px;
+  border-bottom: 1px solid #eeeeee;
+}
+.disease-express ul,
+.disease-express ol {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+.disease-express ul ul,
+.disease-express ul ol,
+.disease-express ol ul,
+.disease-express ol ol {
+  margin-bottom: 0;
+}
+.disease-express .list-unstyled {
+  padding-left: 0;
+  list-style: none;
+}
+.disease-express .list-inline {
+  padding-left: 0;
+  list-style: none;
+  margin-left: -5px;
+}
+.disease-express .list-inline > li {
+  display: inline-block;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.disease-express dl {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+.disease-express dt,
+.disease-express dd {
+  line-height: 1.428571429;
+}
+.disease-express dt {
+  font-weight: bold;
+}
+.disease-express dd {
+  margin-left: 0;
+}
+.disease-express .dl-horizontal dd:before, .disease-express .dl-horizontal dd:after {
+  content: " ";
+  display: table;
+}
+.disease-express .dl-horizontal dd:after {
+  clear: both;
+}
+@media (min-width: 768px) {
+  .disease-express .dl-horizontal dt {
+    float: left;
+    width: 160px;
+    clear: left;
+    text-align: right;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .disease-express .dl-horizontal dd {
+    margin-left: 180px;
+  }
+}
+.disease-express abbr[title],
+.disease-express abbr[data-original-title] {
+  cursor: help;
+  border-bottom: 1px dotted #777777;
+}
+.disease-express .initialism {
+  font-size: 90%;
+}
+.disease-express blockquote {
+  padding: 10px 20px;
+  margin: 0 0 20px;
+  font-size: 17.5px;
+  border-left: 5px solid #eeeeee;
+}
+.disease-express blockquote p:last-child,
+.disease-express blockquote ul:last-child,
+.disease-express blockquote ol:last-child {
+  margin-bottom: 0;
+}
+.disease-express blockquote footer,
+.disease-express blockquote small,
+.disease-express blockquote .small {
+  display: block;
+  font-size: 80%;
+  line-height: 1.428571429;
+  color: #777777;
+}
+.disease-express blockquote footer:before,
+.disease-express blockquote small:before,
+.disease-express blockquote .small:before {
+  content: "— ";
+}
+.disease-express .blockquote-reverse,
+.disease-express blockquote.pull-right {
+  padding-right: 15px;
+  padding-left: 0;
+  border-right: 5px solid #eeeeee;
+  border-left: 0;
+  text-align: right;
+}
+.disease-express .blockquote-reverse footer:before,
+.disease-express .blockquote-reverse small:before,
+.disease-express .blockquote-reverse .small:before,
+.disease-express blockquote.pull-right footer:before,
+.disease-express blockquote.pull-right small:before,
+.disease-express blockquote.pull-right .small:before {
+  content: "";
+}
+.disease-express .blockquote-reverse footer:after,
+.disease-express .blockquote-reverse small:after,
+.disease-express .blockquote-reverse .small:after,
+.disease-express blockquote.pull-right footer:after,
+.disease-express blockquote.pull-right small:after,
+.disease-express blockquote.pull-right .small:after {
+  content: " —";
+}
+.disease-express address {
+  margin-bottom: 20px;
+  font-style: normal;
+  line-height: 1.428571429;
+}
+.disease-express code,
+.disease-express kbd,
+.disease-express pre,
+.disease-express samp {
+  font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+.disease-express code {
+  padding: 2px 4px;
+  font-size: 90%;
+  color: #c7254e;
+  background-color: #f9f2f4;
+  border-radius: 4px;
+}
+.disease-express kbd {
+  padding: 2px 4px;
+  font-size: 90%;
+  color: #fff;
+  background-color: #333;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
+.disease-express kbd kbd {
+  padding: 0;
+  font-size: 100%;
+  font-weight: bold;
+  box-shadow: none;
+}
+.disease-express pre {
+  display: block;
+  padding: 9.5px;
+  margin: 0 0 10px;
+  font-size: 13px;
+  line-height: 1.428571429;
+  word-break: break-all;
+  word-wrap: break-word;
+  color: #333333;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.disease-express pre code {
+  padding: 0;
+  font-size: inherit;
+  color: inherit;
+  white-space: pre-wrap;
+  background-color: transparent;
+  border-radius: 0;
+}
+.disease-express .pre-scrollable {
+  max-height: 340px;
+  overflow-y: scroll;
+}
+.disease-express .container {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.disease-express .container:before, .disease-express .container:after {
+  content: " ";
+  display: table;
+}
+.disease-express .container:after {
+  clear: both;
+}
+@media (min-width: 768px) {
+  .disease-express .container {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .disease-express .container {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .disease-express .container {
+    width: 1170px;
+  }
+}
+.disease-express .container-fluid {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.disease-express .container-fluid:before, .disease-express .container-fluid:after {
+  content: " ";
+  display: table;
+}
+.disease-express .container-fluid:after {
+  clear: both;
+}
+.disease-express .row {
+  margin-left: -15px;
+  margin-right: -15px;
+}
+.disease-express .row:before, .disease-express .row:after {
+  content: " ";
+  display: table;
+}
+.disease-express .row:after {
+  clear: both;
+}
+.disease-express .col-xs-1, .disease-express .col-sm-1, .disease-express .col-md-1, .disease-express .col-lg-1, .disease-express .col-xs-2, .disease-express .col-sm-2, .disease-express .col-md-2, .disease-express .col-lg-2, .disease-express .col-xs-3, .disease-express .col-sm-3, .disease-express .col-md-3, .disease-express .col-lg-3, .disease-express .col-xs-4, .disease-express .col-sm-4, .disease-express .col-md-4, .disease-express .col-lg-4, .disease-express .col-xs-5, .disease-express .col-sm-5, .disease-express .col-md-5, .disease-express .col-lg-5, .disease-express .col-xs-6, .disease-express .col-sm-6, .disease-express .col-md-6, .disease-express .col-lg-6, .disease-express .col-xs-7, .disease-express .col-sm-7, .disease-express .col-md-7, .disease-express .col-lg-7, .disease-express .col-xs-8, .disease-express .col-sm-8, .disease-express .col-md-8, .disease-express .col-lg-8, .disease-express .col-xs-9, .disease-express .col-sm-9, .disease-express .col-md-9, .disease-express .col-lg-9, .disease-express .col-xs-10, .disease-express .col-sm-10, .disease-express .col-md-10, .disease-express .col-lg-10, .disease-express .col-xs-11, .disease-express .col-sm-11, .disease-express .col-md-11, .disease-express .col-lg-11, .disease-express .col-xs-12, .disease-express .col-sm-12, .disease-express .col-md-12, .disease-express .col-lg-12 {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.disease-express .col-xs-1, .disease-express .col-xs-2, .disease-express .col-xs-3, .disease-express .col-xs-4, .disease-express .col-xs-5, .disease-express .col-xs-6, .disease-express .col-xs-7, .disease-express .col-xs-8, .disease-express .col-xs-9, .disease-express .col-xs-10, .disease-express .col-xs-11, .disease-express .col-xs-12 {
+  float: left;
+}
+.disease-express .col-xs-1 {
+  width: 8.3333333333%;
+}
+.disease-express .col-xs-2 {
+  width: 16.6666666667%;
+}
+.disease-express .col-xs-3 {
+  width: 25%;
+}
+.disease-express .col-xs-4 {
+  width: 33.3333333333%;
+}
+.disease-express .col-xs-5 {
+  width: 41.6666666667%;
+}
+.disease-express .col-xs-6 {
+  width: 50%;
+}
+.disease-express .col-xs-7 {
+  width: 58.3333333333%;
+}
+.disease-express .col-xs-8 {
+  width: 66.6666666667%;
+}
+.disease-express .col-xs-9 {
+  width: 75%;
+}
+.disease-express .col-xs-10 {
+  width: 83.3333333333%;
+}
+.disease-express .col-xs-11 {
+  width: 91.6666666667%;
+}
+.disease-express .col-xs-12 {
+  width: 100%;
+}
+.disease-express .col-xs-pull-0 {
+  right: auto;
+}
+.disease-express .col-xs-pull-1 {
+  right: 8.3333333333%;
+}
+.disease-express .col-xs-pull-2 {
+  right: 16.6666666667%;
+}
+.disease-express .col-xs-pull-3 {
+  right: 25%;
+}
+.disease-express .col-xs-pull-4 {
+  right: 33.3333333333%;
+}
+.disease-express .col-xs-pull-5 {
+  right: 41.6666666667%;
+}
+.disease-express .col-xs-pull-6 {
+  right: 50%;
+}
+.disease-express .col-xs-pull-7 {
+  right: 58.3333333333%;
+}
+.disease-express .col-xs-pull-8 {
+  right: 66.6666666667%;
+}
+.disease-express .col-xs-pull-9 {
+  right: 75%;
+}
+.disease-express .col-xs-pull-10 {
+  right: 83.3333333333%;
+}
+.disease-express .col-xs-pull-11 {
+  right: 91.6666666667%;
+}
+.disease-express .col-xs-pull-12 {
+  right: 100%;
+}
+.disease-express .col-xs-push-0 {
+  left: auto;
+}
+.disease-express .col-xs-push-1 {
+  left: 8.3333333333%;
+}
+.disease-express .col-xs-push-2 {
+  left: 16.6666666667%;
+}
+.disease-express .col-xs-push-3 {
+  left: 25%;
+}
+.disease-express .col-xs-push-4 {
+  left: 33.3333333333%;
+}
+.disease-express .col-xs-push-5 {
+  left: 41.6666666667%;
+}
+.disease-express .col-xs-push-6 {
+  left: 50%;
+}
+.disease-express .col-xs-push-7 {
+  left: 58.3333333333%;
+}
+.disease-express .col-xs-push-8 {
+  left: 66.6666666667%;
+}
+.disease-express .col-xs-push-9 {
+  left: 75%;
+}
+.disease-express .col-xs-push-10 {
+  left: 83.3333333333%;
+}
+.disease-express .col-xs-push-11 {
+  left: 91.6666666667%;
+}
+.disease-express .col-xs-push-12 {
+  left: 100%;
+}
+.disease-express .col-xs-offset-0 {
+  margin-left: 0%;
+}
+.disease-express .col-xs-offset-1 {
+  margin-left: 8.3333333333%;
+}
+.disease-express .col-xs-offset-2 {
+  margin-left: 16.6666666667%;
+}
+.disease-express .col-xs-offset-3 {
+  margin-left: 25%;
+}
+.disease-express .col-xs-offset-4 {
+  margin-left: 33.3333333333%;
+}
+.disease-express .col-xs-offset-5 {
+  margin-left: 41.6666666667%;
+}
+.disease-express .col-xs-offset-6 {
+  margin-left: 50%;
+}
+.disease-express .col-xs-offset-7 {
+  margin-left: 58.3333333333%;
+}
+.disease-express .col-xs-offset-8 {
+  margin-left: 66.6666666667%;
+}
+.disease-express .col-xs-offset-9 {
+  margin-left: 75%;
+}
+.disease-express .col-xs-offset-10 {
+  margin-left: 83.3333333333%;
+}
+.disease-express .col-xs-offset-11 {
+  margin-left: 91.6666666667%;
+}
+.disease-express .col-xs-offset-12 {
+  margin-left: 100%;
+}
+@media (min-width: 768px) {
+  .disease-express .col-sm-1, .disease-express .col-sm-2, .disease-express .col-sm-3, .disease-express .col-sm-4, .disease-express .col-sm-5, .disease-express .col-sm-6, .disease-express .col-sm-7, .disease-express .col-sm-8, .disease-express .col-sm-9, .disease-express .col-sm-10, .disease-express .col-sm-11, .disease-express .col-sm-12 {
+    float: left;
+  }
+  .disease-express .col-sm-1 {
+    width: 8.3333333333%;
+  }
+  .disease-express .col-sm-2 {
+    width: 16.6666666667%;
+  }
+  .disease-express .col-sm-3 {
+    width: 25%;
+  }
+  .disease-express .col-sm-4 {
+    width: 33.3333333333%;
+  }
+  .disease-express .col-sm-5 {
+    width: 41.6666666667%;
+  }
+  .disease-express .col-sm-6 {
+    width: 50%;
+  }
+  .disease-express .col-sm-7 {
+    width: 58.3333333333%;
+  }
+  .disease-express .col-sm-8 {
+    width: 66.6666666667%;
+  }
+  .disease-express .col-sm-9 {
+    width: 75%;
+  }
+  .disease-express .col-sm-10 {
+    width: 83.3333333333%;
+  }
+  .disease-express .col-sm-11 {
+    width: 91.6666666667%;
+  }
+  .disease-express .col-sm-12 {
+    width: 100%;
+  }
+  .disease-express .col-sm-pull-0 {
+    right: auto;
+  }
+  .disease-express .col-sm-pull-1 {
+    right: 8.3333333333%;
+  }
+  .disease-express .col-sm-pull-2 {
+    right: 16.6666666667%;
+  }
+  .disease-express .col-sm-pull-3 {
+    right: 25%;
+  }
+  .disease-express .col-sm-pull-4 {
+    right: 33.3333333333%;
+  }
+  .disease-express .col-sm-pull-5 {
+    right: 41.6666666667%;
+  }
+  .disease-express .col-sm-pull-6 {
+    right: 50%;
+  }
+  .disease-express .col-sm-pull-7 {
+    right: 58.3333333333%;
+  }
+  .disease-express .col-sm-pull-8 {
+    right: 66.6666666667%;
+  }
+  .disease-express .col-sm-pull-9 {
+    right: 75%;
+  }
+  .disease-express .col-sm-pull-10 {
+    right: 83.3333333333%;
+  }
+  .disease-express .col-sm-pull-11 {
+    right: 91.6666666667%;
+  }
+  .disease-express .col-sm-pull-12 {
+    right: 100%;
+  }
+  .disease-express .col-sm-push-0 {
+    left: auto;
+  }
+  .disease-express .col-sm-push-1 {
+    left: 8.3333333333%;
+  }
+  .disease-express .col-sm-push-2 {
+    left: 16.6666666667%;
+  }
+  .disease-express .col-sm-push-3 {
+    left: 25%;
+  }
+  .disease-express .col-sm-push-4 {
+    left: 33.3333333333%;
+  }
+  .disease-express .col-sm-push-5 {
+    left: 41.6666666667%;
+  }
+  .disease-express .col-sm-push-6 {
+    left: 50%;
+  }
+  .disease-express .col-sm-push-7 {
+    left: 58.3333333333%;
+  }
+  .disease-express .col-sm-push-8 {
+    left: 66.6666666667%;
+  }
+  .disease-express .col-sm-push-9 {
+    left: 75%;
+  }
+  .disease-express .col-sm-push-10 {
+    left: 83.3333333333%;
+  }
+  .disease-express .col-sm-push-11 {
+    left: 91.6666666667%;
+  }
+  .disease-express .col-sm-push-12 {
+    left: 100%;
+  }
+  .disease-express .col-sm-offset-0 {
+    margin-left: 0%;
+  }
+  .disease-express .col-sm-offset-1 {
+    margin-left: 8.3333333333%;
+  }
+  .disease-express .col-sm-offset-2 {
+    margin-left: 16.6666666667%;
+  }
+  .disease-express .col-sm-offset-3 {
+    margin-left: 25%;
+  }
+  .disease-express .col-sm-offset-4 {
+    margin-left: 33.3333333333%;
+  }
+  .disease-express .col-sm-offset-5 {
+    margin-left: 41.6666666667%;
+  }
+  .disease-express .col-sm-offset-6 {
+    margin-left: 50%;
+  }
+  .disease-express .col-sm-offset-7 {
+    margin-left: 58.3333333333%;
+  }
+  .disease-express .col-sm-offset-8 {
+    margin-left: 66.6666666667%;
+  }
+  .disease-express .col-sm-offset-9 {
+    margin-left: 75%;
+  }
+  .disease-express .col-sm-offset-10 {
+    margin-left: 83.3333333333%;
+  }
+  .disease-express .col-sm-offset-11 {
+    margin-left: 91.6666666667%;
+  }
+  .disease-express .col-sm-offset-12 {
+    margin-left: 100%;
+  }
+}
+@media (min-width: 992px) {
+  .disease-express .col-md-1, .disease-express .col-md-2, .disease-express .col-md-3, .disease-express .col-md-4, .disease-express .col-md-5, .disease-express .col-md-6, .disease-express .col-md-7, .disease-express .col-md-8, .disease-express .col-md-9, .disease-express .col-md-10, .disease-express .col-md-11, .disease-express .col-md-12 {
+    float: left;
+  }
+  .disease-express .col-md-1 {
+    width: 8.3333333333%;
+  }
+  .disease-express .col-md-2 {
+    width: 16.6666666667%;
+  }
+  .disease-express .col-md-3 {
+    width: 25%;
+  }
+  .disease-express .col-md-4 {
+    width: 33.3333333333%;
+  }
+  .disease-express .col-md-5 {
+    width: 41.6666666667%;
+  }
+  .disease-express .col-md-6 {
+    width: 50%;
+  }
+  .disease-express .col-md-7 {
+    width: 58.3333333333%;
+  }
+  .disease-express .col-md-8 {
+    width: 66.6666666667%;
+  }
+  .disease-express .col-md-9 {
+    width: 75%;
+  }
+  .disease-express .col-md-10 {
+    width: 83.3333333333%;
+  }
+  .disease-express .col-md-11 {
+    width: 91.6666666667%;
+  }
+  .disease-express .col-md-12 {
+    width: 100%;
+  }
+  .disease-express .col-md-pull-0 {
+    right: auto;
+  }
+  .disease-express .col-md-pull-1 {
+    right: 8.3333333333%;
+  }
+  .disease-express .col-md-pull-2 {
+    right: 16.6666666667%;
+  }
+  .disease-express .col-md-pull-3 {
+    right: 25%;
+  }
+  .disease-express .col-md-pull-4 {
+    right: 33.3333333333%;
+  }
+  .disease-express .col-md-pull-5 {
+    right: 41.6666666667%;
+  }
+  .disease-express .col-md-pull-6 {
+    right: 50%;
+  }
+  .disease-express .col-md-pull-7 {
+    right: 58.3333333333%;
+  }
+  .disease-express .col-md-pull-8 {
+    right: 66.6666666667%;
+  }
+  .disease-express .col-md-pull-9 {
+    right: 75%;
+  }
+  .disease-express .col-md-pull-10 {
+    right: 83.3333333333%;
+  }
+  .disease-express .col-md-pull-11 {
+    right: 91.6666666667%;
+  }
+  .disease-express .col-md-pull-12 {
+    right: 100%;
+  }
+  .disease-express .col-md-push-0 {
+    left: auto;
+  }
+  .disease-express .col-md-push-1 {
+    left: 8.3333333333%;
+  }
+  .disease-express .col-md-push-2 {
+    left: 16.6666666667%;
+  }
+  .disease-express .col-md-push-3 {
+    left: 25%;
+  }
+  .disease-express .col-md-push-4 {
+    left: 33.3333333333%;
+  }
+  .disease-express .col-md-push-5 {
+    left: 41.6666666667%;
+  }
+  .disease-express .col-md-push-6 {
+    left: 50%;
+  }
+  .disease-express .col-md-push-7 {
+    left: 58.3333333333%;
+  }
+  .disease-express .col-md-push-8 {
+    left: 66.6666666667%;
+  }
+  .disease-express .col-md-push-9 {
+    left: 75%;
+  }
+  .disease-express .col-md-push-10 {
+    left: 83.3333333333%;
+  }
+  .disease-express .col-md-push-11 {
+    left: 91.6666666667%;
+  }
+  .disease-express .col-md-push-12 {
+    left: 100%;
+  }
+  .disease-express .col-md-offset-0 {
+    margin-left: 0%;
+  }
+  .disease-express .col-md-offset-1 {
+    margin-left: 8.3333333333%;
+  }
+  .disease-express .col-md-offset-2 {
+    margin-left: 16.6666666667%;
+  }
+  .disease-express .col-md-offset-3 {
+    margin-left: 25%;
+  }
+  .disease-express .col-md-offset-4 {
+    margin-left: 33.3333333333%;
+  }
+  .disease-express .col-md-offset-5 {
+    margin-left: 41.6666666667%;
+  }
+  .disease-express .col-md-offset-6 {
+    margin-left: 50%;
+  }
+  .disease-express .col-md-offset-7 {
+    margin-left: 58.3333333333%;
+  }
+  .disease-express .col-md-offset-8 {
+    margin-left: 66.6666666667%;
+  }
+  .disease-express .col-md-offset-9 {
+    margin-left: 75%;
+  }
+  .disease-express .col-md-offset-10 {
+    margin-left: 83.3333333333%;
+  }
+  .disease-express .col-md-offset-11 {
+    margin-left: 91.6666666667%;
+  }
+  .disease-express .col-md-offset-12 {
+    margin-left: 100%;
+  }
+}
+@media (min-width: 1200px) {
+  .disease-express .col-lg-1, .disease-express .col-lg-2, .disease-express .col-lg-3, .disease-express .col-lg-4, .disease-express .col-lg-5, .disease-express .col-lg-6, .disease-express .col-lg-7, .disease-express .col-lg-8, .disease-express .col-lg-9, .disease-express .col-lg-10, .disease-express .col-lg-11, .disease-express .col-lg-12 {
+    float: left;
+  }
+  .disease-express .col-lg-1 {
+    width: 8.3333333333%;
+  }
+  .disease-express .col-lg-2 {
+    width: 16.6666666667%;
+  }
+  .disease-express .col-lg-3 {
+    width: 25%;
+  }
+  .disease-express .col-lg-4 {
+    width: 33.3333333333%;
+  }
+  .disease-express .col-lg-5 {
+    width: 41.6666666667%;
+  }
+  .disease-express .col-lg-6 {
+    width: 50%;
+  }
+  .disease-express .col-lg-7 {
+    width: 58.3333333333%;
+  }
+  .disease-express .col-lg-8 {
+    width: 66.6666666667%;
+  }
+  .disease-express .col-lg-9 {
+    width: 75%;
+  }
+  .disease-express .col-lg-10 {
+    width: 83.3333333333%;
+  }
+  .disease-express .col-lg-11 {
+    width: 91.6666666667%;
+  }
+  .disease-express .col-lg-12 {
+    width: 100%;
+  }
+  .disease-express .col-lg-pull-0 {
+    right: auto;
+  }
+  .disease-express .col-lg-pull-1 {
+    right: 8.3333333333%;
+  }
+  .disease-express .col-lg-pull-2 {
+    right: 16.6666666667%;
+  }
+  .disease-express .col-lg-pull-3 {
+    right: 25%;
+  }
+  .disease-express .col-lg-pull-4 {
+    right: 33.3333333333%;
+  }
+  .disease-express .col-lg-pull-5 {
+    right: 41.6666666667%;
+  }
+  .disease-express .col-lg-pull-6 {
+    right: 50%;
+  }
+  .disease-express .col-lg-pull-7 {
+    right: 58.3333333333%;
+  }
+  .disease-express .col-lg-pull-8 {
+    right: 66.6666666667%;
+  }
+  .disease-express .col-lg-pull-9 {
+    right: 75%;
+  }
+  .disease-express .col-lg-pull-10 {
+    right: 83.3333333333%;
+  }
+  .disease-express .col-lg-pull-11 {
+    right: 91.6666666667%;
+  }
+  .disease-express .col-lg-pull-12 {
+    right: 100%;
+  }
+  .disease-express .col-lg-push-0 {
+    left: auto;
+  }
+  .disease-express .col-lg-push-1 {
+    left: 8.3333333333%;
+  }
+  .disease-express .col-lg-push-2 {
+    left: 16.6666666667%;
+  }
+  .disease-express .col-lg-push-3 {
+    left: 25%;
+  }
+  .disease-express .col-lg-push-4 {
+    left: 33.3333333333%;
+  }
+  .disease-express .col-lg-push-5 {
+    left: 41.6666666667%;
+  }
+  .disease-express .col-lg-push-6 {
+    left: 50%;
+  }
+  .disease-express .col-lg-push-7 {
+    left: 58.3333333333%;
+  }
+  .disease-express .col-lg-push-8 {
+    left: 66.6666666667%;
+  }
+  .disease-express .col-lg-push-9 {
+    left: 75%;
+  }
+  .disease-express .col-lg-push-10 {
+    left: 83.3333333333%;
+  }
+  .disease-express .col-lg-push-11 {
+    left: 91.6666666667%;
+  }
+  .disease-express .col-lg-push-12 {
+    left: 100%;
+  }
+  .disease-express .col-lg-offset-0 {
+    margin-left: 0%;
+  }
+  .disease-express .col-lg-offset-1 {
+    margin-left: 8.3333333333%;
+  }
+  .disease-express .col-lg-offset-2 {
+    margin-left: 16.6666666667%;
+  }
+  .disease-express .col-lg-offset-3 {
+    margin-left: 25%;
+  }
+  .disease-express .col-lg-offset-4 {
+    margin-left: 33.3333333333%;
+  }
+  .disease-express .col-lg-offset-5 {
+    margin-left: 41.6666666667%;
+  }
+  .disease-express .col-lg-offset-6 {
+    margin-left: 50%;
+  }
+  .disease-express .col-lg-offset-7 {
+    margin-left: 58.3333333333%;
+  }
+  .disease-express .col-lg-offset-8 {
+    margin-left: 66.6666666667%;
+  }
+  .disease-express .col-lg-offset-9 {
+    margin-left: 75%;
+  }
+  .disease-express .col-lg-offset-10 {
+    margin-left: 83.3333333333%;
+  }
+  .disease-express .col-lg-offset-11 {
+    margin-left: 91.6666666667%;
+  }
+  .disease-express .col-lg-offset-12 {
+    margin-left: 100%;
+  }
+}
+.disease-express table {
+  background-color: transparent;
+}
+.disease-express caption {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  color: #777777;
+  text-align: left;
+}
+.disease-express th {
+  text-align: left;
+}
+.disease-express .table {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 20px;
+}
+.disease-express .table > thead > tr > th,
+.disease-express .table > thead > tr > td,
+.disease-express .table > tbody > tr > th,
+.disease-express .table > tbody > tr > td,
+.disease-express .table > tfoot > tr > th,
+.disease-express .table > tfoot > tr > td {
+  padding: 8px;
+  line-height: 1.428571429;
+  vertical-align: top;
+  border-top: 1px solid #ddd;
+}
+.disease-express .table > thead > tr > th {
+  vertical-align: bottom;
+  border-bottom: 2px solid #ddd;
+}
+.disease-express .table > caption + thead > tr:first-child > th,
+.disease-express .table > caption + thead > tr:first-child > td,
+.disease-express .table > colgroup + thead > tr:first-child > th,
+.disease-express .table > colgroup + thead > tr:first-child > td,
+.disease-express .table > thead:first-child > tr:first-child > th,
+.disease-express .table > thead:first-child > tr:first-child > td {
+  border-top: 0;
+}
+.disease-express .table > tbody + tbody {
+  border-top: 2px solid #ddd;
+}
+.disease-express .table .table {
+  background-color: #fff;
+}
+.disease-express .table-condensed > thead > tr > th,
+.disease-express .table-condensed > thead > tr > td,
+.disease-express .table-condensed > tbody > tr > th,
+.disease-express .table-condensed > tbody > tr > td,
+.disease-express .table-condensed > tfoot > tr > th,
+.disease-express .table-condensed > tfoot > tr > td {
+  padding: 5px;
+}
+.disease-express .table-bordered {
+  border: 1px solid #ddd;
+}
+.disease-express .table-bordered > thead > tr > th,
+.disease-express .table-bordered > thead > tr > td,
+.disease-express .table-bordered > tbody > tr > th,
+.disease-express .table-bordered > tbody > tr > td,
+.disease-express .table-bordered > tfoot > tr > th,
+.disease-express .table-bordered > tfoot > tr > td {
+  border: 1px solid #ddd;
+}
+.disease-express .table-bordered > thead > tr > th,
+.disease-express .table-bordered > thead > tr > td {
+  border-bottom-width: 2px;
+}
+.disease-express .table-striped > tbody > tr:nth-of-type(odd) {
+  background-color: #f9f9f9;
+}
+.disease-express .table-hover > tbody > tr:hover {
+  background-color: #f5f5f5;
+}
+.disease-express table col[class*=col-] {
+  position: static;
+  float: none;
+  display: table-column;
+}
+.disease-express table td[class*=col-],
+.disease-express table th[class*=col-] {
+  position: static;
+  float: none;
+  display: table-cell;
+}
+.disease-express .table > thead > tr > td.active,
+.disease-express .table > thead > tr > th.active, .disease-express .table > thead > tr.active > td, .disease-express .table > thead > tr.active > th,
+.disease-express .table > tbody > tr > td.active,
+.disease-express .table > tbody > tr > th.active,
+.disease-express .table > tbody > tr.active > td,
+.disease-express .table > tbody > tr.active > th,
+.disease-express .table > tfoot > tr > td.active,
+.disease-express .table > tfoot > tr > th.active,
+.disease-express .table > tfoot > tr.active > td,
+.disease-express .table > tfoot > tr.active > th {
+  background-color: #f5f5f5;
+}
+.disease-express .table-hover > tbody > tr > td.active:hover,
+.disease-express .table-hover > tbody > tr > th.active:hover, .disease-express .table-hover > tbody > tr.active:hover > td, .disease-express .table-hover > tbody > tr:hover > .active, .disease-express .table-hover > tbody > tr.active:hover > th {
+  background-color: #e8e8e8;
+}
+.disease-express .table > thead > tr > td.success,
+.disease-express .table > thead > tr > th.success, .disease-express .table > thead > tr.success > td, .disease-express .table > thead > tr.success > th,
+.disease-express .table > tbody > tr > td.success,
+.disease-express .table > tbody > tr > th.success,
+.disease-express .table > tbody > tr.success > td,
+.disease-express .table > tbody > tr.success > th,
+.disease-express .table > tfoot > tr > td.success,
+.disease-express .table > tfoot > tr > th.success,
+.disease-express .table > tfoot > tr.success > td,
+.disease-express .table > tfoot > tr.success > th {
+  background-color: #dff0d8;
+}
+.disease-express .table-hover > tbody > tr > td.success:hover,
+.disease-express .table-hover > tbody > tr > th.success:hover, .disease-express .table-hover > tbody > tr.success:hover > td, .disease-express .table-hover > tbody > tr:hover > .success, .disease-express .table-hover > tbody > tr.success:hover > th {
+  background-color: #d0e9c6;
+}
+.disease-express .table > thead > tr > td.info,
+.disease-express .table > thead > tr > th.info, .disease-express .table > thead > tr.info > td, .disease-express .table > thead > tr.info > th,
+.disease-express .table > tbody > tr > td.info,
+.disease-express .table > tbody > tr > th.info,
+.disease-express .table > tbody > tr.info > td,
+.disease-express .table > tbody > tr.info > th,
+.disease-express .table > tfoot > tr > td.info,
+.disease-express .table > tfoot > tr > th.info,
+.disease-express .table > tfoot > tr.info > td,
+.disease-express .table > tfoot > tr.info > th {
+  background-color: #d9edf7;
+}
+.disease-express .table-hover > tbody > tr > td.info:hover,
+.disease-express .table-hover > tbody > tr > th.info:hover, .disease-express .table-hover > tbody > tr.info:hover > td, .disease-express .table-hover > tbody > tr:hover > .info, .disease-express .table-hover > tbody > tr.info:hover > th {
+  background-color: #c4e3f3;
+}
+.disease-express .table > thead > tr > td.warning,
+.disease-express .table > thead > tr > th.warning, .disease-express .table > thead > tr.warning > td, .disease-express .table > thead > tr.warning > th,
+.disease-express .table > tbody > tr > td.warning,
+.disease-express .table > tbody > tr > th.warning,
+.disease-express .table > tbody > tr.warning > td,
+.disease-express .table > tbody > tr.warning > th,
+.disease-express .table > tfoot > tr > td.warning,
+.disease-express .table > tfoot > tr > th.warning,
+.disease-express .table > tfoot > tr.warning > td,
+.disease-express .table > tfoot > tr.warning > th {
+  background-color: #fcf8e3;
+}
+.disease-express .table-hover > tbody > tr > td.warning:hover,
+.disease-express .table-hover > tbody > tr > th.warning:hover, .disease-express .table-hover > tbody > tr.warning:hover > td, .disease-express .table-hover > tbody > tr:hover > .warning, .disease-express .table-hover > tbody > tr.warning:hover > th {
+  background-color: #faf2cc;
+}
+.disease-express .table > thead > tr > td.danger,
+.disease-express .table > thead > tr > th.danger, .disease-express .table > thead > tr.danger > td, .disease-express .table > thead > tr.danger > th,
+.disease-express .table > tbody > tr > td.danger,
+.disease-express .table > tbody > tr > th.danger,
+.disease-express .table > tbody > tr.danger > td,
+.disease-express .table > tbody > tr.danger > th,
+.disease-express .table > tfoot > tr > td.danger,
+.disease-express .table > tfoot > tr > th.danger,
+.disease-express .table > tfoot > tr.danger > td,
+.disease-express .table > tfoot > tr.danger > th {
+  background-color: #f2dede;
+}
+.disease-express .table-hover > tbody > tr > td.danger:hover,
+.disease-express .table-hover > tbody > tr > th.danger:hover, .disease-express .table-hover > tbody > tr.danger:hover > td, .disease-express .table-hover > tbody > tr:hover > .danger, .disease-express .table-hover > tbody > tr.danger:hover > th {
+  background-color: #ebcccc;
+}
+.disease-express .table-responsive {
+  overflow-x: auto;
+  min-height: 0.01%;
+}
+@media screen and (max-width: 767px) {
+  .disease-express .table-responsive {
+    width: 100%;
+    margin-bottom: 15px;
+    overflow-y: hidden;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    border: 1px solid #ddd;
+  }
+  .disease-express .table-responsive > .table {
+    margin-bottom: 0;
+  }
+  .disease-express .table-responsive > .table > thead > tr > th,
+.disease-express .table-responsive > .table > thead > tr > td,
+.disease-express .table-responsive > .table > tbody > tr > th,
+.disease-express .table-responsive > .table > tbody > tr > td,
+.disease-express .table-responsive > .table > tfoot > tr > th,
+.disease-express .table-responsive > .table > tfoot > tr > td {
+    white-space: nowrap;
+  }
+  .disease-express .table-responsive > .table-bordered {
+    border: 0;
+  }
+  .disease-express .table-responsive > .table-bordered > thead > tr > th:first-child,
+.disease-express .table-responsive > .table-bordered > thead > tr > td:first-child,
+.disease-express .table-responsive > .table-bordered > tbody > tr > th:first-child,
+.disease-express .table-responsive > .table-bordered > tbody > tr > td:first-child,
+.disease-express .table-responsive > .table-bordered > tfoot > tr > th:first-child,
+.disease-express .table-responsive > .table-bordered > tfoot > tr > td:first-child {
+    border-left: 0;
+  }
+  .disease-express .table-responsive > .table-bordered > thead > tr > th:last-child,
+.disease-express .table-responsive > .table-bordered > thead > tr > td:last-child,
+.disease-express .table-responsive > .table-bordered > tbody > tr > th:last-child,
+.disease-express .table-responsive > .table-bordered > tbody > tr > td:last-child,
+.disease-express .table-responsive > .table-bordered > tfoot > tr > th:last-child,
+.disease-express .table-responsive > .table-bordered > tfoot > tr > td:last-child {
+    border-right: 0;
+  }
+  .disease-express .table-responsive > .table-bordered > tbody > tr:last-child > th,
+.disease-express .table-responsive > .table-bordered > tbody > tr:last-child > td,
+.disease-express .table-responsive > .table-bordered > tfoot > tr:last-child > th,
+.disease-express .table-responsive > .table-bordered > tfoot > tr:last-child > td {
+    border-bottom: 0;
+  }
+}
+.disease-express fieldset {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  min-width: 0;
+}
+.disease-express legend {
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin-bottom: 20px;
+  font-size: 21px;
+  line-height: inherit;
+  color: #333333;
+  border: 0;
+  border-bottom: 1px solid #e5e5e5;
+}
+.disease-express label {
+  display: inline-block;
+  max-width: 100%;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+.disease-express input[type=search] {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.disease-express input[type=radio],
+.disease-express input[type=checkbox] {
+  margin: 4px 0 0;
+  margin-top: 1px \9;
+  line-height: normal;
+}
+.disease-express input[type=file] {
+  display: block;
+}
+.disease-express input[type=range] {
+  display: block;
+  width: 100%;
+}
+.disease-express select[multiple],
+.disease-express select[size] {
+  height: auto;
+}
+.disease-express input[type=file]:focus,
+.disease-express input[type=radio]:focus,
+.disease-express input[type=checkbox]:focus {
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+.disease-express output {
+  display: block;
+  padding-top: 7px;
+  font-size: 14px;
+  line-height: 1.428571429;
+  color: #555555;
+}
+.disease-express .form-control {
+  display: block;
+  width: 100%;
+  height: 34px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.428571429;
+  color: #555555;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  -o-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+}
+.disease-express .form-control:focus {
+  border-color: #66afe9;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+}
+.disease-express .form-control::-moz-placeholder {
+  color: #999;
+  opacity: 1;
+}
+.disease-express .form-control:-ms-input-placeholder {
+  color: #999;
+}
+.disease-express .form-control::-webkit-input-placeholder {
+  color: #999;
+}
+.disease-express .form-control::-ms-expand {
+  border: 0;
+  background-color: transparent;
+}
+.disease-express .form-control[disabled], .disease-express .form-control[readonly], fieldset[disabled] .disease-express .form-control {
+  background-color: #eeeeee;
+  opacity: 1;
+}
+.disease-express .form-control[disabled], fieldset[disabled] .disease-express .form-control {
+  cursor: not-allowed;
+}
+.disease-express textarea.form-control {
+  height: auto;
+}
+.disease-express input[type=search] {
+  -webkit-appearance: none;
+}
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  .disease-express input[type=date].form-control,
+.disease-express input[type=time].form-control,
+.disease-express input[type=datetime-local].form-control,
+.disease-express input[type=month].form-control {
+    line-height: 34px;
+  }
+  .disease-express input[type=date].input-sm, .disease-express .input-group-sm > input[type=date].form-control,
+.disease-express .input-group-sm > input[type=date].input-group-addon,
+.disease-express .input-group-sm > .input-group-btn > input[type=date].btn, .input-group-sm .disease-express input[type=date],
+.disease-express input[type=time].input-sm,
+.disease-express .input-group-sm > input[type=time].form-control,
+.disease-express .input-group-sm > input[type=time].input-group-addon,
+.disease-express .input-group-sm > .input-group-btn > input[type=time].btn,
+.input-group-sm .disease-express input[type=time],
+.disease-express input[type=datetime-local].input-sm,
+.disease-express .input-group-sm > input[type=datetime-local].form-control,
+.disease-express .input-group-sm > input[type=datetime-local].input-group-addon,
+.disease-express .input-group-sm > .input-group-btn > input[type=datetime-local].btn,
+.input-group-sm .disease-express input[type=datetime-local],
+.disease-express input[type=month].input-sm,
+.disease-express .input-group-sm > input[type=month].form-control,
+.disease-express .input-group-sm > input[type=month].input-group-addon,
+.disease-express .input-group-sm > .input-group-btn > input[type=month].btn,
+.input-group-sm .disease-express input[type=month] {
+    line-height: 30px;
+  }
+  .disease-express input[type=date].input-lg, .disease-express .input-group-lg > input[type=date].form-control,
+.disease-express .input-group-lg > input[type=date].input-group-addon,
+.disease-express .input-group-lg > .input-group-btn > input[type=date].btn, .input-group-lg .disease-express input[type=date],
+.disease-express input[type=time].input-lg,
+.disease-express .input-group-lg > input[type=time].form-control,
+.disease-express .input-group-lg > input[type=time].input-group-addon,
+.disease-express .input-group-lg > .input-group-btn > input[type=time].btn,
+.input-group-lg .disease-express input[type=time],
+.disease-express input[type=datetime-local].input-lg,
+.disease-express .input-group-lg > input[type=datetime-local].form-control,
+.disease-express .input-group-lg > input[type=datetime-local].input-group-addon,
+.disease-express .input-group-lg > .input-group-btn > input[type=datetime-local].btn,
+.input-group-lg .disease-express input[type=datetime-local],
+.disease-express input[type=month].input-lg,
+.disease-express .input-group-lg > input[type=month].form-control,
+.disease-express .input-group-lg > input[type=month].input-group-addon,
+.disease-express .input-group-lg > .input-group-btn > input[type=month].btn,
+.input-group-lg .disease-express input[type=month] {
+    line-height: 46px;
+  }
+}
+.disease-express .form-group {
+  margin-bottom: 15px;
+}
+.disease-express .radio,
+.disease-express .checkbox {
+  position: relative;
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.disease-express .radio label,
+.disease-express .checkbox label {
+  min-height: 20px;
+  padding-left: 20px;
+  margin-bottom: 0;
+  font-weight: normal;
+  cursor: pointer;
+}
+.disease-express .radio input[type=radio],
+.disease-express .radio-inline input[type=radio],
+.disease-express .checkbox input[type=checkbox],
+.disease-express .checkbox-inline input[type=checkbox] {
+  position: absolute;
+  margin-left: -20px;
+  margin-top: 4px \9;
+}
+.disease-express .radio + .radio,
+.disease-express .checkbox + .checkbox {
+  margin-top: -5px;
+}
+.disease-express .radio-inline,
+.disease-express .checkbox-inline {
+  position: relative;
+  display: inline-block;
+  padding-left: 20px;
+  margin-bottom: 0;
+  vertical-align: middle;
+  font-weight: normal;
+  cursor: pointer;
+}
+.disease-express .radio-inline + .radio-inline,
+.disease-express .checkbox-inline + .checkbox-inline {
+  margin-top: 0;
+  margin-left: 10px;
+}
+.disease-express input[type=radio][disabled], .disease-express input[type=radio].disabled, fieldset[disabled] .disease-express input[type=radio],
+.disease-express input[type=checkbox][disabled],
+.disease-express input[type=checkbox].disabled,
+fieldset[disabled] .disease-express input[type=checkbox] {
+  cursor: not-allowed;
+}
+.disease-express .radio-inline.disabled, fieldset[disabled] .disease-express .radio-inline,
+.disease-express .checkbox-inline.disabled,
+fieldset[disabled] .disease-express .checkbox-inline {
+  cursor: not-allowed;
+}
+.disease-express .radio.disabled label, fieldset[disabled] .disease-express .radio label,
+.disease-express .checkbox.disabled label,
+fieldset[disabled] .disease-express .checkbox label {
+  cursor: not-allowed;
+}
+.disease-express .form-control-static {
+  padding-top: 7px;
+  padding-bottom: 7px;
+  margin-bottom: 0;
+  min-height: 34px;
+}
+.disease-express .form-control-static.input-lg, .disease-express .input-group-lg > .form-control-static.form-control,
+.disease-express .input-group-lg > .form-control-static.input-group-addon,
+.disease-express .input-group-lg > .input-group-btn > .form-control-static.btn, .disease-express .form-control-static.input-sm, .disease-express .input-group-sm > .form-control-static.form-control,
+.disease-express .input-group-sm > .form-control-static.input-group-addon,
+.disease-express .input-group-sm > .input-group-btn > .form-control-static.btn {
+  padding-left: 0;
+  padding-right: 0;
+}
+.disease-express .input-sm, .disease-express .input-group-sm > .form-control,
+.disease-express .input-group-sm > .input-group-addon,
+.disease-express .input-group-sm > .input-group-btn > .btn {
+  height: 30px;
+  padding: 5px 10px;
+  font-size: 12px;
+  line-height: 1.5;
+  border-radius: 3px;
+}
+.disease-express select.input-sm, .disease-express .input-group-sm > select.form-control,
+.disease-express .input-group-sm > select.input-group-addon,
+.disease-express .input-group-sm > .input-group-btn > select.btn {
+  height: 30px;
+  line-height: 30px;
+}
+.disease-express textarea.input-sm, .disease-express .input-group-sm > textarea.form-control,
+.disease-express .input-group-sm > textarea.input-group-addon,
+.disease-express .input-group-sm > .input-group-btn > textarea.btn,
+.disease-express select[multiple].input-sm,
+.disease-express .input-group-sm > select[multiple].form-control,
+.disease-express .input-group-sm > select[multiple].input-group-addon,
+.disease-express .input-group-sm > .input-group-btn > select[multiple].btn {
+  height: auto;
+}
+.disease-express .form-group-sm .form-control {
+  height: 30px;
+  padding: 5px 10px;
+  font-size: 12px;
+  line-height: 1.5;
+  border-radius: 3px;
+}
+.disease-express .form-group-sm select.form-control {
+  height: 30px;
+  line-height: 30px;
+}
+.disease-express .form-group-sm textarea.form-control,
+.disease-express .form-group-sm select[multiple].form-control {
+  height: auto;
+}
+.disease-express .form-group-sm .form-control-static {
+  height: 30px;
+  min-height: 32px;
+  padding: 6px 10px;
+  font-size: 12px;
+  line-height: 1.5;
+}
+.disease-express .input-lg, .disease-express .input-group-lg > .form-control,
+.disease-express .input-group-lg > .input-group-addon,
+.disease-express .input-group-lg > .input-group-btn > .btn {
+  height: 46px;
+  padding: 10px 16px;
+  font-size: 18px;
+  line-height: 1.3333333;
+  border-radius: 6px;
+}
+.disease-express select.input-lg, .disease-express .input-group-lg > select.form-control,
+.disease-express .input-group-lg > select.input-group-addon,
+.disease-express .input-group-lg > .input-group-btn > select.btn {
+  height: 46px;
+  line-height: 46px;
+}
+.disease-express textarea.input-lg, .disease-express .input-group-lg > textarea.form-control,
+.disease-express .input-group-lg > textarea.input-group-addon,
+.disease-express .input-group-lg > .input-group-btn > textarea.btn,
+.disease-express select[multiple].input-lg,
+.disease-express .input-group-lg > select[multiple].form-control,
+.disease-express .input-group-lg > select[multiple].input-group-addon,
+.disease-express .input-group-lg > .input-group-btn > select[multiple].btn {
+  height: auto;
+}
+.disease-express .form-group-lg .form-control {
+  height: 46px;
+  padding: 10px 16px;
+  font-size: 18px;
+  line-height: 1.3333333;
+  border-radius: 6px;
+}
+.disease-express .form-group-lg select.form-control {
+  height: 46px;
+  line-height: 46px;
+}
+.disease-express .form-group-lg textarea.form-control,
+.disease-express .form-group-lg select[multiple].form-control {
+  height: auto;
+}
+.disease-express .form-group-lg .form-control-static {
+  height: 46px;
+  min-height: 38px;
+  padding: 11px 16px;
+  font-size: 18px;
+  line-height: 1.3333333;
+}
+.disease-express .has-feedback {
+  position: relative;
+}
+.disease-express .has-feedback .form-control {
+  padding-right: 42.5px;
+}
+.disease-express .form-control-feedback {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2;
+  display: block;
+  width: 34px;
+  height: 34px;
+  line-height: 34px;
+  text-align: center;
+  pointer-events: none;
+}
+.disease-express .input-lg + .form-control-feedback, .disease-express .input-group-lg > .form-control + .form-control-feedback,
+.disease-express .input-group-lg > .input-group-addon + .form-control-feedback,
+.disease-express .input-group-lg > .input-group-btn > .btn + .form-control-feedback,
+.disease-express .input-group-lg + .form-control-feedback,
+.disease-express .form-group-lg .form-control + .form-control-feedback {
+  width: 46px;
+  height: 46px;
+  line-height: 46px;
+}
+.disease-express .input-sm + .form-control-feedback, .disease-express .input-group-sm > .form-control + .form-control-feedback,
+.disease-express .input-group-sm > .input-group-addon + .form-control-feedback,
+.disease-express .input-group-sm > .input-group-btn > .btn + .form-control-feedback,
+.disease-express .input-group-sm + .form-control-feedback,
+.disease-express .form-group-sm .form-control + .form-control-feedback {
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+}
+.disease-express .has-success .help-block,
+.disease-express .has-success .control-label,
+.disease-express .has-success .radio,
+.disease-express .has-success .checkbox,
+.disease-express .has-success .radio-inline,
+.disease-express .has-success .checkbox-inline, .disease-express .has-success.radio label, .disease-express .has-success.checkbox label, .disease-express .has-success.radio-inline label, .disease-express .has-success.checkbox-inline label {
+  color: #3c763d;
+}
+.disease-express .has-success .form-control {
+  border-color: #3c763d;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+}
+.disease-express .has-success .form-control:focus {
+  border-color: #2b542c;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #67b168;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #67b168;
+}
+.disease-express .has-success .input-group-addon {
+  color: #3c763d;
+  border-color: #3c763d;
+  background-color: #dff0d8;
+}
+.disease-express .has-success .form-control-feedback {
+  color: #3c763d;
+}
+.disease-express .has-warning .help-block,
+.disease-express .has-warning .control-label,
+.disease-express .has-warning .radio,
+.disease-express .has-warning .checkbox,
+.disease-express .has-warning .radio-inline,
+.disease-express .has-warning .checkbox-inline, .disease-express .has-warning.radio label, .disease-express .has-warning.checkbox label, .disease-express .has-warning.radio-inline label, .disease-express .has-warning.checkbox-inline label {
+  color: #8a6d3b;
+}
+.disease-express .has-warning .form-control {
+  border-color: #8a6d3b;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+}
+.disease-express .has-warning .form-control:focus {
+  border-color: #66512c;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #c0a16b;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #c0a16b;
+}
+.disease-express .has-warning .input-group-addon {
+  color: #8a6d3b;
+  border-color: #8a6d3b;
+  background-color: #fcf8e3;
+}
+.disease-express .has-warning .form-control-feedback {
+  color: #8a6d3b;
+}
+.disease-express .has-error .help-block,
+.disease-express .has-error .control-label,
+.disease-express .has-error .radio,
+.disease-express .has-error .checkbox,
+.disease-express .has-error .radio-inline,
+.disease-express .has-error .checkbox-inline, .disease-express .has-error.radio label, .disease-express .has-error.checkbox label, .disease-express .has-error.radio-inline label, .disease-express .has-error.checkbox-inline label {
+  color: #a94442;
+}
+.disease-express .has-error .form-control {
+  border-color: #a94442;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+}
+.disease-express .has-error .form-control:focus {
+  border-color: #843534;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #ce8483;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #ce8483;
+}
+.disease-express .has-error .input-group-addon {
+  color: #a94442;
+  border-color: #a94442;
+  background-color: #f2dede;
+}
+.disease-express .has-error .form-control-feedback {
+  color: #a94442;
+}
+.disease-express .has-feedback label ~ .form-control-feedback {
+  top: 25px;
+}
+.disease-express .has-feedback label.sr-only ~ .form-control-feedback {
+  top: 0;
+}
+.disease-express .help-block {
+  display: block;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  color: #737373;
+}
+@media (min-width: 768px) {
+  .disease-express .form-inline .form-group {
+    display: inline-block;
+    margin-bottom: 0;
+    vertical-align: middle;
+  }
+  .disease-express .form-inline .form-control {
+    display: inline-block;
+    width: auto;
+    vertical-align: middle;
+  }
+  .disease-express .form-inline .form-control-static {
+    display: inline-block;
+  }
+  .disease-express .form-inline .input-group {
+    display: inline-table;
+    vertical-align: middle;
+  }
+  .disease-express .form-inline .input-group .input-group-addon,
+.disease-express .form-inline .input-group .input-group-btn,
+.disease-express .form-inline .input-group .form-control {
+    width: auto;
+  }
+  .disease-express .form-inline .input-group > .form-control {
+    width: 100%;
+  }
+  .disease-express .form-inline .control-label {
+    margin-bottom: 0;
+    vertical-align: middle;
+  }
+  .disease-express .form-inline .radio,
+.disease-express .form-inline .checkbox {
+    display: inline-block;
+    margin-top: 0;
+    margin-bottom: 0;
+    vertical-align: middle;
+  }
+  .disease-express .form-inline .radio label,
+.disease-express .form-inline .checkbox label {
+    padding-left: 0;
+  }
+  .disease-express .form-inline .radio input[type=radio],
+.disease-express .form-inline .checkbox input[type=checkbox] {
+    position: relative;
+    margin-left: 0;
+  }
+  .disease-express .form-inline .has-feedback .form-control-feedback {
+    top: 0;
+  }
+}
+.disease-express .form-horizontal .radio,
+.disease-express .form-horizontal .checkbox,
+.disease-express .form-horizontal .radio-inline,
+.disease-express .form-horizontal .checkbox-inline {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 7px;
+}
+.disease-express .form-horizontal .radio,
+.disease-express .form-horizontal .checkbox {
+  min-height: 27px;
+}
+.disease-express .form-horizontal .form-group {
+  margin-left: -15px;
+  margin-right: -15px;
+}
+.disease-express .form-horizontal .form-group:before, .disease-express .form-horizontal .form-group:after {
+  content: " ";
+  display: table;
+}
+.disease-express .form-horizontal .form-group:after {
+  clear: both;
+}
+@media (min-width: 768px) {
+  .disease-express .form-horizontal .control-label {
+    text-align: right;
+    margin-bottom: 0;
+    padding-top: 7px;
+  }
+}
+.disease-express .form-horizontal .has-feedback .form-control-feedback {
+  right: 15px;
+}
+@media (min-width: 768px) {
+  .disease-express .form-horizontal .form-group-lg .control-label {
+    padding-top: 11px;
+    font-size: 18px;
+  }
+}
+@media (min-width: 768px) {
+  .disease-express .form-horizontal .form-group-sm .control-label {
+    padding-top: 6px;
+    font-size: 12px;
+  }
+}
+.disease-express .btn {
+  display: inline-block;
+  margin-bottom: 0;
+  font-weight: normal;
+  text-align: center;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.428571429;
+  border-radius: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.disease-express .btn:focus, .disease-express .btn.focus, .disease-express .btn:active:focus, .disease-express .btn:active.focus, .disease-express .btn.active:focus, .disease-express .btn.active.focus {
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+.disease-express .btn:hover, .disease-express .btn:focus, .disease-express .btn.focus {
+  color: #333;
+  text-decoration: none;
+}
+.disease-express .btn:active, .disease-express .btn.active {
+  outline: 0;
+  background-image: none;
+  -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+}
+.disease-express .btn.disabled, .disease-express .btn[disabled], fieldset[disabled] .disease-express .btn {
+  cursor: not-allowed;
+  opacity: 0.65;
+  filter: alpha(opacity=65);
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.disease-express a.btn.disabled, fieldset[disabled] .disease-express a.btn {
+  pointer-events: none;
+}
+.disease-express .btn-default {
+  color: #333;
+  background-color: #fff;
+  border-color: #ccc;
+}
+.disease-express .btn-default:focus, .disease-express .btn-default.focus {
+  color: #333;
+  background-color: #e6e6e6;
+  border-color: #8c8c8c;
+}
+.disease-express .btn-default:hover {
+  color: #333;
+  background-color: #e6e6e6;
+  border-color: #adadad;
+}
+.disease-express .btn-default:active, .disease-express .btn-default.active, .open > .disease-express .btn-default.dropdown-toggle {
+  color: #333;
+  background-color: #e6e6e6;
+  border-color: #adadad;
+}
+.disease-express .btn-default:active:hover, .disease-express .btn-default:active:focus, .disease-express .btn-default:active.focus, .disease-express .btn-default.active:hover, .disease-express .btn-default.active:focus, .disease-express .btn-default.active.focus, .open > .disease-express .btn-default.dropdown-toggle:hover, .open > .disease-express .btn-default.dropdown-toggle:focus, .open > .disease-express .btn-default.dropdown-toggle.focus {
+  color: #333;
+  background-color: #d4d4d4;
+  border-color: #8c8c8c;
+}
+.disease-express .btn-default:active, .disease-express .btn-default.active, .open > .disease-express .btn-default.dropdown-toggle {
+  background-image: none;
+}
+.disease-express .btn-default.disabled:hover, .disease-express .btn-default.disabled:focus, .disease-express .btn-default.disabled.focus, .disease-express .btn-default[disabled]:hover, .disease-express .btn-default[disabled]:focus, .disease-express .btn-default[disabled].focus, fieldset[disabled] .disease-express .btn-default:hover, fieldset[disabled] .disease-express .btn-default:focus, fieldset[disabled] .disease-express .btn-default.focus {
+  background-color: #fff;
+  border-color: #ccc;
+}
+.disease-express .btn-default .badge {
+  color: #fff;
+  background-color: #333;
+}
+.disease-express .btn-primary {
+  color: #fff;
+  background-color: #337ab7;
+  border-color: #2e6da4;
+}
+.disease-express .btn-primary:focus, .disease-express .btn-primary.focus {
+  color: #fff;
+  background-color: #286090;
+  border-color: #122b40;
+}
+.disease-express .btn-primary:hover {
+  color: #fff;
+  background-color: #286090;
+  border-color: #204d74;
+}
+.disease-express .btn-primary:active, .disease-express .btn-primary.active, .open > .disease-express .btn-primary.dropdown-toggle {
+  color: #fff;
+  background-color: #286090;
+  border-color: #204d74;
+}
+.disease-express .btn-primary:active:hover, .disease-express .btn-primary:active:focus, .disease-express .btn-primary:active.focus, .disease-express .btn-primary.active:hover, .disease-express .btn-primary.active:focus, .disease-express .btn-primary.active.focus, .open > .disease-express .btn-primary.dropdown-toggle:hover, .open > .disease-express .btn-primary.dropdown-toggle:focus, .open > .disease-express .btn-primary.dropdown-toggle.focus {
+  color: #fff;
+  background-color: #204d74;
+  border-color: #122b40;
+}
+.disease-express .btn-primary:active, .disease-express .btn-primary.active, .open > .disease-express .btn-primary.dropdown-toggle {
+  background-image: none;
+}
+.disease-express .btn-primary.disabled:hover, .disease-express .btn-primary.disabled:focus, .disease-express .btn-primary.disabled.focus, .disease-express .btn-primary[disabled]:hover, .disease-express .btn-primary[disabled]:focus, .disease-express .btn-primary[disabled].focus, fieldset[disabled] .disease-express .btn-primary:hover, fieldset[disabled] .disease-express .btn-primary:focus, fieldset[disabled] .disease-express .btn-primary.focus {
+  background-color: #337ab7;
+  border-color: #2e6da4;
+}
+.disease-express .btn-primary .badge {
+  color: #337ab7;
+  background-color: #fff;
+}
+.disease-express .btn-success {
+  color: #fff;
+  background-color: #5cb85c;
+  border-color: #4cae4c;
+}
+.disease-express .btn-success:focus, .disease-express .btn-success.focus {
+  color: #fff;
+  background-color: #449d44;
+  border-color: #255625;
+}
+.disease-express .btn-success:hover {
+  color: #fff;
+  background-color: #449d44;
+  border-color: #398439;
+}
+.disease-express .btn-success:active, .disease-express .btn-success.active, .open > .disease-express .btn-success.dropdown-toggle {
+  color: #fff;
+  background-color: #449d44;
+  border-color: #398439;
+}
+.disease-express .btn-success:active:hover, .disease-express .btn-success:active:focus, .disease-express .btn-success:active.focus, .disease-express .btn-success.active:hover, .disease-express .btn-success.active:focus, .disease-express .btn-success.active.focus, .open > .disease-express .btn-success.dropdown-toggle:hover, .open > .disease-express .btn-success.dropdown-toggle:focus, .open > .disease-express .btn-success.dropdown-toggle.focus {
+  color: #fff;
+  background-color: #398439;
+  border-color: #255625;
+}
+.disease-express .btn-success:active, .disease-express .btn-success.active, .open > .disease-express .btn-success.dropdown-toggle {
+  background-image: none;
+}
+.disease-express .btn-success.disabled:hover, .disease-express .btn-success.disabled:focus, .disease-express .btn-success.disabled.focus, .disease-express .btn-success[disabled]:hover, .disease-express .btn-success[disabled]:focus, .disease-express .btn-success[disabled].focus, fieldset[disabled] .disease-express .btn-success:hover, fieldset[disabled] .disease-express .btn-success:focus, fieldset[disabled] .disease-express .btn-success.focus {
+  background-color: #5cb85c;
+  border-color: #4cae4c;
+}
+.disease-express .btn-success .badge {
+  color: #5cb85c;
+  background-color: #fff;
+}
+.disease-express .btn-info {
+  color: #fff;
+  background-color: #5bc0de;
+  border-color: #46b8da;
+}
+.disease-express .btn-info:focus, .disease-express .btn-info.focus {
+  color: #fff;
+  background-color: #31b0d5;
+  border-color: #1b6d85;
+}
+.disease-express .btn-info:hover {
+  color: #fff;
+  background-color: #31b0d5;
+  border-color: #269abc;
+}
+.disease-express .btn-info:active, .disease-express .btn-info.active, .open > .disease-express .btn-info.dropdown-toggle {
+  color: #fff;
+  background-color: #31b0d5;
+  border-color: #269abc;
+}
+.disease-express .btn-info:active:hover, .disease-express .btn-info:active:focus, .disease-express .btn-info:active.focus, .disease-express .btn-info.active:hover, .disease-express .btn-info.active:focus, .disease-express .btn-info.active.focus, .open > .disease-express .btn-info.dropdown-toggle:hover, .open > .disease-express .btn-info.dropdown-toggle:focus, .open > .disease-express .btn-info.dropdown-toggle.focus {
+  color: #fff;
+  background-color: #269abc;
+  border-color: #1b6d85;
+}
+.disease-express .btn-info:active, .disease-express .btn-info.active, .open > .disease-express .btn-info.dropdown-toggle {
+  background-image: none;
+}
+.disease-express .btn-info.disabled:hover, .disease-express .btn-info.disabled:focus, .disease-express .btn-info.disabled.focus, .disease-express .btn-info[disabled]:hover, .disease-express .btn-info[disabled]:focus, .disease-express .btn-info[disabled].focus, fieldset[disabled] .disease-express .btn-info:hover, fieldset[disabled] .disease-express .btn-info:focus, fieldset[disabled] .disease-express .btn-info.focus {
+  background-color: #5bc0de;
+  border-color: #46b8da;
+}
+.disease-express .btn-info .badge {
+  color: #5bc0de;
+  background-color: #fff;
+}
+.disease-express .btn-warning {
+  color: #fff;
+  background-color: #f0ad4e;
+  border-color: #eea236;
+}
+.disease-express .btn-warning:focus, .disease-express .btn-warning.focus {
+  color: #fff;
+  background-color: #ec971f;
+  border-color: #985f0d;
+}
+.disease-express .btn-warning:hover {
+  color: #fff;
+  background-color: #ec971f;
+  border-color: #d58512;
+}
+.disease-express .btn-warning:active, .disease-express .btn-warning.active, .open > .disease-express .btn-warning.dropdown-toggle {
+  color: #fff;
+  background-color: #ec971f;
+  border-color: #d58512;
+}
+.disease-express .btn-warning:active:hover, .disease-express .btn-warning:active:focus, .disease-express .btn-warning:active.focus, .disease-express .btn-warning.active:hover, .disease-express .btn-warning.active:focus, .disease-express .btn-warning.active.focus, .open > .disease-express .btn-warning.dropdown-toggle:hover, .open > .disease-express .btn-warning.dropdown-toggle:focus, .open > .disease-express .btn-warning.dropdown-toggle.focus {
+  color: #fff;
+  background-color: #d58512;
+  border-color: #985f0d;
+}
+.disease-express .btn-warning:active, .disease-express .btn-warning.active, .open > .disease-express .btn-warning.dropdown-toggle {
+  background-image: none;
+}
+.disease-express .btn-warning.disabled:hover, .disease-express .btn-warning.disabled:focus, .disease-express .btn-warning.disabled.focus, .disease-express .btn-warning[disabled]:hover, .disease-express .btn-warning[disabled]:focus, .disease-express .btn-warning[disabled].focus, fieldset[disabled] .disease-express .btn-warning:hover, fieldset[disabled] .disease-express .btn-warning:focus, fieldset[disabled] .disease-express .btn-warning.focus {
+  background-color: #f0ad4e;
+  border-color: #eea236;
+}
+.disease-express .btn-warning .badge {
+  color: #f0ad4e;
+  background-color: #fff;
+}
+.disease-express .btn-danger {
+  color: #fff;
+  background-color: #d9534f;
+  border-color: #d43f3a;
+}
+.disease-express .btn-danger:focus, .disease-express .btn-danger.focus {
+  color: #fff;
+  background-color: #c9302c;
+  border-color: #761c19;
+}
+.disease-express .btn-danger:hover {
+  color: #fff;
+  background-color: #c9302c;
+  border-color: #ac2925;
+}
+.disease-express .btn-danger:active, .disease-express .btn-danger.active, .open > .disease-express .btn-danger.dropdown-toggle {
+  color: #fff;
+  background-color: #c9302c;
+  border-color: #ac2925;
+}
+.disease-express .btn-danger:active:hover, .disease-express .btn-danger:active:focus, .disease-express .btn-danger:active.focus, .disease-express .btn-danger.active:hover, .disease-express .btn-danger.active:focus, .disease-express .btn-danger.active.focus, .open > .disease-express .btn-danger.dropdown-toggle:hover, .open > .disease-express .btn-danger.dropdown-toggle:focus, .open > .disease-express .btn-danger.dropdown-toggle.focus {
+  color: #fff;
+  background-color: #ac2925;
+  border-color: #761c19;
+}
+.disease-express .btn-danger:active, .disease-express .btn-danger.active, .open > .disease-express .btn-danger.dropdown-toggle {
+  background-image: none;
+}
+.disease-express .btn-danger.disabled:hover, .disease-express .btn-danger.disabled:focus, .disease-express .btn-danger.disabled.focus, .disease-express .btn-danger[disabled]:hover, .disease-express .btn-danger[disabled]:focus, .disease-express .btn-danger[disabled].focus, fieldset[disabled] .disease-express .btn-danger:hover, fieldset[disabled] .disease-express .btn-danger:focus, fieldset[disabled] .disease-express .btn-danger.focus {
+  background-color: #d9534f;
+  border-color: #d43f3a;
+}
+.disease-express .btn-danger .badge {
+  color: #d9534f;
+  background-color: #fff;
+}
+.disease-express .btn-link {
+  color: #337ab7;
+  font-weight: normal;
+  border-radius: 0;
+}
+.disease-express .btn-link, .disease-express .btn-link:active, .disease-express .btn-link.active, .disease-express .btn-link[disabled], fieldset[disabled] .disease-express .btn-link {
+  background-color: transparent;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.disease-express .btn-link, .disease-express .btn-link:hover, .disease-express .btn-link:focus, .disease-express .btn-link:active {
+  border-color: transparent;
+}
+.disease-express .btn-link:hover, .disease-express .btn-link:focus {
+  color: #23527c;
+  text-decoration: underline;
+  background-color: transparent;
+}
+.disease-express .btn-link[disabled]:hover, .disease-express .btn-link[disabled]:focus, fieldset[disabled] .disease-express .btn-link:hover, fieldset[disabled] .disease-express .btn-link:focus {
+  color: #777777;
+  text-decoration: none;
+}
+.disease-express .btn-lg, .disease-express .btn-group-lg > .btn {
+  padding: 10px 16px;
+  font-size: 18px;
+  line-height: 1.3333333;
+  border-radius: 6px;
+}
+.disease-express .btn-sm, .disease-express .btn-group-sm > .btn {
+  padding: 5px 10px;
+  font-size: 12px;
+  line-height: 1.5;
+  border-radius: 3px;
+}
+.disease-express .btn-xs, .disease-express .btn-group-xs > .btn {
+  padding: 1px 5px;
+  font-size: 12px;
+  line-height: 1.5;
+  border-radius: 3px;
+}
+.disease-express .btn-block {
+  display: block;
+  width: 100%;
+}
+.disease-express .btn-block + .btn-block {
+  margin-top: 5px;
+}
+.disease-express input[type=submit].btn-block,
+.disease-express input[type=reset].btn-block,
+.disease-express input[type=button].btn-block {
+  width: 100%;
+}
+.disease-express .fade {
+  opacity: 0;
+  -webkit-transition: opacity 0.15s linear;
+  -o-transition: opacity 0.15s linear;
+  transition: opacity 0.15s linear;
+}
+.disease-express .fade.in {
+  opacity: 1;
+}
+.disease-express .collapse {
+  display: none;
+}
+.disease-express .collapse.in {
+  display: block;
+}
+.disease-express tr.collapse.in {
+  display: table-row;
+}
+.disease-express tbody.collapse.in {
+  display: table-row-group;
+}
+.disease-express .collapsing {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  -webkit-transition-property: height, visibility;
+  transition-property: height, visibility;
+  -webkit-transition-duration: 0.35s;
+  transition-duration: 0.35s;
+  -webkit-transition-timing-function: ease;
+  transition-timing-function: ease;
+}
+.disease-express .caret {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-left: 2px;
+  vertical-align: middle;
+  border-top: 4px dashed;
+  border-top: 4px solid \9;
+  border-right: 4px solid transparent;
+  border-left: 4px solid transparent;
+}
+.disease-express .dropup,
+.disease-express .dropdown {
+  position: relative;
+}
+.disease-express .dropdown-toggle:focus {
+  outline: 0;
+}
+.disease-express .dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  display: none;
+  float: left;
+  min-width: 160px;
+  padding: 5px 0;
+  margin: 2px 0 0;
+  list-style: none;
+  font-size: 14px;
+  text-align: left;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  background-clip: padding-box;
+}
+.disease-express .dropdown-menu.pull-right {
+  right: 0;
+  left: auto;
+}
+.disease-express .dropdown-menu .divider {
+  height: 1px;
+  margin: 9px 0;
+  overflow: hidden;
+  background-color: #e5e5e5;
+}
+.disease-express .dropdown-menu > li > a {
+  display: block;
+  padding: 3px 20px;
+  clear: both;
+  font-weight: normal;
+  line-height: 1.428571429;
+  color: #333333;
+  white-space: nowrap;
+}
+.disease-express .dropdown-menu > li > a:hover, .disease-express .dropdown-menu > li > a:focus {
+  text-decoration: none;
+  color: #262626;
+  background-color: #f5f5f5;
+}
+.disease-express .dropdown-menu > .active > a, .disease-express .dropdown-menu > .active > a:hover, .disease-express .dropdown-menu > .active > a:focus {
+  color: #fff;
+  text-decoration: none;
+  outline: 0;
+  background-color: #337ab7;
+}
+.disease-express .dropdown-menu > .disabled > a, .disease-express .dropdown-menu > .disabled > a:hover, .disease-express .dropdown-menu > .disabled > a:focus {
+  color: #777777;
+}
+.disease-express .dropdown-menu > .disabled > a:hover, .disease-express .dropdown-menu > .disabled > a:focus {
+  text-decoration: none;
+  background-color: transparent;
+  background-image: none;
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+  cursor: not-allowed;
+}
+.disease-express .open > .dropdown-menu {
+  display: block;
+}
+.disease-express .open > a {
+  outline: 0;
+}
+.disease-express .dropdown-menu-right {
+  left: auto;
+  right: 0;
+}
+.disease-express .dropdown-menu-left {
+  left: 0;
+  right: auto;
+}
+.disease-express .dropdown-header {
+  display: block;
+  padding: 3px 20px;
+  font-size: 12px;
+  line-height: 1.428571429;
+  color: #777777;
+  white-space: nowrap;
+}
+.disease-express .dropdown-backdrop {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  z-index: 990;
+}
+.disease-express .pull-right > .dropdown-menu {
+  right: 0;
+  left: auto;
+}
+.disease-express .dropup .caret,
+.disease-express .navbar-fixed-bottom .dropdown .caret {
+  border-top: 0;
+  border-bottom: 4px dashed;
+  border-bottom: 4px solid \9;
+  content: "";
+}
+.disease-express .dropup .dropdown-menu,
+.disease-express .navbar-fixed-bottom .dropdown .dropdown-menu {
+  top: auto;
+  bottom: 100%;
+  margin-bottom: 2px;
+}
+@media (min-width: 768px) {
+  .disease-express .navbar-right .dropdown-menu {
+    right: 0;
+    left: auto;
+  }
+  .disease-express .navbar-right .dropdown-menu-left {
+    left: 0;
+    right: auto;
+  }
+}
+.disease-express .btn-group,
+.disease-express .btn-group-vertical {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+}
+.disease-express .btn-group > .btn,
+.disease-express .btn-group-vertical > .btn {
+  position: relative;
+  float: left;
+}
+.disease-express .btn-group > .btn:hover, .disease-express .btn-group > .btn:focus, .disease-express .btn-group > .btn:active, .disease-express .btn-group > .btn.active,
+.disease-express .btn-group-vertical > .btn:hover,
+.disease-express .btn-group-vertical > .btn:focus,
+.disease-express .btn-group-vertical > .btn:active,
+.disease-express .btn-group-vertical > .btn.active {
+  z-index: 2;
+}
+.disease-express .btn-group .btn + .btn,
+.disease-express .btn-group .btn + .btn-group,
+.disease-express .btn-group .btn-group + .btn,
+.disease-express .btn-group .btn-group + .btn-group {
+  margin-left: -1px;
+}
+.disease-express .btn-toolbar {
+  margin-left: -5px;
+}
+.disease-express .btn-toolbar:before, .disease-express .btn-toolbar:after {
+  content: " ";
+  display: table;
+}
+.disease-express .btn-toolbar:after {
+  clear: both;
+}
+.disease-express .btn-toolbar .btn,
+.disease-express .btn-toolbar .btn-group,
+.disease-express .btn-toolbar .input-group {
+  float: left;
+}
+.disease-express .btn-toolbar > .btn,
+.disease-express .btn-toolbar > .btn-group,
+.disease-express .btn-toolbar > .input-group {
+  margin-left: 5px;
+}
+.disease-express .btn-group > .btn:not(:first-child):not(:last-child):not(.dropdown-toggle) {
+  border-radius: 0;
+}
+.disease-express .btn-group > .btn:first-child {
+  margin-left: 0;
+}
+.disease-express .btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle) {
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+}
+.disease-express .btn-group > .btn:last-child:not(:first-child),
+.disease-express .btn-group > .dropdown-toggle:not(:first-child) {
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+}
+.disease-express .btn-group > .btn-group {
+  float: left;
+}
+.disease-express .btn-group > .btn-group:not(:first-child):not(:last-child) > .btn {
+  border-radius: 0;
+}
+.disease-express .btn-group > .btn-group:first-child:not(:last-child) > .btn:last-child,
+.disease-express .btn-group > .btn-group:first-child:not(:last-child) > .dropdown-toggle {
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+}
+.disease-express .btn-group > .btn-group:last-child:not(:first-child) > .btn:first-child {
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+}
+.disease-express .btn-group .dropdown-toggle:active,
+.disease-express .btn-group.open .dropdown-toggle {
+  outline: 0;
+}
+.disease-express .btn-group > .btn + .dropdown-toggle {
+  padding-left: 8px;
+  padding-right: 8px;
+}
+.disease-express .btn-group > .btn-lg + .dropdown-toggle, .disease-express .btn-group-lg.btn-group > .btn + .dropdown-toggle {
+  padding-left: 12px;
+  padding-right: 12px;
+}
+.disease-express .btn-group.open .dropdown-toggle {
+  -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+}
+.disease-express .btn-group.open .dropdown-toggle.btn-link {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.disease-express .btn .caret {
+  margin-left: 0;
+}
+.disease-express .btn-lg .caret, .disease-express .btn-group-lg > .btn .caret {
+  border-width: 5px 5px 0;
+  border-bottom-width: 0;
+}
+.disease-express .dropup .btn-lg .caret, .disease-express .dropup .btn-group-lg > .btn .caret {
+  border-width: 0 5px 5px;
+}
+.disease-express .btn-group-vertical > .btn,
+.disease-express .btn-group-vertical > .btn-group,
+.disease-express .btn-group-vertical > .btn-group > .btn {
+  display: block;
+  float: none;
+  width: 100%;
+  max-width: 100%;
+}
+.disease-express .btn-group-vertical > .btn-group:before, .disease-express .btn-group-vertical > .btn-group:after {
+  content: " ";
+  display: table;
+}
+.disease-express .btn-group-vertical > .btn-group:after {
+  clear: both;
+}
+.disease-express .btn-group-vertical > .btn-group > .btn {
+  float: none;
+}
+.disease-express .btn-group-vertical > .btn + .btn,
+.disease-express .btn-group-vertical > .btn + .btn-group,
+.disease-express .btn-group-vertical > .btn-group + .btn,
+.disease-express .btn-group-vertical > .btn-group + .btn-group {
+  margin-top: -1px;
+  margin-left: 0;
+}
+.disease-express .btn-group-vertical > .btn:not(:first-child):not(:last-child) {
+  border-radius: 0;
+}
+.disease-express .btn-group-vertical > .btn:first-child:not(:last-child) {
+  border-top-right-radius: 4px;
+  border-top-left-radius: 4px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.disease-express .btn-group-vertical > .btn:last-child:not(:first-child) {
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+.disease-express .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > .btn {
+  border-radius: 0;
+}
+.disease-express .btn-group-vertical > .btn-group:first-child:not(:last-child) > .btn:last-child,
+.disease-express .btn-group-vertical > .btn-group:first-child:not(:last-child) > .dropdown-toggle {
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.disease-express .btn-group-vertical > .btn-group:last-child:not(:first-child) > .btn:first-child {
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+}
+.disease-express .btn-group-justified {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: separate;
+}
+.disease-express .btn-group-justified > .btn,
+.disease-express .btn-group-justified > .btn-group {
+  float: none;
+  display: table-cell;
+  width: 1%;
+}
+.disease-express .btn-group-justified > .btn-group .btn {
+  width: 100%;
+}
+.disease-express .btn-group-justified > .btn-group .dropdown-menu {
+  left: auto;
+}
+.disease-express [data-toggle=buttons] > .btn input[type=radio],
+.disease-express [data-toggle=buttons] > .btn input[type=checkbox],
+.disease-express [data-toggle=buttons] > .btn-group > .btn input[type=radio],
+.disease-express [data-toggle=buttons] > .btn-group > .btn input[type=checkbox] {
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+  pointer-events: none;
+}
+.disease-express .input-group {
+  position: relative;
+  display: table;
+  border-collapse: separate;
+}
+.disease-express .input-group[class*=col-] {
+  float: none;
+  padding-left: 0;
+  padding-right: 0;
+}
+.disease-express .input-group .form-control {
+  position: relative;
+  z-index: 2;
+  float: left;
+  width: 100%;
+  margin-bottom: 0;
+}
+.disease-express .input-group .form-control:focus {
+  z-index: 3;
+}
+.disease-express .input-group-addon,
+.disease-express .input-group-btn,
+.disease-express .input-group .form-control {
+  display: table-cell;
+}
+.disease-express .input-group-addon:not(:first-child):not(:last-child),
+.disease-express .input-group-btn:not(:first-child):not(:last-child),
+.disease-express .input-group .form-control:not(:first-child):not(:last-child) {
+  border-radius: 0;
+}
+.disease-express .input-group-addon,
+.disease-express .input-group-btn {
+  width: 1%;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+.disease-express .input-group-addon {
+  padding: 6px 12px;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1;
+  color: #555555;
+  text-align: center;
+  background-color: #eeeeee;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.disease-express .input-group-addon.input-sm,
+.disease-express .input-group-sm > .input-group-addon,
+.disease-express .input-group-sm > .input-group-btn > .input-group-addon.btn {
+  padding: 5px 10px;
+  font-size: 12px;
+  border-radius: 3px;
+}
+.disease-express .input-group-addon.input-lg,
+.disease-express .input-group-lg > .input-group-addon,
+.disease-express .input-group-lg > .input-group-btn > .input-group-addon.btn {
+  padding: 10px 16px;
+  font-size: 18px;
+  border-radius: 6px;
+}
+.disease-express .input-group-addon input[type=radio],
+.disease-express .input-group-addon input[type=checkbox] {
+  margin-top: 0;
+}
+.disease-express .input-group .form-control:first-child,
+.disease-express .input-group-addon:first-child,
+.disease-express .input-group-btn:first-child > .btn,
+.disease-express .input-group-btn:first-child > .btn-group > .btn,
+.disease-express .input-group-btn:first-child > .dropdown-toggle,
+.disease-express .input-group-btn:last-child > .btn:not(:last-child):not(.dropdown-toggle),
+.disease-express .input-group-btn:last-child > .btn-group:not(:last-child) > .btn {
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+}
+.disease-express .input-group-addon:first-child {
+  border-right: 0;
+}
+.disease-express .input-group .form-control:last-child,
+.disease-express .input-group-addon:last-child,
+.disease-express .input-group-btn:last-child > .btn,
+.disease-express .input-group-btn:last-child > .btn-group > .btn,
+.disease-express .input-group-btn:last-child > .dropdown-toggle,
+.disease-express .input-group-btn:first-child > .btn:not(:first-child),
+.disease-express .input-group-btn:first-child > .btn-group:not(:first-child) > .btn {
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+}
+.disease-express .input-group-addon:last-child {
+  border-left: 0;
+}
+.disease-express .input-group-btn {
+  position: relative;
+  font-size: 0;
+  white-space: nowrap;
+}
+.disease-express .input-group-btn > .btn {
+  position: relative;
+}
+.disease-express .input-group-btn > .btn + .btn {
+  margin-left: -1px;
+}
+.disease-express .input-group-btn > .btn:hover, .disease-express .input-group-btn > .btn:focus, .disease-express .input-group-btn > .btn:active {
+  z-index: 2;
+}
+.disease-express .input-group-btn:first-child > .btn,
+.disease-express .input-group-btn:first-child > .btn-group {
+  margin-right: -1px;
+}
+.disease-express .input-group-btn:last-child > .btn,
+.disease-express .input-group-btn:last-child > .btn-group {
+  z-index: 2;
+  margin-left: -1px;
+}
+.disease-express .nav {
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style: none;
+}
+.disease-express .nav:before, .disease-express .nav:after {
+  content: " ";
+  display: table;
+}
+.disease-express .nav:after {
+  clear: both;
+}
+.disease-express .nav > li {
+  position: relative;
+  display: block;
+}
+.disease-express .nav > li > a {
+  position: relative;
+  display: block;
+  padding: 10px 15px;
+}
+.disease-express .nav > li > a:hover, .disease-express .nav > li > a:focus {
+  text-decoration: none;
+  background-color: #eeeeee;
+}
+.disease-express .nav > li.disabled > a {
+  color: #777777;
+}
+.disease-express .nav > li.disabled > a:hover, .disease-express .nav > li.disabled > a:focus {
+  color: #777777;
+  text-decoration: none;
+  background-color: transparent;
+  cursor: not-allowed;
+}
+.disease-express .nav .open > a, .disease-express .nav .open > a:hover, .disease-express .nav .open > a:focus {
+  background-color: #eeeeee;
+  border-color: #337ab7;
+}
+.disease-express .nav .nav-divider {
+  height: 1px;
+  margin: 9px 0;
+  overflow: hidden;
+  background-color: #e5e5e5;
+}
+.disease-express .nav > li > a > img {
+  max-width: none;
+}
+.disease-express .nav-tabs {
+  border-bottom: 1px solid #ddd;
+}
+.disease-express .nav-tabs > li {
+  float: left;
+  margin-bottom: -1px;
+}
+.disease-express .nav-tabs > li > a {
+  margin-right: 2px;
+  line-height: 1.428571429;
+  border: 1px solid transparent;
+  border-radius: 4px 4px 0 0;
+}
+.disease-express .nav-tabs > li > a:hover {
+  border-color: #eeeeee #eeeeee #ddd;
+}
+.disease-express .nav-tabs > li.active > a, .disease-express .nav-tabs > li.active > a:hover, .disease-express .nav-tabs > li.active > a:focus {
+  color: #555555;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-bottom-color: transparent;
+  cursor: default;
+}
+.disease-express .nav-pills > li {
+  float: left;
+}
+.disease-express .nav-pills > li > a {
+  border-radius: 4px;
+}
+.disease-express .nav-pills > li + li {
+  margin-left: 2px;
+}
+.disease-express .nav-pills > li.active > a, .disease-express .nav-pills > li.active > a:hover, .disease-express .nav-pills > li.active > a:focus {
+  color: #fff;
+  background-color: #337ab7;
+}
+.disease-express .nav-stacked > li {
+  float: none;
+}
+.disease-express .nav-stacked > li + li {
+  margin-top: 2px;
+  margin-left: 0;
+}
+.disease-express .nav-justified, .disease-express .nav-tabs.nav-justified {
+  width: 100%;
+}
+.disease-express .nav-justified > li, .disease-express .nav-tabs.nav-justified > li {
+  float: none;
+}
+.disease-express .nav-justified > li > a, .disease-express .nav-tabs.nav-justified > li > a {
+  text-align: center;
+  margin-bottom: 5px;
+}
+.disease-express .nav-justified > .dropdown .dropdown-menu {
+  top: auto;
+  left: auto;
+}
+@media (min-width: 768px) {
+  .disease-express .nav-justified > li, .disease-express .nav-tabs.nav-justified > li {
+    display: table-cell;
+    width: 1%;
+  }
+  .disease-express .nav-justified > li > a, .disease-express .nav-tabs.nav-justified > li > a {
+    margin-bottom: 0;
+  }
+}
+.disease-express .nav-tabs-justified, .disease-express .nav-tabs.nav-justified {
+  border-bottom: 0;
+}
+.disease-express .nav-tabs-justified > li > a, .disease-express .nav-tabs.nav-justified > li > a {
+  margin-right: 0;
+  border-radius: 4px;
+}
+.disease-express .nav-tabs-justified > .active > a, .disease-express .nav-tabs.nav-justified > .active > a,
+.disease-express .nav-tabs-justified > .active > a:hover,
+.disease-express .nav-tabs-justified > .active > a:focus {
+  border: 1px solid #ddd;
+}
+@media (min-width: 768px) {
+  .disease-express .nav-tabs-justified > li > a, .disease-express .nav-tabs.nav-justified > li > a {
+    border-bottom: 1px solid #ddd;
+    border-radius: 4px 4px 0 0;
+  }
+  .disease-express .nav-tabs-justified > .active > a, .disease-express .nav-tabs.nav-justified > .active > a,
+.disease-express .nav-tabs-justified > .active > a:hover,
+.disease-express .nav-tabs-justified > .active > a:focus {
+    border-bottom-color: #fff;
+  }
+}
+.disease-express .tab-content > .tab-pane {
+  display: none;
+}
+.disease-express .tab-content > .active {
+  display: block;
+}
+.disease-express .nav-tabs .dropdown-menu {
+  margin-top: -1px;
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+}
+.disease-express .navbar {
+  position: relative;
+  min-height: 50px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+}
+.disease-express .navbar:before, .disease-express .navbar:after {
+  content: " ";
+  display: table;
+}
+.disease-express .navbar:after {
+  clear: both;
+}
+@media (min-width: 768px) {
+  .disease-express .navbar {
+    border-radius: 4px;
+  }
+}
+.disease-express .navbar-header:before, .disease-express .navbar-header:after {
+  content: " ";
+  display: table;
+}
+.disease-express .navbar-header:after {
+  clear: both;
+}
+@media (min-width: 768px) {
+  .disease-express .navbar-header {
+    float: left;
+  }
+}
+.disease-express .navbar-collapse {
+  overflow-x: visible;
+  padding-right: 15px;
+  padding-left: 15px;
+  border-top: 1px solid transparent;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  -webkit-overflow-scrolling: touch;
+}
+.disease-express .navbar-collapse:before, .disease-express .navbar-collapse:after {
+  content: " ";
+  display: table;
+}
+.disease-express .navbar-collapse:after {
+  clear: both;
+}
+.disease-express .navbar-collapse.in {
+  overflow-y: auto;
+}
+@media (min-width: 768px) {
+  .disease-express .navbar-collapse {
+    width: auto;
+    border-top: 0;
+    box-shadow: none;
+  }
+  .disease-express .navbar-collapse.collapse {
+    display: block !important;
+    height: auto !important;
+    padding-bottom: 0;
+    overflow: visible !important;
+  }
+  .disease-express .navbar-collapse.in {
+    overflow-y: visible;
+  }
+  .navbar-fixed-top .disease-express .navbar-collapse, .navbar-static-top .disease-express .navbar-collapse, .navbar-fixed-bottom .disease-express .navbar-collapse {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+.disease-express .navbar-fixed-top .navbar-collapse,
+.disease-express .navbar-fixed-bottom .navbar-collapse {
+  max-height: 340px;
+}
+@media (max-device-width: 480px) and (orientation: landscape) {
+  .disease-express .navbar-fixed-top .navbar-collapse,
+.disease-express .navbar-fixed-bottom .navbar-collapse {
+    max-height: 200px;
+  }
+}
+.disease-express .container > .navbar-header,
+.disease-express .container > .navbar-collapse,
+.disease-express .container-fluid > .navbar-header,
+.disease-express .container-fluid > .navbar-collapse {
+  margin-right: -15px;
+  margin-left: -15px;
+}
+@media (min-width: 768px) {
+  .disease-express .container > .navbar-header,
+.disease-express .container > .navbar-collapse,
+.disease-express .container-fluid > .navbar-header,
+.disease-express .container-fluid > .navbar-collapse {
+    margin-right: 0;
+    margin-left: 0;
+  }
+}
+.disease-express .navbar-static-top {
+  z-index: 1000;
+  border-width: 0 0 1px;
+}
+@media (min-width: 768px) {
+  .disease-express .navbar-static-top {
+    border-radius: 0;
+  }
+}
+.disease-express .navbar-fixed-top,
+.disease-express .navbar-fixed-bottom {
+  position: fixed;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+}
+@media (min-width: 768px) {
+  .disease-express .navbar-fixed-top,
+.disease-express .navbar-fixed-bottom {
+    border-radius: 0;
+  }
+}
+.disease-express .navbar-fixed-top {
+  top: 0;
+  border-width: 0 0 1px;
+}
+.disease-express .navbar-fixed-bottom {
+  bottom: 0;
+  margin-bottom: 0;
+  border-width: 1px 0 0;
+}
+.disease-express .navbar-brand {
+  float: left;
+  padding: 15px 15px;
+  font-size: 18px;
+  line-height: 20px;
+  height: 50px;
+}
+.disease-express .navbar-brand:hover, .disease-express .navbar-brand:focus {
+  text-decoration: none;
+}
+.disease-express .navbar-brand > img {
+  display: block;
+}
+@media (min-width: 768px) {
+  .navbar > .container .disease-express .navbar-brand, .navbar > .container-fluid .disease-express .navbar-brand {
+    margin-left: -15px;
+  }
+}
+.disease-express .navbar-toggle {
+  position: relative;
+  float: right;
+  margin-right: 15px;
+  padding: 9px 10px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  background-color: transparent;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+.disease-express .navbar-toggle:focus {
+  outline: 0;
+}
+.disease-express .navbar-toggle .icon-bar {
+  display: block;
+  width: 22px;
+  height: 2px;
+  border-radius: 1px;
+}
+.disease-express .navbar-toggle .icon-bar + .icon-bar {
+  margin-top: 4px;
+}
+@media (min-width: 768px) {
+  .disease-express .navbar-toggle {
+    display: none;
+  }
+}
+.disease-express .navbar-nav {
+  margin: 7.5px -15px;
+}
+.disease-express .navbar-nav > li > a {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  line-height: 20px;
+}
+@media (max-width: 767px) {
+  .disease-express .navbar-nav .open .dropdown-menu {
+    position: static;
+    float: none;
+    width: auto;
+    margin-top: 0;
+    background-color: transparent;
+    border: 0;
+    box-shadow: none;
+  }
+  .disease-express .navbar-nav .open .dropdown-menu > li > a,
+.disease-express .navbar-nav .open .dropdown-menu .dropdown-header {
+    padding: 5px 15px 5px 25px;
+  }
+  .disease-express .navbar-nav .open .dropdown-menu > li > a {
+    line-height: 20px;
+  }
+  .disease-express .navbar-nav .open .dropdown-menu > li > a:hover, .disease-express .navbar-nav .open .dropdown-menu > li > a:focus {
+    background-image: none;
+  }
+}
+@media (min-width: 768px) {
+  .disease-express .navbar-nav {
+    float: left;
+    margin: 0;
+  }
+  .disease-express .navbar-nav > li {
+    float: left;
+  }
+  .disease-express .navbar-nav > li > a {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+}
+.disease-express .navbar-form {
+  margin-left: -15px;
+  margin-right: -15px;
+  padding: 10px 15px;
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(255, 255, 255, 0.1);
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+@media (min-width: 768px) {
+  .disease-express .navbar-form .form-group {
+    display: inline-block;
+    margin-bottom: 0;
+    vertical-align: middle;
+  }
+  .disease-express .navbar-form .form-control {
+    display: inline-block;
+    width: auto;
+    vertical-align: middle;
+  }
+  .disease-express .navbar-form .form-control-static {
+    display: inline-block;
+  }
+  .disease-express .navbar-form .input-group {
+    display: inline-table;
+    vertical-align: middle;
+  }
+  .disease-express .navbar-form .input-group .input-group-addon,
+.disease-express .navbar-form .input-group .input-group-btn,
+.disease-express .navbar-form .input-group .form-control {
+    width: auto;
+  }
+  .disease-express .navbar-form .input-group > .form-control {
+    width: 100%;
+  }
+  .disease-express .navbar-form .control-label {
+    margin-bottom: 0;
+    vertical-align: middle;
+  }
+  .disease-express .navbar-form .radio,
+.disease-express .navbar-form .checkbox {
+    display: inline-block;
+    margin-top: 0;
+    margin-bottom: 0;
+    vertical-align: middle;
+  }
+  .disease-express .navbar-form .radio label,
+.disease-express .navbar-form .checkbox label {
+    padding-left: 0;
+  }
+  .disease-express .navbar-form .radio input[type=radio],
+.disease-express .navbar-form .checkbox input[type=checkbox] {
+    position: relative;
+    margin-left: 0;
+  }
+  .disease-express .navbar-form .has-feedback .form-control-feedback {
+    top: 0;
+  }
+}
+@media (max-width: 767px) {
+  .disease-express .navbar-form .form-group {
+    margin-bottom: 5px;
+  }
+  .disease-express .navbar-form .form-group:last-child {
+    margin-bottom: 0;
+  }
+}
+@media (min-width: 768px) {
+  .disease-express .navbar-form {
+    width: auto;
+    border: 0;
+    margin-left: 0;
+    margin-right: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+}
+.disease-express .navbar-nav > li > .dropdown-menu {
+  margin-top: 0;
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+}
+.disease-express .navbar-fixed-bottom .navbar-nav > li > .dropdown-menu {
+  margin-bottom: 0;
+  border-top-right-radius: 4px;
+  border-top-left-radius: 4px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.disease-express .navbar-btn {
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+.disease-express .navbar-btn.btn-sm, .disease-express .btn-group-sm > .navbar-btn.btn {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.disease-express .navbar-btn.btn-xs, .disease-express .btn-group-xs > .navbar-btn.btn {
+  margin-top: 14px;
+  margin-bottom: 14px;
+}
+.disease-express .navbar-text {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+@media (min-width: 768px) {
+  .disease-express .navbar-text {
+    float: left;
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+}
+@media (min-width: 768px) {
+  .disease-express .navbar-left {
+    float: left !important;
+  }
+  .disease-express .navbar-right {
+    float: right !important;
+    margin-right: -15px;
+  }
+  .disease-express .navbar-right ~ .navbar-right {
+    margin-right: 0;
+  }
+}
+.disease-express .navbar-default {
+  background-color: #f8f8f8;
+  border-color: #e7e7e7;
+}
+.disease-express .navbar-default .navbar-brand {
+  color: #777;
+}
+.disease-express .navbar-default .navbar-brand:hover, .disease-express .navbar-default .navbar-brand:focus {
+  color: #5e5e5e;
+  background-color: transparent;
+}
+.disease-express .navbar-default .navbar-text {
+  color: #777;
+}
+.disease-express .navbar-default .navbar-nav > li > a {
+  color: #777;
+}
+.disease-express .navbar-default .navbar-nav > li > a:hover, .disease-express .navbar-default .navbar-nav > li > a:focus {
+  color: #333;
+  background-color: transparent;
+}
+.disease-express .navbar-default .navbar-nav > .active > a, .disease-express .navbar-default .navbar-nav > .active > a:hover, .disease-express .navbar-default .navbar-nav > .active > a:focus {
+  color: #555;
+  background-color: #e7e7e7;
+}
+.disease-express .navbar-default .navbar-nav > .disabled > a, .disease-express .navbar-default .navbar-nav > .disabled > a:hover, .disease-express .navbar-default .navbar-nav > .disabled > a:focus {
+  color: #ccc;
+  background-color: transparent;
+}
+.disease-express .navbar-default .navbar-toggle {
+  border-color: #ddd;
+}
+.disease-express .navbar-default .navbar-toggle:hover, .disease-express .navbar-default .navbar-toggle:focus {
+  background-color: #ddd;
+}
+.disease-express .navbar-default .navbar-toggle .icon-bar {
+  background-color: #888;
+}
+.disease-express .navbar-default .navbar-collapse,
+.disease-express .navbar-default .navbar-form {
+  border-color: #e7e7e7;
+}
+.disease-express .navbar-default .navbar-nav > .open > a, .disease-express .navbar-default .navbar-nav > .open > a:hover, .disease-express .navbar-default .navbar-nav > .open > a:focus {
+  background-color: #e7e7e7;
+  color: #555;
+}
+@media (max-width: 767px) {
+  .disease-express .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #777;
+  }
+  .disease-express .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .disease-express .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #333;
+    background-color: transparent;
+  }
+  .disease-express .navbar-default .navbar-nav .open .dropdown-menu > .active > a, .disease-express .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .disease-express .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #555;
+    background-color: #e7e7e7;
+  }
+  .disease-express .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a, .disease-express .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a:hover, .disease-express .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a:focus {
+    color: #ccc;
+    background-color: transparent;
+  }
+}
+.disease-express .navbar-default .navbar-link {
+  color: #777;
+}
+.disease-express .navbar-default .navbar-link:hover {
+  color: #333;
+}
+.disease-express .navbar-default .btn-link {
+  color: #777;
+}
+.disease-express .navbar-default .btn-link:hover, .disease-express .navbar-default .btn-link:focus {
+  color: #333;
+}
+.disease-express .navbar-default .btn-link[disabled]:hover, .disease-express .navbar-default .btn-link[disabled]:focus, fieldset[disabled] .disease-express .navbar-default .btn-link:hover, fieldset[disabled] .disease-express .navbar-default .btn-link:focus {
+  color: #ccc;
+}
+.disease-express .navbar-inverse {
+  background-color: #222;
+  border-color: #090909;
+}
+.disease-express .navbar-inverse .navbar-brand {
+  color: #9d9d9d;
+}
+.disease-express .navbar-inverse .navbar-brand:hover, .disease-express .navbar-inverse .navbar-brand:focus {
+  color: #fff;
+  background-color: transparent;
+}
+.disease-express .navbar-inverse .navbar-text {
+  color: #9d9d9d;
+}
+.disease-express .navbar-inverse .navbar-nav > li > a {
+  color: #9d9d9d;
+}
+.disease-express .navbar-inverse .navbar-nav > li > a:hover, .disease-express .navbar-inverse .navbar-nav > li > a:focus {
+  color: #fff;
+  background-color: transparent;
+}
+.disease-express .navbar-inverse .navbar-nav > .active > a, .disease-express .navbar-inverse .navbar-nav > .active > a:hover, .disease-express .navbar-inverse .navbar-nav > .active > a:focus {
+  color: #fff;
+  background-color: #090909;
+}
+.disease-express .navbar-inverse .navbar-nav > .disabled > a, .disease-express .navbar-inverse .navbar-nav > .disabled > a:hover, .disease-express .navbar-inverse .navbar-nav > .disabled > a:focus {
+  color: #444;
+  background-color: transparent;
+}
+.disease-express .navbar-inverse .navbar-toggle {
+  border-color: #333;
+}
+.disease-express .navbar-inverse .navbar-toggle:hover, .disease-express .navbar-inverse .navbar-toggle:focus {
+  background-color: #333;
+}
+.disease-express .navbar-inverse .navbar-toggle .icon-bar {
+  background-color: #fff;
+}
+.disease-express .navbar-inverse .navbar-collapse,
+.disease-express .navbar-inverse .navbar-form {
+  border-color: #101010;
+}
+.disease-express .navbar-inverse .navbar-nav > .open > a, .disease-express .navbar-inverse .navbar-nav > .open > a:hover, .disease-express .navbar-inverse .navbar-nav > .open > a:focus {
+  background-color: #090909;
+  color: #fff;
+}
+@media (max-width: 767px) {
+  .disease-express .navbar-inverse .navbar-nav .open .dropdown-menu > .dropdown-header {
+    border-color: #090909;
+  }
+  .disease-express .navbar-inverse .navbar-nav .open .dropdown-menu .divider {
+    background-color: #090909;
+  }
+  .disease-express .navbar-inverse .navbar-nav .open .dropdown-menu > li > a {
+    color: #9d9d9d;
+  }
+  .disease-express .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:hover, .disease-express .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #fff;
+    background-color: transparent;
+  }
+  .disease-express .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a, .disease-express .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a:hover, .disease-express .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #fff;
+    background-color: #090909;
+  }
+  .disease-express .navbar-inverse .navbar-nav .open .dropdown-menu > .disabled > a, .disease-express .navbar-inverse .navbar-nav .open .dropdown-menu > .disabled > a:hover, .disease-express .navbar-inverse .navbar-nav .open .dropdown-menu > .disabled > a:focus {
+    color: #444;
+    background-color: transparent;
+  }
+}
+.disease-express .navbar-inverse .navbar-link {
+  color: #9d9d9d;
+}
+.disease-express .navbar-inverse .navbar-link:hover {
+  color: #fff;
+}
+.disease-express .navbar-inverse .btn-link {
+  color: #9d9d9d;
+}
+.disease-express .navbar-inverse .btn-link:hover, .disease-express .navbar-inverse .btn-link:focus {
+  color: #fff;
+}
+.disease-express .navbar-inverse .btn-link[disabled]:hover, .disease-express .navbar-inverse .btn-link[disabled]:focus, fieldset[disabled] .disease-express .navbar-inverse .btn-link:hover, fieldset[disabled] .disease-express .navbar-inverse .btn-link:focus {
+  color: #444;
+}
+.disease-express .breadcrumb {
+  padding: 8px 15px;
+  margin-bottom: 20px;
+  list-style: none;
+  background-color: #f5f5f5;
+  border-radius: 4px;
+}
+.disease-express .breadcrumb > li {
+  display: inline-block;
+}
+.disease-express .breadcrumb > li + li:before {
+  content: "/ ";
+  padding: 0 5px;
+  color: #ccc;
+}
+.disease-express .breadcrumb > .active {
+  color: #777777;
+}
+.disease-express .pagination {
+  display: inline-block;
+  padding-left: 0;
+  margin: 20px 0;
+  border-radius: 4px;
+}
+.disease-express .pagination > li {
+  display: inline;
+}
+.disease-express .pagination > li > a,
+.disease-express .pagination > li > span {
+  position: relative;
+  float: left;
+  padding: 6px 12px;
+  line-height: 1.428571429;
+  text-decoration: none;
+  color: #337ab7;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  margin-left: -1px;
+}
+.disease-express .pagination > li:first-child > a,
+.disease-express .pagination > li:first-child > span {
+  margin-left: 0;
+  border-bottom-left-radius: 4px;
+  border-top-left-radius: 4px;
+}
+.disease-express .pagination > li:last-child > a,
+.disease-express .pagination > li:last-child > span {
+  border-bottom-right-radius: 4px;
+  border-top-right-radius: 4px;
+}
+.disease-express .pagination > li > a:hover, .disease-express .pagination > li > a:focus,
+.disease-express .pagination > li > span:hover,
+.disease-express .pagination > li > span:focus {
+  z-index: 2;
+  color: #23527c;
+  background-color: #eeeeee;
+  border-color: #ddd;
+}
+.disease-express .pagination > .active > a, .disease-express .pagination > .active > a:hover, .disease-express .pagination > .active > a:focus,
+.disease-express .pagination > .active > span,
+.disease-express .pagination > .active > span:hover,
+.disease-express .pagination > .active > span:focus {
+  z-index: 3;
+  color: #fff;
+  background-color: #337ab7;
+  border-color: #337ab7;
+  cursor: default;
+}
+.disease-express .pagination > .disabled > span,
+.disease-express .pagination > .disabled > span:hover,
+.disease-express .pagination > .disabled > span:focus,
+.disease-express .pagination > .disabled > a,
+.disease-express .pagination > .disabled > a:hover,
+.disease-express .pagination > .disabled > a:focus {
+  color: #777777;
+  background-color: #fff;
+  border-color: #ddd;
+  cursor: not-allowed;
+}
+.disease-express .pagination-lg > li > a,
+.disease-express .pagination-lg > li > span {
+  padding: 10px 16px;
+  font-size: 18px;
+  line-height: 1.3333333;
+}
+.disease-express .pagination-lg > li:first-child > a,
+.disease-express .pagination-lg > li:first-child > span {
+  border-bottom-left-radius: 6px;
+  border-top-left-radius: 6px;
+}
+.disease-express .pagination-lg > li:last-child > a,
+.disease-express .pagination-lg > li:last-child > span {
+  border-bottom-right-radius: 6px;
+  border-top-right-radius: 6px;
+}
+.disease-express .pagination-sm > li > a,
+.disease-express .pagination-sm > li > span {
+  padding: 5px 10px;
+  font-size: 12px;
+  line-height: 1.5;
+}
+.disease-express .pagination-sm > li:first-child > a,
+.disease-express .pagination-sm > li:first-child > span {
+  border-bottom-left-radius: 3px;
+  border-top-left-radius: 3px;
+}
+.disease-express .pagination-sm > li:last-child > a,
+.disease-express .pagination-sm > li:last-child > span {
+  border-bottom-right-radius: 3px;
+  border-top-right-radius: 3px;
+}
+.disease-express .pager {
+  padding-left: 0;
+  margin: 20px 0;
+  list-style: none;
+  text-align: center;
+}
+.disease-express .pager:before, .disease-express .pager:after {
+  content: " ";
+  display: table;
+}
+.disease-express .pager:after {
+  clear: both;
+}
+.disease-express .pager li {
+  display: inline;
+}
+.disease-express .pager li > a,
+.disease-express .pager li > span {
+  display: inline-block;
+  padding: 5px 14px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 15px;
+}
+.disease-express .pager li > a:hover,
+.disease-express .pager li > a:focus {
+  text-decoration: none;
+  background-color: #eeeeee;
+}
+.disease-express .pager .next > a,
+.disease-express .pager .next > span {
+  float: right;
+}
+.disease-express .pager .previous > a,
+.disease-express .pager .previous > span {
+  float: left;
+}
+.disease-express .pager .disabled > a,
+.disease-express .pager .disabled > a:hover,
+.disease-express .pager .disabled > a:focus,
+.disease-express .pager .disabled > span {
+  color: #777777;
+  background-color: #fff;
+  cursor: not-allowed;
+}
+.disease-express .label {
+  display: inline;
+  padding: 0.2em 0.6em 0.3em;
+  font-size: 75%;
+  font-weight: bold;
+  line-height: 1;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: 0.25em;
+}
+.disease-express .label:empty {
+  display: none;
+}
+.btn .disease-express .label {
+  position: relative;
+  top: -1px;
+}
+.disease-express a.label:hover, .disease-express a.label:focus {
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+}
+.disease-express .label-default {
+  background-color: #777777;
+}
+.disease-express .label-default[href]:hover, .disease-express .label-default[href]:focus {
+  background-color: #5e5e5e;
+}
+.disease-express .label-primary {
+  background-color: #337ab7;
+}
+.disease-express .label-primary[href]:hover, .disease-express .label-primary[href]:focus {
+  background-color: #286090;
+}
+.disease-express .label-success {
+  background-color: #5cb85c;
+}
+.disease-express .label-success[href]:hover, .disease-express .label-success[href]:focus {
+  background-color: #449d44;
+}
+.disease-express .label-info {
+  background-color: #5bc0de;
+}
+.disease-express .label-info[href]:hover, .disease-express .label-info[href]:focus {
+  background-color: #31b0d5;
+}
+.disease-express .label-warning {
+  background-color: #f0ad4e;
+}
+.disease-express .label-warning[href]:hover, .disease-express .label-warning[href]:focus {
+  background-color: #ec971f;
+}
+.disease-express .label-danger {
+  background-color: #d9534f;
+}
+.disease-express .label-danger[href]:hover, .disease-express .label-danger[href]:focus {
+  background-color: #c9302c;
+}
+.disease-express .badge {
+  display: inline-block;
+  min-width: 10px;
+  padding: 3px 7px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #fff;
+  line-height: 1;
+  vertical-align: middle;
+  white-space: nowrap;
+  text-align: center;
+  background-color: #777777;
+  border-radius: 10px;
+}
+.disease-express .badge:empty {
+  display: none;
+}
+.btn .disease-express .badge {
+  position: relative;
+  top: -1px;
+}
+.btn-xs .disease-express .badge, .btn-group-xs > .btn .disease-express .badge {
+  top: 0;
+  padding: 1px 5px;
+}
+.list-group-item.active > .disease-express .badge, .nav-pills > .active > a > .disease-express .badge {
+  color: #337ab7;
+  background-color: #fff;
+}
+.list-group-item > .disease-express .badge {
+  float: right;
+}
+.list-group-item > .disease-express .badge + .disease-express .badge {
+  margin-right: 5px;
+}
+.nav-pills > li > a > .disease-express .badge {
+  margin-left: 3px;
+}
+.disease-express a.badge:hover, .disease-express a.badge:focus {
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+}
+.disease-express .jumbotron {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  margin-bottom: 30px;
+  color: inherit;
+  background-color: #eeeeee;
+}
+.disease-express .jumbotron h1,
+.disease-express .jumbotron .h1 {
+  color: inherit;
+}
+.disease-express .jumbotron p {
+  margin-bottom: 15px;
+  font-size: 21px;
+  font-weight: 200;
+}
+.disease-express .jumbotron > hr {
+  border-top-color: #d5d5d5;
+}
+.container .disease-express .jumbotron, .container-fluid .disease-express .jumbotron {
+  border-radius: 6px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.disease-express .jumbotron .container {
+  max-width: 100%;
+}
+@media screen and (min-width: 768px) {
+  .disease-express .jumbotron {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+  .container .disease-express .jumbotron, .container-fluid .disease-express .jumbotron {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+  .disease-express .jumbotron h1,
+.disease-express .jumbotron .h1 {
+    font-size: 63px;
+  }
+}
+.disease-express .thumbnail {
+  display: block;
+  padding: 4px;
+  margin-bottom: 20px;
+  line-height: 1.428571429;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  -webkit-transition: border 0.2s ease-in-out;
+  -o-transition: border 0.2s ease-in-out;
+  transition: border 0.2s ease-in-out;
+}
+.disease-express .thumbnail > img,
+.disease-express .thumbnail a > img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+.disease-express .thumbnail .caption {
+  padding: 9px;
+  color: #333333;
+}
+.disease-express a.thumbnail:hover,
+.disease-express a.thumbnail:focus,
+.disease-express a.thumbnail.active {
+  border-color: #337ab7;
+}
+.disease-express .alert {
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+.disease-express .alert h4 {
+  margin-top: 0;
+  color: inherit;
+}
+.disease-express .alert .alert-link {
+  font-weight: bold;
+}
+.disease-express .alert > p,
+.disease-express .alert > ul {
+  margin-bottom: 0;
+}
+.disease-express .alert > p + p {
+  margin-top: 5px;
+}
+.disease-express .alert-dismissable,
+.disease-express .alert-dismissible {
+  padding-right: 35px;
+}
+.disease-express .alert-dismissable .close,
+.disease-express .alert-dismissible .close {
+  position: relative;
+  top: -2px;
+  right: -21px;
+  color: inherit;
+}
+.disease-express .alert-success {
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+  color: #3c763d;
+}
+.disease-express .alert-success hr {
+  border-top-color: #c9e2b3;
+}
+.disease-express .alert-success .alert-link {
+  color: #2b542c;
+}
+.disease-express .alert-info {
+  background-color: #d9edf7;
+  border-color: #bce8f1;
+  color: #31708f;
+}
+.disease-express .alert-info hr {
+  border-top-color: #a6e1ec;
+}
+.disease-express .alert-info .alert-link {
+  color: #245269;
+}
+.disease-express .alert-warning {
+  background-color: #fcf8e3;
+  border-color: #faebcc;
+  color: #8a6d3b;
+}
+.disease-express .alert-warning hr {
+  border-top-color: #f7e1b5;
+}
+.disease-express .alert-warning .alert-link {
+  color: #66512c;
+}
+.disease-express .alert-danger {
+  background-color: #f2dede;
+  border-color: #ebccd1;
+  color: #a94442;
+}
+.disease-express .alert-danger hr {
+  border-top-color: #e4b9c0;
+}
+.disease-express .alert-danger .alert-link {
+  color: #843534;
+}
+@-webkit-keyframes progress-bar-stripes {
+  from {
+    background-position: 40px 0;
+  }
+  to {
+    background-position: 0 0;
+  }
+}
+@keyframes progress-bar-stripes {
+  from {
+    background-position: 40px 0;
+  }
+  to {
+    background-position: 0 0;
+  }
+}
+.disease-express .progress {
+  overflow: hidden;
+  height: 20px;
+  margin-bottom: 20px;
+  background-color: #f5f5f5;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+.disease-express .progress-bar {
+  float: left;
+  width: 0%;
+  height: 100%;
+  font-size: 12px;
+  line-height: 20px;
+  color: #fff;
+  text-align: center;
+  background-color: #337ab7;
+  -webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
+  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
+  -webkit-transition: width 0.6s ease;
+  -o-transition: width 0.6s ease;
+  transition: width 0.6s ease;
+}
+.disease-express .progress-striped .progress-bar,
+.disease-express .progress-bar-striped {
+  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-size: 40px 40px;
+}
+.disease-express .progress.active .progress-bar,
+.disease-express .progress-bar.active {
+  -webkit-animation: progress-bar-stripes 2s linear infinite;
+  -o-animation: progress-bar-stripes 2s linear infinite;
+  animation: progress-bar-stripes 2s linear infinite;
+}
+.disease-express .progress-bar-success {
+  background-color: #5cb85c;
+}
+.progress-striped .disease-express .progress-bar-success {
+  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+}
+.disease-express .progress-bar-info {
+  background-color: #5bc0de;
+}
+.progress-striped .disease-express .progress-bar-info {
+  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+}
+.disease-express .progress-bar-warning {
+  background-color: #f0ad4e;
+}
+.progress-striped .disease-express .progress-bar-warning {
+  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+}
+.disease-express .progress-bar-danger {
+  background-color: #d9534f;
+}
+.progress-striped .disease-express .progress-bar-danger {
+  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+}
+.disease-express .media {
+  margin-top: 15px;
+}
+.disease-express .media:first-child {
+  margin-top: 0;
+}
+.disease-express .media,
+.disease-express .media-body {
+  zoom: 1;
+  overflow: hidden;
+}
+.disease-express .media-body {
+  width: 10000px;
+}
+.disease-express .media-object {
+  display: block;
+}
+.disease-express .media-object.img-thumbnail {
+  max-width: none;
+}
+.disease-express .media-right,
+.disease-express .media > .pull-right {
+  padding-left: 10px;
+}
+.disease-express .media-left,
+.disease-express .media > .pull-left {
+  padding-right: 10px;
+}
+.disease-express .media-left,
+.disease-express .media-right,
+.disease-express .media-body {
+  display: table-cell;
+  vertical-align: top;
+}
+.disease-express .media-middle {
+  vertical-align: middle;
+}
+.disease-express .media-bottom {
+  vertical-align: bottom;
+}
+.disease-express .media-heading {
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+.disease-express .media-list {
+  padding-left: 0;
+  list-style: none;
+}
+.disease-express .list-group {
+  margin-bottom: 20px;
+  padding-left: 0;
+}
+.disease-express .list-group-item {
+  position: relative;
+  display: block;
+  padding: 10px 15px;
+  margin-bottom: -1px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+}
+.disease-express .list-group-item:first-child {
+  border-top-right-radius: 4px;
+  border-top-left-radius: 4px;
+}
+.disease-express .list-group-item:last-child {
+  margin-bottom: 0;
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+.disease-express a.list-group-item,
+.disease-express button.list-group-item {
+  color: #555;
+}
+.disease-express a.list-group-item .list-group-item-heading,
+.disease-express button.list-group-item .list-group-item-heading {
+  color: #333;
+}
+.disease-express a.list-group-item:hover, .disease-express a.list-group-item:focus,
+.disease-express button.list-group-item:hover,
+.disease-express button.list-group-item:focus {
+  text-decoration: none;
+  color: #555;
+  background-color: #f5f5f5;
+}
+.disease-express button.list-group-item {
+  width: 100%;
+  text-align: left;
+}
+.disease-express .list-group-item.disabled, .disease-express .list-group-item.disabled:hover, .disease-express .list-group-item.disabled:focus {
+  background-color: #eeeeee;
+  color: #777777;
+  cursor: not-allowed;
+}
+.disease-express .list-group-item.disabled .list-group-item-heading, .disease-express .list-group-item.disabled:hover .list-group-item-heading, .disease-express .list-group-item.disabled:focus .list-group-item-heading {
+  color: inherit;
+}
+.disease-express .list-group-item.disabled .list-group-item-text, .disease-express .list-group-item.disabled:hover .list-group-item-text, .disease-express .list-group-item.disabled:focus .list-group-item-text {
+  color: #777777;
+}
+.disease-express .list-group-item.active, .disease-express .list-group-item.active:hover, .disease-express .list-group-item.active:focus {
+  z-index: 2;
+  color: #fff;
+  background-color: #337ab7;
+  border-color: #337ab7;
+}
+.disease-express .list-group-item.active .list-group-item-heading,
+.disease-express .list-group-item.active .list-group-item-heading > small,
+.disease-express .list-group-item.active .list-group-item-heading > .small, .disease-express .list-group-item.active:hover .list-group-item-heading,
+.disease-express .list-group-item.active:hover .list-group-item-heading > small,
+.disease-express .list-group-item.active:hover .list-group-item-heading > .small, .disease-express .list-group-item.active:focus .list-group-item-heading,
+.disease-express .list-group-item.active:focus .list-group-item-heading > small,
+.disease-express .list-group-item.active:focus .list-group-item-heading > .small {
+  color: inherit;
+}
+.disease-express .list-group-item.active .list-group-item-text, .disease-express .list-group-item.active:hover .list-group-item-text, .disease-express .list-group-item.active:focus .list-group-item-text {
+  color: #c7ddef;
+}
+.disease-express .list-group-item-success {
+  color: #3c763d;
+  background-color: #dff0d8;
+}
+.disease-express a.list-group-item-success,
+.disease-express button.list-group-item-success {
+  color: #3c763d;
+}
+.disease-express a.list-group-item-success .list-group-item-heading,
+.disease-express button.list-group-item-success .list-group-item-heading {
+  color: inherit;
+}
+.disease-express a.list-group-item-success:hover, .disease-express a.list-group-item-success:focus,
+.disease-express button.list-group-item-success:hover,
+.disease-express button.list-group-item-success:focus {
+  color: #3c763d;
+  background-color: #d0e9c6;
+}
+.disease-express a.list-group-item-success.active, .disease-express a.list-group-item-success.active:hover, .disease-express a.list-group-item-success.active:focus,
+.disease-express button.list-group-item-success.active,
+.disease-express button.list-group-item-success.active:hover,
+.disease-express button.list-group-item-success.active:focus {
+  color: #fff;
+  background-color: #3c763d;
+  border-color: #3c763d;
+}
+.disease-express .list-group-item-info {
+  color: #31708f;
+  background-color: #d9edf7;
+}
+.disease-express a.list-group-item-info,
+.disease-express button.list-group-item-info {
+  color: #31708f;
+}
+.disease-express a.list-group-item-info .list-group-item-heading,
+.disease-express button.list-group-item-info .list-group-item-heading {
+  color: inherit;
+}
+.disease-express a.list-group-item-info:hover, .disease-express a.list-group-item-info:focus,
+.disease-express button.list-group-item-info:hover,
+.disease-express button.list-group-item-info:focus {
+  color: #31708f;
+  background-color: #c4e3f3;
+}
+.disease-express a.list-group-item-info.active, .disease-express a.list-group-item-info.active:hover, .disease-express a.list-group-item-info.active:focus,
+.disease-express button.list-group-item-info.active,
+.disease-express button.list-group-item-info.active:hover,
+.disease-express button.list-group-item-info.active:focus {
+  color: #fff;
+  background-color: #31708f;
+  border-color: #31708f;
+}
+.disease-express .list-group-item-warning {
+  color: #8a6d3b;
+  background-color: #fcf8e3;
+}
+.disease-express a.list-group-item-warning,
+.disease-express button.list-group-item-warning {
+  color: #8a6d3b;
+}
+.disease-express a.list-group-item-warning .list-group-item-heading,
+.disease-express button.list-group-item-warning .list-group-item-heading {
+  color: inherit;
+}
+.disease-express a.list-group-item-warning:hover, .disease-express a.list-group-item-warning:focus,
+.disease-express button.list-group-item-warning:hover,
+.disease-express button.list-group-item-warning:focus {
+  color: #8a6d3b;
+  background-color: #faf2cc;
+}
+.disease-express a.list-group-item-warning.active, .disease-express a.list-group-item-warning.active:hover, .disease-express a.list-group-item-warning.active:focus,
+.disease-express button.list-group-item-warning.active,
+.disease-express button.list-group-item-warning.active:hover,
+.disease-express button.list-group-item-warning.active:focus {
+  color: #fff;
+  background-color: #8a6d3b;
+  border-color: #8a6d3b;
+}
+.disease-express .list-group-item-danger {
+  color: #a94442;
+  background-color: #f2dede;
+}
+.disease-express a.list-group-item-danger,
+.disease-express button.list-group-item-danger {
+  color: #a94442;
+}
+.disease-express a.list-group-item-danger .list-group-item-heading,
+.disease-express button.list-group-item-danger .list-group-item-heading {
+  color: inherit;
+}
+.disease-express a.list-group-item-danger:hover, .disease-express a.list-group-item-danger:focus,
+.disease-express button.list-group-item-danger:hover,
+.disease-express button.list-group-item-danger:focus {
+  color: #a94442;
+  background-color: #ebcccc;
+}
+.disease-express a.list-group-item-danger.active, .disease-express a.list-group-item-danger.active:hover, .disease-express a.list-group-item-danger.active:focus,
+.disease-express button.list-group-item-danger.active,
+.disease-express button.list-group-item-danger.active:hover,
+.disease-express button.list-group-item-danger.active:focus {
+  color: #fff;
+  background-color: #a94442;
+  border-color: #a94442;
+}
+.disease-express .list-group-item-heading {
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+.disease-express .list-group-item-text {
+  margin-bottom: 0;
+  line-height: 1.3;
+}
+.disease-express .panel {
+  margin-bottom: 20px;
+  background-color: #fff;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+.disease-express .panel-body {
+  padding: 15px;
+}
+.disease-express .panel-body:before, .disease-express .panel-body:after {
+  content: " ";
+  display: table;
+}
+.disease-express .panel-body:after {
+  clear: both;
+}
+.disease-express .panel-heading {
+  padding: 10px 15px;
+  border-bottom: 1px solid transparent;
+  border-top-right-radius: 3px;
+  border-top-left-radius: 3px;
+}
+.disease-express .panel-heading > .dropdown .dropdown-toggle {
+  color: inherit;
+}
+.disease-express .panel-title {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 16px;
+  color: inherit;
+}
+.disease-express .panel-title > a,
+.disease-express .panel-title > small,
+.disease-express .panel-title > .small,
+.disease-express .panel-title > small > a,
+.disease-express .panel-title > .small > a {
+  color: inherit;
+}
+.disease-express .panel-footer {
+  padding: 10px 15px;
+  background-color: #f5f5f5;
+  border-top: 1px solid #ddd;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+.disease-express .panel > .list-group,
+.disease-express .panel > .panel-collapse > .list-group {
+  margin-bottom: 0;
+}
+.disease-express .panel > .list-group .list-group-item,
+.disease-express .panel > .panel-collapse > .list-group .list-group-item {
+  border-width: 1px 0;
+  border-radius: 0;
+}
+.disease-express .panel > .list-group:first-child .list-group-item:first-child,
+.disease-express .panel > .panel-collapse > .list-group:first-child .list-group-item:first-child {
+  border-top: 0;
+  border-top-right-radius: 3px;
+  border-top-left-radius: 3px;
+}
+.disease-express .panel > .list-group:last-child .list-group-item:last-child,
+.disease-express .panel > .panel-collapse > .list-group:last-child .list-group-item:last-child {
+  border-bottom: 0;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+.disease-express .panel > .panel-heading + .panel-collapse > .list-group .list-group-item:first-child {
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+}
+.disease-express .panel-heading + .list-group .list-group-item:first-child {
+  border-top-width: 0;
+}
+.disease-express .list-group + .panel-footer {
+  border-top-width: 0;
+}
+.disease-express .panel > .table,
+.disease-express .panel > .table-responsive > .table,
+.disease-express .panel > .panel-collapse > .table {
+  margin-bottom: 0;
+}
+.disease-express .panel > .table caption,
+.disease-express .panel > .table-responsive > .table caption,
+.disease-express .panel > .panel-collapse > .table caption {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.disease-express .panel > .table:first-child,
+.disease-express .panel > .table-responsive:first-child > .table:first-child {
+  border-top-right-radius: 3px;
+  border-top-left-radius: 3px;
+}
+.disease-express .panel > .table:first-child > thead:first-child > tr:first-child,
+.disease-express .panel > .table:first-child > tbody:first-child > tr:first-child,
+.disease-express .panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child,
+.disease-express .panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child {
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+.disease-express .panel > .table:first-child > thead:first-child > tr:first-child td:first-child,
+.disease-express .panel > .table:first-child > thead:first-child > tr:first-child th:first-child,
+.disease-express .panel > .table:first-child > tbody:first-child > tr:first-child td:first-child,
+.disease-express .panel > .table:first-child > tbody:first-child > tr:first-child th:first-child,
+.disease-express .panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child td:first-child,
+.disease-express .panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child th:first-child,
+.disease-express .panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child td:first-child,
+.disease-express .panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child th:first-child {
+  border-top-left-radius: 3px;
+}
+.disease-express .panel > .table:first-child > thead:first-child > tr:first-child td:last-child,
+.disease-express .panel > .table:first-child > thead:first-child > tr:first-child th:last-child,
+.disease-express .panel > .table:first-child > tbody:first-child > tr:first-child td:last-child,
+.disease-express .panel > .table:first-child > tbody:first-child > tr:first-child th:last-child,
+.disease-express .panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child td:last-child,
+.disease-express .panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child th:last-child,
+.disease-express .panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child td:last-child,
+.disease-express .panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child th:last-child {
+  border-top-right-radius: 3px;
+}
+.disease-express .panel > .table:last-child,
+.disease-express .panel > .table-responsive:last-child > .table:last-child {
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+.disease-express .panel > .table:last-child > tbody:last-child > tr:last-child,
+.disease-express .panel > .table:last-child > tfoot:last-child > tr:last-child,
+.disease-express .panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child,
+.disease-express .panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child {
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+.disease-express .panel > .table:last-child > tbody:last-child > tr:last-child td:first-child,
+.disease-express .panel > .table:last-child > tbody:last-child > tr:last-child th:first-child,
+.disease-express .panel > .table:last-child > tfoot:last-child > tr:last-child td:first-child,
+.disease-express .panel > .table:last-child > tfoot:last-child > tr:last-child th:first-child,
+.disease-express .panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child td:first-child,
+.disease-express .panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child th:first-child,
+.disease-express .panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child td:first-child,
+.disease-express .panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child th:first-child {
+  border-bottom-left-radius: 3px;
+}
+.disease-express .panel > .table:last-child > tbody:last-child > tr:last-child td:last-child,
+.disease-express .panel > .table:last-child > tbody:last-child > tr:last-child th:last-child,
+.disease-express .panel > .table:last-child > tfoot:last-child > tr:last-child td:last-child,
+.disease-express .panel > .table:last-child > tfoot:last-child > tr:last-child th:last-child,
+.disease-express .panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child td:last-child,
+.disease-express .panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child th:last-child,
+.disease-express .panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child td:last-child,
+.disease-express .panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child th:last-child {
+  border-bottom-right-radius: 3px;
+}
+.disease-express .panel > .panel-body + .table,
+.disease-express .panel > .panel-body + .table-responsive,
+.disease-express .panel > .table + .panel-body,
+.disease-express .panel > .table-responsive + .panel-body {
+  border-top: 1px solid #ddd;
+}
+.disease-express .panel > .table > tbody:first-child > tr:first-child th,
+.disease-express .panel > .table > tbody:first-child > tr:first-child td {
+  border-top: 0;
+}
+.disease-express .panel > .table-bordered,
+.disease-express .panel > .table-responsive > .table-bordered {
+  border: 0;
+}
+.disease-express .panel > .table-bordered > thead > tr > th:first-child,
+.disease-express .panel > .table-bordered > thead > tr > td:first-child,
+.disease-express .panel > .table-bordered > tbody > tr > th:first-child,
+.disease-express .panel > .table-bordered > tbody > tr > td:first-child,
+.disease-express .panel > .table-bordered > tfoot > tr > th:first-child,
+.disease-express .panel > .table-bordered > tfoot > tr > td:first-child,
+.disease-express .panel > .table-responsive > .table-bordered > thead > tr > th:first-child,
+.disease-express .panel > .table-responsive > .table-bordered > thead > tr > td:first-child,
+.disease-express .panel > .table-responsive > .table-bordered > tbody > tr > th:first-child,
+.disease-express .panel > .table-responsive > .table-bordered > tbody > tr > td:first-child,
+.disease-express .panel > .table-responsive > .table-bordered > tfoot > tr > th:first-child,
+.disease-express .panel > .table-responsive > .table-bordered > tfoot > tr > td:first-child {
+  border-left: 0;
+}
+.disease-express .panel > .table-bordered > thead > tr > th:last-child,
+.disease-express .panel > .table-bordered > thead > tr > td:last-child,
+.disease-express .panel > .table-bordered > tbody > tr > th:last-child,
+.disease-express .panel > .table-bordered > tbody > tr > td:last-child,
+.disease-express .panel > .table-bordered > tfoot > tr > th:last-child,
+.disease-express .panel > .table-bordered > tfoot > tr > td:last-child,
+.disease-express .panel > .table-responsive > .table-bordered > thead > tr > th:last-child,
+.disease-express .panel > .table-responsive > .table-bordered > thead > tr > td:last-child,
+.disease-express .panel > .table-responsive > .table-bordered > tbody > tr > th:last-child,
+.disease-express .panel > .table-responsive > .table-bordered > tbody > tr > td:last-child,
+.disease-express .panel > .table-responsive > .table-bordered > tfoot > tr > th:last-child,
+.disease-express .panel > .table-responsive > .table-bordered > tfoot > tr > td:last-child {
+  border-right: 0;
+}
+.disease-express .panel > .table-bordered > thead > tr:first-child > td,
+.disease-express .panel > .table-bordered > thead > tr:first-child > th,
+.disease-express .panel > .table-bordered > tbody > tr:first-child > td,
+.disease-express .panel > .table-bordered > tbody > tr:first-child > th,
+.disease-express .panel > .table-responsive > .table-bordered > thead > tr:first-child > td,
+.disease-express .panel > .table-responsive > .table-bordered > thead > tr:first-child > th,
+.disease-express .panel > .table-responsive > .table-bordered > tbody > tr:first-child > td,
+.disease-express .panel > .table-responsive > .table-bordered > tbody > tr:first-child > th {
+  border-bottom: 0;
+}
+.disease-express .panel > .table-bordered > tbody > tr:last-child > td,
+.disease-express .panel > .table-bordered > tbody > tr:last-child > th,
+.disease-express .panel > .table-bordered > tfoot > tr:last-child > td,
+.disease-express .panel > .table-bordered > tfoot > tr:last-child > th,
+.disease-express .panel > .table-responsive > .table-bordered > tbody > tr:last-child > td,
+.disease-express .panel > .table-responsive > .table-bordered > tbody > tr:last-child > th,
+.disease-express .panel > .table-responsive > .table-bordered > tfoot > tr:last-child > td,
+.disease-express .panel > .table-responsive > .table-bordered > tfoot > tr:last-child > th {
+  border-bottom: 0;
+}
+.disease-express .panel > .table-responsive {
+  border: 0;
+  margin-bottom: 0;
+}
+.disease-express .panel-group {
+  margin-bottom: 20px;
+}
+.disease-express .panel-group .panel {
+  margin-bottom: 0;
+  border-radius: 4px;
+}
+.disease-express .panel-group .panel + .panel {
+  margin-top: 5px;
+}
+.disease-express .panel-group .panel-heading {
+  border-bottom: 0;
+}
+.disease-express .panel-group .panel-heading + .panel-collapse > .panel-body,
+.disease-express .panel-group .panel-heading + .panel-collapse > .list-group {
+  border-top: 1px solid #ddd;
+}
+.disease-express .panel-group .panel-footer {
+  border-top: 0;
+}
+.disease-express .panel-group .panel-footer + .panel-collapse .panel-body {
+  border-bottom: 1px solid #ddd;
+}
+.disease-express .panel-default {
+  border-color: #ddd;
+}
+.disease-express .panel-default > .panel-heading {
+  color: #333333;
+  background-color: #f5f5f5;
+  border-color: #ddd;
+}
+.disease-express .panel-default > .panel-heading + .panel-collapse > .panel-body {
+  border-top-color: #ddd;
+}
+.disease-express .panel-default > .panel-heading .badge {
+  color: #f5f5f5;
+  background-color: #333333;
+}
+.disease-express .panel-default > .panel-footer + .panel-collapse > .panel-body {
+  border-bottom-color: #ddd;
+}
+.disease-express .panel-primary {
+  border-color: #337ab7;
+}
+.disease-express .panel-primary > .panel-heading {
+  color: #fff;
+  background-color: #337ab7;
+  border-color: #337ab7;
+}
+.disease-express .panel-primary > .panel-heading + .panel-collapse > .panel-body {
+  border-top-color: #337ab7;
+}
+.disease-express .panel-primary > .panel-heading .badge {
+  color: #337ab7;
+  background-color: #fff;
+}
+.disease-express .panel-primary > .panel-footer + .panel-collapse > .panel-body {
+  border-bottom-color: #337ab7;
+}
+.disease-express .panel-success {
+  border-color: #d6e9c6;
+}
+.disease-express .panel-success > .panel-heading {
+  color: #3c763d;
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+}
+.disease-express .panel-success > .panel-heading + .panel-collapse > .panel-body {
+  border-top-color: #d6e9c6;
+}
+.disease-express .panel-success > .panel-heading .badge {
+  color: #dff0d8;
+  background-color: #3c763d;
+}
+.disease-express .panel-success > .panel-footer + .panel-collapse > .panel-body {
+  border-bottom-color: #d6e9c6;
+}
+.disease-express .panel-info {
+  border-color: #bce8f1;
+}
+.disease-express .panel-info > .panel-heading {
+  color: #31708f;
+  background-color: #d9edf7;
+  border-color: #bce8f1;
+}
+.disease-express .panel-info > .panel-heading + .panel-collapse > .panel-body {
+  border-top-color: #bce8f1;
+}
+.disease-express .panel-info > .panel-heading .badge {
+  color: #d9edf7;
+  background-color: #31708f;
+}
+.disease-express .panel-info > .panel-footer + .panel-collapse > .panel-body {
+  border-bottom-color: #bce8f1;
+}
+.disease-express .panel-warning {
+  border-color: #faebcc;
+}
+.disease-express .panel-warning > .panel-heading {
+  color: #8a6d3b;
+  background-color: #fcf8e3;
+  border-color: #faebcc;
+}
+.disease-express .panel-warning > .panel-heading + .panel-collapse > .panel-body {
+  border-top-color: #faebcc;
+}
+.disease-express .panel-warning > .panel-heading .badge {
+  color: #fcf8e3;
+  background-color: #8a6d3b;
+}
+.disease-express .panel-warning > .panel-footer + .panel-collapse > .panel-body {
+  border-bottom-color: #faebcc;
+}
+.disease-express .panel-danger {
+  border-color: #ebccd1;
+}
+.disease-express .panel-danger > .panel-heading {
+  color: #a94442;
+  background-color: #f2dede;
+  border-color: #ebccd1;
+}
+.disease-express .panel-danger > .panel-heading + .panel-collapse > .panel-body {
+  border-top-color: #ebccd1;
+}
+.disease-express .panel-danger > .panel-heading .badge {
+  color: #f2dede;
+  background-color: #a94442;
+}
+.disease-express .panel-danger > .panel-footer + .panel-collapse > .panel-body {
+  border-bottom-color: #ebccd1;
+}
+.disease-express .embed-responsive {
+  position: relative;
+  display: block;
+  height: 0;
+  padding: 0;
+  overflow: hidden;
+}
+.disease-express .embed-responsive .embed-responsive-item,
+.disease-express .embed-responsive iframe,
+.disease-express .embed-responsive embed,
+.disease-express .embed-responsive object,
+.disease-express .embed-responsive video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  border: 0;
+}
+.disease-express .embed-responsive-16by9 {
+  padding-bottom: 56.25%;
+}
+.disease-express .embed-responsive-4by3 {
+  padding-bottom: 75%;
+}
+.disease-express .well {
+  min-height: 20px;
+  padding: 19px;
+  margin-bottom: 20px;
+  background-color: #f5f5f5;
+  border: 1px solid #e3e3e3;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+.disease-express .well blockquote {
+  border-color: #ddd;
+  border-color: rgba(0, 0, 0, 0.15);
+}
+.disease-express .well-lg {
+  padding: 24px;
+  border-radius: 6px;
+}
+.disease-express .well-sm {
+  padding: 9px;
+  border-radius: 3px;
+}
+.disease-express .close {
+  float: right;
+  font-size: 21px;
+  font-weight: bold;
+  line-height: 1;
+  color: #000;
+  text-shadow: 0 1px 0 #fff;
+  opacity: 0.2;
+  filter: alpha(opacity=20);
+}
+.disease-express .close:hover, .disease-express .close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+  opacity: 0.5;
+  filter: alpha(opacity=50);
+}
+.disease-express button.close {
+  padding: 0;
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+  -webkit-appearance: none;
+}
+.disease-express .modal-open {
+  overflow: hidden;
+}
+.disease-express .modal {
+  display: none;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1050;
+  -webkit-overflow-scrolling: touch;
+  outline: 0;
+}
+.disease-express .modal.fade .modal-dialog {
+  -webkit-transform: translate(0, -25%);
+  -ms-transform: translate(0, -25%);
+  -o-transform: translate(0, -25%);
+  transform: translate(0, -25%);
+  -webkit-transition: -webkit-transform 0.3s ease-out;
+  -moz-transition: -moz-transform 0.3s ease-out;
+  -o-transition: -o-transform 0.3s ease-out;
+  transition: transform 0.3s ease-out;
+}
+.disease-express .modal.in .modal-dialog {
+  -webkit-transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  -o-transform: translate(0, 0);
+  transform: translate(0, 0);
+}
+.disease-express .modal-open .modal {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.disease-express .modal-dialog {
+  position: relative;
+  width: auto;
+  margin: 10px;
+}
+.disease-express .modal-content {
+  position: relative;
+  background-color: #fff;
+  border: 1px solid #999;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+  background-clip: padding-box;
+  outline: 0;
+}
+.disease-express .modal-backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1040;
+  background-color: #000;
+}
+.disease-express .modal-backdrop.fade {
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+.disease-express .modal-backdrop.in {
+  opacity: 0.5;
+  filter: alpha(opacity=50);
+}
+.disease-express .modal-header {
+  padding: 15px;
+  border-bottom: 1px solid #e5e5e5;
+}
+.disease-express .modal-header:before, .disease-express .modal-header:after {
+  content: " ";
+  display: table;
+}
+.disease-express .modal-header:after {
+  clear: both;
+}
+.disease-express .modal-header .close {
+  margin-top: -2px;
+}
+.disease-express .modal-title {
+  margin: 0;
+  line-height: 1.428571429;
+}
+.disease-express .modal-body {
+  position: relative;
+  padding: 15px;
+}
+.disease-express .modal-footer {
+  padding: 15px;
+  text-align: right;
+  border-top: 1px solid #e5e5e5;
+}
+.disease-express .modal-footer:before, .disease-express .modal-footer:after {
+  content: " ";
+  display: table;
+}
+.disease-express .modal-footer:after {
+  clear: both;
+}
+.disease-express .modal-footer .btn + .btn {
+  margin-left: 5px;
+  margin-bottom: 0;
+}
+.disease-express .modal-footer .btn-group .btn + .btn {
+  margin-left: -1px;
+}
+.disease-express .modal-footer .btn-block + .btn-block {
+  margin-left: 0;
+}
+.disease-express .modal-scrollbar-measure {
+  position: absolute;
+  top: -9999px;
+  width: 50px;
+  height: 50px;
+  overflow: scroll;
+}
+@media (min-width: 768px) {
+  .disease-express .modal-dialog {
+    width: 600px;
+    margin: 30px auto;
+  }
+  .disease-express .modal-content {
+    -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  }
+  .disease-express .modal-sm {
+    width: 300px;
+  }
+}
+@media (min-width: 992px) {
+  .disease-express .modal-lg {
+    width: 900px;
+  }
+}
+.disease-express .tooltip {
+  position: absolute;
+  z-index: 1070;
+  display: block;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  letter-spacing: normal;
+  line-break: auto;
+  line-height: 1.428571429;
+  text-align: left;
+  text-align: start;
+  text-decoration: none;
+  text-shadow: none;
+  text-transform: none;
+  white-space: normal;
+  word-break: normal;
+  word-spacing: normal;
+  word-wrap: normal;
+  font-size: 12px;
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+.disease-express .tooltip.in {
+  opacity: 0.9;
+  filter: alpha(opacity=90);
+}
+.disease-express .tooltip.top {
+  margin-top: -3px;
+  padding: 5px 0;
+}
+.disease-express .tooltip.right {
+  margin-left: 3px;
+  padding: 0 5px;
+}
+.disease-express .tooltip.bottom {
+  margin-top: 3px;
+  padding: 5px 0;
+}
+.disease-express .tooltip.left {
+  margin-left: -3px;
+  padding: 0 5px;
+}
+.disease-express .tooltip-inner {
+  max-width: 200px;
+  padding: 3px 8px;
+  color: #fff;
+  text-align: center;
+  background-color: #000;
+  border-radius: 4px;
+}
+.disease-express .tooltip-arrow {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+}
+.disease-express .tooltip.top .tooltip-arrow {
+  bottom: 0;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px 5px 0;
+  border-top-color: #000;
+}
+.disease-express .tooltip.top-left .tooltip-arrow {
+  bottom: 0;
+  right: 5px;
+  margin-bottom: -5px;
+  border-width: 5px 5px 0;
+  border-top-color: #000;
+}
+.disease-express .tooltip.top-right .tooltip-arrow {
+  bottom: 0;
+  left: 5px;
+  margin-bottom: -5px;
+  border-width: 5px 5px 0;
+  border-top-color: #000;
+}
+.disease-express .tooltip.right .tooltip-arrow {
+  top: 50%;
+  left: 0;
+  margin-top: -5px;
+  border-width: 5px 5px 5px 0;
+  border-right-color: #000;
+}
+.disease-express .tooltip.left .tooltip-arrow {
+  top: 50%;
+  right: 0;
+  margin-top: -5px;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #000;
+}
+.disease-express .tooltip.bottom .tooltip-arrow {
+  top: 0;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 0 5px 5px;
+  border-bottom-color: #000;
+}
+.disease-express .tooltip.bottom-left .tooltip-arrow {
+  top: 0;
+  right: 5px;
+  margin-top: -5px;
+  border-width: 0 5px 5px;
+  border-bottom-color: #000;
+}
+.disease-express .tooltip.bottom-right .tooltip-arrow {
+  top: 0;
+  left: 5px;
+  margin-top: -5px;
+  border-width: 0 5px 5px;
+  border-bottom-color: #000;
+}
+.disease-express .popover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1060;
+  display: none;
+  max-width: 276px;
+  padding: 1px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  letter-spacing: normal;
+  line-break: auto;
+  line-height: 1.428571429;
+  text-align: left;
+  text-align: start;
+  text-decoration: none;
+  text-shadow: none;
+  text-transform: none;
+  white-space: normal;
+  word-break: normal;
+  word-spacing: normal;
+  word-wrap: normal;
+  font-size: 14px;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+.disease-express .popover.top {
+  margin-top: -10px;
+}
+.disease-express .popover.right {
+  margin-left: 10px;
+}
+.disease-express .popover.bottom {
+  margin-top: 10px;
+}
+.disease-express .popover.left {
+  margin-left: -10px;
+}
+.disease-express .popover-title {
+  margin: 0;
+  padding: 8px 14px;
+  font-size: 14px;
+  background-color: #f7f7f7;
+  border-bottom: 1px solid #ebebeb;
+  border-radius: 5px 5px 0 0;
+}
+.disease-express .popover-content {
+  padding: 9px 14px;
+}
+.disease-express .popover > .arrow, .disease-express .popover > .arrow:after {
+  position: absolute;
+  display: block;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+}
+.disease-express .popover > .arrow {
+  border-width: 11px;
+}
+.disease-express .popover > .arrow:after {
+  border-width: 10px;
+  content: "";
+}
+.disease-express .popover.top > .arrow {
+  left: 50%;
+  margin-left: -11px;
+  border-bottom-width: 0;
+  border-top-color: #999999;
+  border-top-color: rgba(0, 0, 0, 0.25);
+  bottom: -11px;
+}
+.disease-express .popover.top > .arrow:after {
+  content: " ";
+  bottom: 1px;
+  margin-left: -10px;
+  border-bottom-width: 0;
+  border-top-color: #fff;
+}
+.disease-express .popover.right > .arrow {
+  top: 50%;
+  left: -11px;
+  margin-top: -11px;
+  border-left-width: 0;
+  border-right-color: #999999;
+  border-right-color: rgba(0, 0, 0, 0.25);
+}
+.disease-express .popover.right > .arrow:after {
+  content: " ";
+  left: 1px;
+  bottom: -10px;
+  border-left-width: 0;
+  border-right-color: #fff;
+}
+.disease-express .popover.bottom > .arrow {
+  left: 50%;
+  margin-left: -11px;
+  border-top-width: 0;
+  border-bottom-color: #999999;
+  border-bottom-color: rgba(0, 0, 0, 0.25);
+  top: -11px;
+}
+.disease-express .popover.bottom > .arrow:after {
+  content: " ";
+  top: 1px;
+  margin-left: -10px;
+  border-top-width: 0;
+  border-bottom-color: #fff;
+}
+.disease-express .popover.left > .arrow {
+  top: 50%;
+  right: -11px;
+  margin-top: -11px;
+  border-right-width: 0;
+  border-left-color: #999999;
+  border-left-color: rgba(0, 0, 0, 0.25);
+}
+.disease-express .popover.left > .arrow:after {
+  content: " ";
+  right: 1px;
+  border-right-width: 0;
+  border-left-color: #fff;
+  bottom: -10px;
+}
+.disease-express .carousel {
+  position: relative;
+}
+.disease-express .carousel-inner {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+.disease-express .carousel-inner > .item {
+  display: none;
+  position: relative;
+  -webkit-transition: 0.6s ease-in-out left;
+  -o-transition: 0.6s ease-in-out left;
+  transition: 0.6s ease-in-out left;
+}
+.disease-express .carousel-inner > .item > img,
+.disease-express .carousel-inner > .item > a > img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  line-height: 1;
+}
+@media all and (transform-3d), (-webkit-transform-3d) {
+  .disease-express .carousel-inner > .item {
+    -webkit-transition: -webkit-transform 0.6s ease-in-out;
+    -moz-transition: -moz-transform 0.6s ease-in-out;
+    -o-transition: -o-transform 0.6s ease-in-out;
+    transition: transform 0.6s ease-in-out;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-perspective: 1000px;
+    -moz-perspective: 1000px;
+    perspective: 1000px;
+  }
+  .disease-express .carousel-inner > .item.next, .disease-express .carousel-inner > .item.active.right {
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+    left: 0;
+  }
+  .disease-express .carousel-inner > .item.prev, .disease-express .carousel-inner > .item.active.left {
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+    left: 0;
+  }
+  .disease-express .carousel-inner > .item.next.left, .disease-express .carousel-inner > .item.prev.right, .disease-express .carousel-inner > .item.active {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    left: 0;
+  }
+}
+.disease-express .carousel-inner > .active,
+.disease-express .carousel-inner > .next,
+.disease-express .carousel-inner > .prev {
+  display: block;
+}
+.disease-express .carousel-inner > .active {
+  left: 0;
+}
+.disease-express .carousel-inner > .next,
+.disease-express .carousel-inner > .prev {
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+.disease-express .carousel-inner > .next {
+  left: 100%;
+}
+.disease-express .carousel-inner > .prev {
+  left: -100%;
+}
+.disease-express .carousel-inner > .next.left,
+.disease-express .carousel-inner > .prev.right {
+  left: 0;
+}
+.disease-express .carousel-inner > .active.left {
+  left: -100%;
+}
+.disease-express .carousel-inner > .active.right {
+  left: 100%;
+}
+.disease-express .carousel-control {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 15%;
+  opacity: 0.5;
+  filter: alpha(opacity=50);
+  font-size: 20px;
+  color: #fff;
+  text-align: center;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0);
+}
+.disease-express .carousel-control.left {
+  background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.0001) 100%);
+  background-image: -o-linear-gradient(left, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.0001) 100%);
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.0001) 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#80000000", endColorstr="#00000000", GradientType=1);
+}
+.disease-express .carousel-control.right {
+  left: auto;
+  right: 0;
+  background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.0001) 0%, rgba(0, 0, 0, 0.5) 100%);
+  background-image: -o-linear-gradient(left, rgba(0, 0, 0, 0.0001) 0%, rgba(0, 0, 0, 0.5) 100%);
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.0001) 0%, rgba(0, 0, 0, 0.5) 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#00000000", endColorstr="#80000000", GradientType=1);
+}
+.disease-express .carousel-control:hover, .disease-express .carousel-control:focus {
+  outline: 0;
+  color: #fff;
+  text-decoration: none;
+  opacity: 0.9;
+  filter: alpha(opacity=90);
+}
+.disease-express .carousel-control .icon-prev,
+.disease-express .carousel-control .icon-next,
+.disease-express .carousel-control .glyphicon-chevron-left,
+.disease-express .carousel-control .glyphicon-chevron-right {
+  position: absolute;
+  top: 50%;
+  margin-top: -10px;
+  z-index: 5;
+  display: inline-block;
+}
+.disease-express .carousel-control .icon-prev,
+.disease-express .carousel-control .glyphicon-chevron-left {
+  left: 50%;
+  margin-left: -10px;
+}
+.disease-express .carousel-control .icon-next,
+.disease-express .carousel-control .glyphicon-chevron-right {
+  right: 50%;
+  margin-right: -10px;
+}
+.disease-express .carousel-control .icon-prev,
+.disease-express .carousel-control .icon-next {
+  width: 20px;
+  height: 20px;
+  line-height: 1;
+  font-family: serif;
+}
+.disease-express .carousel-control .icon-prev:before {
+  content: "‹";
+}
+.disease-express .carousel-control .icon-next:before {
+  content: "›";
+}
+.disease-express .carousel-indicators {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  z-index: 15;
+  width: 60%;
+  margin-left: -30%;
+  padding-left: 0;
+  list-style: none;
+  text-align: center;
+}
+.disease-express .carousel-indicators li {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin: 1px;
+  text-indent: -999px;
+  border: 1px solid #fff;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: #000 \9;
+  background-color: rgba(0, 0, 0, 0);
+}
+.disease-express .carousel-indicators .active {
+  margin: 0;
+  width: 12px;
+  height: 12px;
+  background-color: #fff;
+}
+.disease-express .carousel-caption {
+  position: absolute;
+  left: 15%;
+  right: 15%;
+  bottom: 20px;
+  z-index: 10;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: #fff;
+  text-align: center;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+}
+.disease-express .carousel-caption .btn {
+  text-shadow: none;
+}
+@media screen and (min-width: 768px) {
+  .disease-express .carousel-control .glyphicon-chevron-left,
+.disease-express .carousel-control .glyphicon-chevron-right,
+.disease-express .carousel-control .icon-prev,
+.disease-express .carousel-control .icon-next {
+    width: 30px;
+    height: 30px;
+    margin-top: -10px;
+    font-size: 30px;
+  }
+  .disease-express .carousel-control .glyphicon-chevron-left,
+.disease-express .carousel-control .icon-prev {
+    margin-left: -10px;
+  }
+  .disease-express .carousel-control .glyphicon-chevron-right,
+.disease-express .carousel-control .icon-next {
+    margin-right: -10px;
+  }
+  .disease-express .carousel-caption {
+    left: 20%;
+    right: 20%;
+    padding-bottom: 30px;
+  }
+  .disease-express .carousel-indicators {
+    bottom: 20px;
+  }
+}
+.disease-express .clearfix:before, .disease-express .clearfix:after {
+  content: " ";
+  display: table;
+}
+.disease-express .clearfix:after {
+  clear: both;
+}
+.disease-express .center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.disease-express .pull-right {
+  float: right !important;
+}
+.disease-express .pull-left {
+  float: left !important;
+}
+.disease-express .hide {
+  display: none !important;
+}
+.disease-express .show {
+  display: block !important;
+}
+.disease-express .invisible {
+  visibility: hidden;
+}
+.disease-express .text-hide {
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+.disease-express .hidden {
+  display: none !important;
+}
+.disease-express .affix {
+  position: fixed;
+}
+@-ms-viewport {
+  width: device-width;
+}
+.disease-express .visible-xs {
+  display: none !important;
+}
+.disease-express .visible-sm {
+  display: none !important;
+}
+.disease-express .visible-md {
+  display: none !important;
+}
+.disease-express .visible-lg {
+  display: none !important;
+}
+.disease-express .visible-xs-block,
+.disease-express .visible-xs-inline,
+.disease-express .visible-xs-inline-block,
+.disease-express .visible-sm-block,
+.disease-express .visible-sm-inline,
+.disease-express .visible-sm-inline-block,
+.disease-express .visible-md-block,
+.disease-express .visible-md-inline,
+.disease-express .visible-md-inline-block,
+.disease-express .visible-lg-block,
+.disease-express .visible-lg-inline,
+.disease-express .visible-lg-inline-block {
+  display: none !important;
+}
+@media (max-width: 767px) {
+  .disease-express .visible-xs {
+    display: block !important;
+  }
+  .disease-express table.visible-xs {
+    display: table !important;
+  }
+  .disease-express tr.visible-xs {
+    display: table-row !important;
+  }
+  .disease-express th.visible-xs,
+.disease-express td.visible-xs {
+    display: table-cell !important;
+  }
+}
+@media (max-width: 767px) {
+  .disease-express .visible-xs-block {
+    display: block !important;
+  }
+}
+@media (max-width: 767px) {
+  .disease-express .visible-xs-inline {
+    display: inline !important;
+  }
+}
+@media (max-width: 767px) {
+  .disease-express .visible-xs-inline-block {
+    display: inline-block !important;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .disease-express .visible-sm {
+    display: block !important;
+  }
+  .disease-express table.visible-sm {
+    display: table !important;
+  }
+  .disease-express tr.visible-sm {
+    display: table-row !important;
+  }
+  .disease-express th.visible-sm,
+.disease-express td.visible-sm {
+    display: table-cell !important;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .disease-express .visible-sm-block {
+    display: block !important;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .disease-express .visible-sm-inline {
+    display: inline !important;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .disease-express .visible-sm-inline-block {
+    display: inline-block !important;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  .disease-express .visible-md {
+    display: block !important;
+  }
+  .disease-express table.visible-md {
+    display: table !important;
+  }
+  .disease-express tr.visible-md {
+    display: table-row !important;
+  }
+  .disease-express th.visible-md,
+.disease-express td.visible-md {
+    display: table-cell !important;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  .disease-express .visible-md-block {
+    display: block !important;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  .disease-express .visible-md-inline {
+    display: inline !important;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  .disease-express .visible-md-inline-block {
+    display: inline-block !important;
+  }
+}
+@media (min-width: 1200px) {
+  .disease-express .visible-lg {
+    display: block !important;
+  }
+  .disease-express table.visible-lg {
+    display: table !important;
+  }
+  .disease-express tr.visible-lg {
+    display: table-row !important;
+  }
+  .disease-express th.visible-lg,
+.disease-express td.visible-lg {
+    display: table-cell !important;
+  }
+}
+@media (min-width: 1200px) {
+  .disease-express .visible-lg-block {
+    display: block !important;
+  }
+}
+@media (min-width: 1200px) {
+  .disease-express .visible-lg-inline {
+    display: inline !important;
+  }
+}
+@media (min-width: 1200px) {
+  .disease-express .visible-lg-inline-block {
+    display: inline-block !important;
+  }
+}
+@media (max-width: 767px) {
+  .disease-express .hidden-xs {
+    display: none !important;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .disease-express .hidden-sm {
+    display: none !important;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  .disease-express .hidden-md {
+    display: none !important;
+  }
+}
+@media (min-width: 1200px) {
+  .disease-express .hidden-lg {
+    display: none !important;
+  }
+}
+.disease-express .visible-print {
+  display: none !important;
+}
+@media print {
+  .disease-express .visible-print {
+    display: block !important;
+  }
+  .disease-express table.visible-print {
+    display: table !important;
+  }
+  .disease-express tr.visible-print {
+    display: table-row !important;
+  }
+  .disease-express th.visible-print,
+.disease-express td.visible-print {
+    display: table-cell !important;
+  }
+}
+.disease-express .visible-print-block {
+  display: none !important;
+}
+@media print {
+  .disease-express .visible-print-block {
+    display: block !important;
+  }
+}
+.disease-express .visible-print-inline {
+  display: none !important;
+}
+@media print {
+  .disease-express .visible-print-inline {
+    display: inline !important;
+  }
+}
+.disease-express .visible-print-inline-block {
+  display: none !important;
+}
+@media print {
+  .disease-express .visible-print-inline-block {
+    display: inline-block !important;
+  }
+}
+@media print {
+  .disease-express .hidden-print {
+    display: none !important;
+  }
+}

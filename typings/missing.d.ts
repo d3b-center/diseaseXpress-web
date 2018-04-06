@@ -5,3 +5,4 @@ declare module '*.json';
 // these packages are missing typings
 declare module 'victory';
 declare module 'jStat';
+declare module 'react-plotly.js';
