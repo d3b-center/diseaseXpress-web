@@ -1,0 +1,54 @@
+.ContentWidth {
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.ColumnOne {
+  width: 30%;
+}
+.ColumnTwo {
+  width: 70%;
+}
+
+.ChartHeader {
+  text-align: center;
+}
+
+.Select {
+  width:250px
+}
+
+.flexRow {
+  display: flex;
+  overflow: visible;
+  flex-direction: row;
+  padding-bottom: 20px;
+  align-items: center;
+}
+
+.flexRow1 {
+  display: flex;
+  overflow: visible;
+  flex-direction: row;
+  padding-bottom: 20px;
+  align-items: center;
+}
+
+.flexRow2 {
+  display: flex;
+  overflow: visible;
+  flex-direction: row;
+  padding-right: 100px;
+  align-items: center;
+}
+.SectionHeader {
+  width: 100px;
+}
+
+.boxPlot {
+  width: 80%;
+  height: 800px;
+}

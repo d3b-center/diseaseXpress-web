@@ -1,0 +1,1586 @@
+{
+  "paths": {
+    "/api/genes/ids": {
+      "get": {
+        "operationId": "getGeneIds",
+        "tags": [
+          "genes"
+        ],
+        "summary": "get All Genes",
+        "description": "Returns List of Gene Ids",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/genes/ids/{gene_ids}": {
+      "get": {
+        "operationId": "getGeneInfoByIds",
+        "tags": [
+          "genes"
+        ],
+        "summary": "get Gene information",
+        "description": "Returns Gene information",
+        "produces": [
+          "application/json",
+          "text/tab-separated-values"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "gene_ids",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/GeneInfo"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/genes/symbols": {
+      "get": {
+        "operationId": "getGenesBySymbol",
+        "tags": [
+          "genes"
+        ],
+        "summary": "get All Genes",
+        "description": "Returns List of Gene Symbols",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/genes/symbols/{gene_symbols}": {
+      "get": {
+        "operationId": "getGeneInfoBySymbols",
+        "tags": [
+          "genes"
+        ],
+        "summary": "get Gene information",
+        "description": "Returns Gene information",
+        "produces": [
+          "application/json",
+          "text/tab-separated-values"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "gene_symbols",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/GeneInfo"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/studies": {
+      "get": {
+        "operationId": "getStudies",
+        "tags": [
+          "studies"
+        ],
+        "summary": "get All Studies",
+        "description": "Returns List of Studies",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/samples": {
+      "get": {
+        "operationId": "getAllSamples",
+        "tags": [
+          "samples"
+        ],
+        "summary": "get All Samples data",
+        "description": "Returns List of Sample Data",
+        "produces": [
+          "application/json",
+          "text/tab-separated-values"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/samples/{study_ids}": {
+      "get": {
+        "operationId": "getSamples",
+        "tags": [
+          "samples"
+        ],
+        "summary": "get Samples Data",
+        "description": "Returns List of Sample Data",
+        "produces": [
+          "application/json",
+          "text/tab-separated-values"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "study_ids",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/transcripts": {
+      "get": {
+        "operationId": "getTranscriptIds",
+        "tags": [
+          "transcripts"
+        ],
+        "summary": "get All Transcripts",
+        "description": "Returns List of Transcript Ids",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/transcripts/{transcript_ids}": {
+      "get": {
+        "operationId": "getTranscriptInfo",
+        "tags": [
+          "transcripts"
+        ],
+        "summary": "get Transcript information",
+        "description": "Returns Transcript information",
+        "produces": [
+          "application/json",
+          "text/tab-separated-values"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "transcript_ids",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/TranscriptWithGeneInfo"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/data/genes/ids/{gene_ids}": {
+      "get": {
+        "operationId": "getDataByGeneIds",
+        "tags": [
+          "data"
+        ],
+        "summary": "get all expression data for given gene entrez ids",
+        "description": "Returns expression data for given gene entrez ids",
+        "produces": [
+          "application/json",
+          "text/tab-separated-values"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "gene_ids",
+            "type": "string",
+            "required": true,
+            "description": "Comma separated list of gene entrez ids. e.g. ENSG00000136997.14,ENSG00000000003.14"
+          },
+          {
+            "in": "query",
+            "name": "projection",
+            "type": "string",
+            "required": false,
+            "description": "Projection type summary or detailed",
+            "enum": [
+              "summary",
+              "detailed"
+            ],
+            "default": "summary"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/GeneData"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/data/genes/ids/{gene_ids}/studies/{studies}": {
+      "get": {
+        "operationId": "getDataByGeneIdsAndStudies",
+        "tags": [
+          "data"
+        ],
+        "summary": "get expression data for given gene entrez ids and studies",
+        "description": "Returns expression data for given gene entrez ids and studies",
+        "produces": [
+          "application/json",
+          "text/tab-separated-values"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "gene_ids",
+            "type": "string",
+            "required": true,
+            "description": "Comma separated list of gene entrez ids. e.g. ENSG00000136997.14,ENSG00000000003.14"
+          },
+          {
+            "in": "path",
+            "name": "studies",
+            "type": "string",
+            "required": true,
+            "description": "Comma separated list of study ids. e.g. PNOC,TARGET"
+          },
+          {
+            "in": "query",
+            "name": "projection",
+            "type": "string",
+            "required": false,
+            "description": "Projection type summary or detailed",
+            "enum": [
+              "summary",
+              "detailed"
+            ],
+            "default": "summary"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/GeneData"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/data/genes/ids/{gene_ids}/normalizations/{normalizations}": {
+      "get": {
+        "operationId": "getDataByGeneIdsAndNormalizations",
+        "tags": [
+          "data"
+        ],
+        "summary": "get expression data for given gene entrez ids",
+        "description": "Returns expression data for given gene entrez ids",
+        "produces": [
+          "application/json",
+          "text/tab-separated-values"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "gene_ids",
+            "type": "string",
+            "required": true,
+            "description": "Comma separated list of gene entrez ids. e.g. ENSG00000136997.14,ENSG00000000003.14"
+          },
+          {
+            "in": "path",
+            "name": "normalizations",
+            "type": "array",
+            "required": true,
+            "description": "Comma separated list of normalization methods",
+            "items": {
+              "type": "string",
+              "enum": [
+                "rsem",
+                "sample_abundance",
+                "sample_rsem_isoform"
+              ],
+              "default": "rsem"
+            },
+            "collectionFormat": "csv"
+          },
+          {
+            "in": "query",
+            "name": "projection",
+            "type": "string",
+            "required": false,
+            "description": "Projection type summary or detailed",
+            "enum": [
+              "summary",
+              "detailed"
+            ],
+            "default": "summary"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/GeneData"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/data/genes/ids/{gene_ids}/studies/{studies}/normalizations/{normalizations}": {
+      "get": {
+        "operationId": "getDataByGeneIdsAndStudiesAndNormalizations",
+        "tags": [
+          "data"
+        ],
+        "summary": "get expression data for given gene entrez ids and studies",
+        "description": "Returns expression data for given gene entrez ids and studies",
+        "produces": [
+          "application/json",
+          "text/tab-separated-values"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "gene_ids",
+            "type": "string",
+            "required": true,
+            "description": "Comma separated list of gene entrez ids. e.g. ENSG00000136997.14,ENSG00000000003.14"
+          },
+          {
+            "in": "path",
+            "name": "studies",
+            "type": "string",
+            "required": true,
+            "description": "Comma separated list of study ids. e.g. PNOC,TARGET"
+          },
+          {
+            "in": "path",
+            "name": "normalizations",
+            "type": "array",
+            "required": true,
+            "description": "Comma separated list of normalization methods",
+            "items": {
+              "type": "string",
+              "enum": [
+                "rsem",
+                "sample_abundance",
+                "sample_rsem_isoform"
+              ],
+              "default": ""
+            },
+            "collectionFormat": "csv"
+          },
+          {
+            "in": "query",
+            "name": "projection",
+            "type": "string",
+            "required": false,
+            "description": "Projection type summary or detailed",
+            "enum": [
+              "summary",
+              "detailed"
+            ],
+            "default": "summary"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/GeneData"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/data/genes/symbols/{gene_symbols}": {
+      "get": {
+        "operationId": "getDataByGeneSymbols",
+        "tags": [
+          "data"
+        ],
+        "summary": "get expression data for given gene symbols",
+        "description": "Returns expression data for given gene symbols",
+        "produces": [
+          "application/json",
+          "text/tab-separated-values"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "gene_symbols",
+            "type": "string",
+            "required": true,
+            "description": "Comma separated list of gene symbols. e.g. MYCN,TP53"
+          },
+          {
+            "in": "query",
+            "name": "projection",
+            "type": "string",
+            "required": false,
+            "description": "Projection type summary or detailed",
+            "enum": [
+              "summary",
+              "detailed"
+            ],
+            "default": "summary"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/GeneData"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/data/genes/symbols/{gene_symbols}/normalizations/{normalizations}": {
+      "get": {
+        "operationId": "getDataByGeneSymbolsAndNormalizations",
+        "tags": [
+          "data"
+        ],
+        "summary": "get expression data for given gene symbols",
+        "description": "Returns expression data for given gene symbols",
+        "produces": [
+          "application/json",
+          "text/tab-separated-values"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "gene_symbols",
+            "type": "string",
+            "required": true,
+            "description": "Comma separated list of gene symbols. e.g. MYCN,TP53"
+          },
+          {
+            "in": "path",
+            "name": "normalizations",
+            "type": "array",
+            "required": true,
+            "description": "Comma separated list of normalization methods",
+            "items": {
+              "type": "string",
+              "enum": [
+                "rsem",
+                "sample_abundance",
+                "sample_rsem_isoform"
+              ],
+              "default": ""
+            },
+            "collectionFormat": "csv"
+          },
+          {
+            "in": "query",
+            "name": "projection",
+            "type": "string",
+            "required": false,
+            "description": "Projection type summary or detailed",
+            "enum": [
+              "summary",
+              "detailed"
+            ],
+            "default": "summary"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/GeneData"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/data/genes/symbols/{gene_symbols}/studies/{studies}": {
+      "get": {
+        "operationId": "getDataByGeneSymbolsAndStudies",
+        "tags": [
+          "data"
+        ],
+        "summary": "get expression data for given gene symbols and studies",
+        "description": "Returns expression data for given gene symbols and studies",
+        "produces": [
+          "application/json",
+          "text/tab-separated-values"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "gene_symbols",
+            "type": "string",
+            "required": true,
+            "description": "Comma separated list of gene symbols. e.g. MYCN,TP53"
+          },
+          {
+            "in": "path",
+            "name": "studies",
+            "type": "string",
+            "required": true,
+            "description": "Comma separated list of study ids. e.g. PNOC,TARGET"
+          },
+          {
+            "in": "query",
+            "name": "projection",
+            "type": "string",
+            "required": false,
+            "description": "Projection type summary or detailed",
+            "enum": [
+              "summary",
+              "detailed"
+            ],
+            "default": "summary"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/GeneData"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/data/genes/symbols/{gene_symbols}/studies/{studies}/normalizations/{normalizations}": {
+      "get": {
+        "operationId": "getDataByGeneSymbolsAndStudiesAndNormalizations",
+        "tags": [
+          "data"
+        ],
+        "summary": "get expression data for given gene symbols and studies",
+        "description": "Returns expression data for given gene symbols and studies",
+        "produces": [
+          "application/json",
+          "text/tab-separated-values"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "gene_symbols",
+            "type": "string",
+            "required": true,
+            "description": "Comma separated list of gene symbols. e.g. MYCN,TP53"
+          },
+          {
+            "in": "path",
+            "name": "studies",
+            "type": "string",
+            "required": true,
+            "description": "Comma separated list of study ids. e.g. PNOC,TARGET"
+          },
+          {
+            "in": "path",
+            "name": "normalizations",
+            "type": "array",
+            "required": true,
+            "description": "Comma separated list of normalization methods",
+            "items": {
+              "type": "string",
+              "enum": [
+                "rsem",
+                "sample_abundance",
+                "sample_rsem_isoform"
+              ],
+              "default": ""
+            },
+            "collectionFormat": "csv"
+          },
+          {
+            "in": "query",
+            "name": "projection",
+            "type": "string",
+            "required": false,
+            "description": "Projection type summary or detailed",
+            "enum": [
+              "summary",
+              "detailed"
+            ],
+            "default": "summary"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/GeneData"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/data/transcripts/ids/{transcript_ids}": {
+      "get": {
+        "operationId": "getDataByTranscriptIds",
+        "tags": [
+          "data"
+        ],
+        "summary": "get expression data for given transcript ids",
+        "description": "Returns expression data for given transcript ids",
+        "produces": [
+          "application/json",
+          "text/tab-separated-values"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "transcript_ids",
+            "type": "string",
+            "required": true,
+            "description": "Comma separated list of transcript ids. e.g. ENST00000373031.4,ENST00000514373.2"
+          },
+          {
+            "in": "query",
+            "name": "projection",
+            "type": "string",
+            "required": false,
+            "description": "Projection type summary or detailed",
+            "enum": [
+              "summary",
+              "detailed"
+            ],
+            "default": "summary"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/GeneData"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/data/transcripts/ids/{transcript_ids}/studies/{studies}": {
+      "get": {
+        "operationId": "getDataByTranscriptIdsAndStudies",
+        "tags": [
+          "data"
+        ],
+        "summary": "get expression data for given transcript ids and studies",
+        "description": "Returns expression data for given transcript ids and studies",
+        "produces": [
+          "application/json",
+          "text/tab-separated-values"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "transcript_ids",
+            "type": "string",
+            "required": true,
+            "description": "Comma separated list of transcript ids. e.g. ENST00000373031.4,ENST00000514373.2"
+          },
+          {
+            "in": "path",
+            "name": "studies",
+            "type": "string",
+            "required": true,
+            "description": "Comma separated list of study ids. e.g. PNOC,TARGET"
+          },
+          {
+            "in": "query",
+            "name": "projection",
+            "type": "string",
+            "required": false,
+            "description": "Projection type summary or detailed",
+            "enum": [
+              "summary",
+              "detailed"
+            ],
+            "default": "summary"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/GeneData"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/data/transcripts/ids/{transcript_ids}/normalizations/{normalizations}": {
+      "get": {
+        "operationId": "getDataByTranscriptIdsAndNormalizations",
+        "tags": [
+          "data"
+        ],
+        "summary": "get expression data for given transcript ids",
+        "description": "Returns expression data for given transcript ids",
+        "produces": [
+          "application/json",
+          "text/tab-separated-values"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "transcript_ids",
+            "type": "string",
+            "required": true,
+            "description": "Comma separated list of transcript ids. e.g. ENST00000373031.4,ENST00000514373.2"
+          },
+          {
+            "in": "path",
+            "name": "normalizations",
+            "type": "array",
+            "required": true,
+            "description": "Comma separated list of normalization methods",
+            "items": {
+              "type": "string",
+              "enum": [
+                "rsem",
+                "sample_abundance",
+                "sample_rsem_isoform"
+              ],
+              "default": ""
+            },
+            "collectionFormat": "csv"
+          },
+          {
+            "in": "query",
+            "name": "projection",
+            "type": "string",
+            "required": false,
+            "description": "Projection type summary or detailed",
+            "enum": [
+              "summary",
+              "detailed"
+            ],
+            "default": "summary"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/GeneData"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/data/transcripts/ids/{transcript_ids}/studies/{studies}/normalizations/{normalizations}": {
+      "get": {
+        "operationId": "getDataByTranscriptIdsAndStudiesAndNormalizations",
+        "tags": [
+          "data"
+        ],
+        "summary": "get expression data for given transcript ids and studies",
+        "description": "Returns expression data for given transcript ids and studies",
+        "produces": [
+          "application/json",
+          "text/tab-separated-values"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "transcript_ids",
+            "type": "string",
+            "required": true,
+            "description": "Comma separated list of transcript ids. e.g. ENST00000373031.4,ENST00000514373.2"
+          },
+          {
+            "in": "path",
+            "name": "studies",
+            "type": "string",
+            "required": true,
+            "description": "Comma separated list of study ids. e.g. PNOC,TARGET"
+          },
+          {
+            "in": "path",
+            "name": "normalizations",
+            "type": "array",
+            "required": true,
+            "description": "Comma separated list of normalization methods",
+            "items": {
+              "type": "string",
+              "enum": [
+                "rsem",
+                "sample_abundance",
+                "sample_rsem_isoform"
+              ],
+              "default": ""
+            },
+            "collectionFormat": "csv"
+          },
+          {
+            "in": "query",
+            "name": "projection",
+            "type": "string",
+            "required": false,
+            "description": "Projection type summary or detailed",
+            "enum": [
+              "summary",
+              "detailed"
+            ],
+            "default": "summary"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/GeneData"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/data/api/tags/data/genes/symbols/{gene_symbols}/normalizations/{normalizations}": {
+      "post": {
+        "operationId": "getDataByGeneSymbolsAndTagsAndNormalizations",
+        "tags": [
+          "data"
+        ],
+        "summary": "get expression data for given transcript ids and studies",
+        "description": "Returns expression data for given transcript ids and studies",
+        "produces": [
+          "application/json",
+          "text/tab-separated-values"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "gene_symbols",
+            "type": "string",
+            "required": true,
+            "description": "Comma separated list of gene symbols. e.g. MYCN,TP53"
+          },
+          {
+            "in": "path",
+            "name": "normalizations",
+            "type": "array",
+            "required": true,
+            "description": "Comma separated list of normalization methods",
+            "items": {
+              "type": "string",
+              "enum": [
+                "rsem",
+                "sample_abundance",
+                "sample_rsem_isoform"
+              ],
+              "default": ""
+            },
+            "collectionFormat": "csv"
+          },
+          {
+            "in": "query",
+            "name": "projection",
+            "type": "string",
+            "required": false,
+            "description": "Projection type summary or detailed",
+            "enum": [
+              "summary",
+              "detailed"
+            ],
+            "default": "summary"
+          },
+          {
+            "in": "body",
+            "name": "payload",
+            "description": "Its a JSON payload currently supports the following operations\nLogical Operators             : $and, $not, $nor, $or\nComparison Operators : $eq, $gt, $gte, $in, $lt, $lte, $ne, $nin\nExample:                           \n{\n&emsp; \\\"$and\\\": [\n&emsp;&emsp;&emsp; { \\\"$eq\\\": { \\\"mycn_status\\\":\\\"amplified\\\" } },\n&emsp;&emsp;&emsp; { \\\"$in\\\": { \\\"risk\\\": [\\\"high\\\",\\\"low\\\"] } },\n&emsp;&emsp;&emsp; { \\\"$not\\\": { \\\"$eq\\\": { \\\"stage\\\": 4 } } },\n&emsp;&emsp;&emsp; { \\\"$lt\\\": { \\\"stage\\\": 4 } },\n&emsp;&emsp;&emsp; { \\\"$or\\\": [\n&emsp;&emsp;&emsp;&emsp;&emsp; { \\\"$eq\\\": { \\\"mycn_status\\\":\\\"amplified\\\" } },\n&emsp;&emsp;&emsp;&emsp;&emsp; { \\\"stage\\\": \\\"4\\\" } ]\n&emsp;&emsp;&emsp; }\n&emsp;]\n}\n",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "example": {
+                "$eq": {
+                  "mycn_status": "amplified"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/GeneData"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/data/api/tags/data/genes/ids/{gene_ids}/normalizations/{normalizations}": {
+      "post": {
+        "operationId": "getDataByGeneIdsAndTagsAndNormalizations",
+        "tags": [
+          "data"
+        ],
+        "summary": "get expression data for given transcript ids and studies",
+        "description": "Returns expression data for given transcript ids and studies",
+        "produces": [
+          "application/json",
+          "text/tab-separated-values"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "gene_ids",
+            "type": "string",
+            "required": true,
+            "description": "Comma separated list of gene entrez ids. e.g. ENSG00000136997.14,ENSG00000000003.14"
+          },
+          {
+            "in": "path",
+            "name": "normalizations",
+            "type": "array",
+            "required": true,
+            "description": "Comma separated list of normalization methods",
+            "items": {
+              "type": "string",
+              "enum": [
+                "rsem",
+                "sample_abundance",
+                "sample_rsem_isoform"
+              ],
+              "default": ""
+            },
+            "collectionFormat": "csv"
+          },
+          {
+            "in": "query",
+            "name": "projection",
+            "type": "string",
+            "required": false,
+            "description": "Projection type summary or detailed",
+            "enum": [
+              "summary",
+              "detailed"
+            ],
+            "default": "summary"
+          },
+          {
+            "in": "body",
+            "name": "payload",
+            "description": "Its a JSON payload currently supports the following operations\nLogical Operators             : $and, $not, $nor, $or\nComparison Operators : $eq, $gt, $gte, $in, $lt, $lte, $ne, $nin\nExample:                           \n{\n&emsp; \\\"$and\\\": [\n&emsp;&emsp;&emsp; { \\\"$eq\\\": { \\\"mycn_status\\\":\\\"amplified\\\" } },\n&emsp;&emsp;&emsp; { \\\"$in\\\": { \\\"risk\\\": [\\\"high\\\",\\\"low\\\"] } },\n&emsp;&emsp;&emsp; { \\\"$not\\\": { \\\"$eq\\\": { \\\"stage\\\": 4 } } },\n&emsp;&emsp;&emsp; { \\\"$lt\\\": { \\\"stage\\\": 4 } },\n&emsp;&emsp;&emsp; { \\\"$or\\\": [\n&emsp;&emsp;&emsp;&emsp;&emsp; { \\\"$eq\\\": { \\\"mycn_status\\\":\\\"amplified\\\" } },\n&emsp;&emsp;&emsp;&emsp;&emsp; { \\\"stage\\\": \\\"4\\\" } ]\n&emsp;&emsp;&emsp; }\n&emsp;]\n}\n",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "example": {
+                "$eq": {
+                  "mycn_status": "amplified"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/GeneData"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/data/api/tags/data/transcripts/ids/{transcript_ids}/normalizations/{normalizations}": {
+      "post": {
+        "operationId": "getDataByTranscriptIdsAndTagsAndNormalizations",
+        "tags": [
+          "data"
+        ],
+        "summary": "get expression data for given transcript ids and studies",
+        "description": "Returns expression data for given transcript ids and studies",
+        "produces": [
+          "application/json",
+          "text/tab-separated-values"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "transcript_ids",
+            "type": "string",
+            "required": true,
+            "description": "Comma separated list of transcript ids. e.g. ENST00000373031.4,ENST00000514373.2"
+          },
+          {
+            "in": "path",
+            "name": "normalizations",
+            "type": "array",
+            "required": true,
+            "description": "Comma separated list of normalization methods",
+            "items": {
+              "type": "string",
+              "enum": [
+                "rsem",
+                "sample_abundance",
+                "sample_rsem_isoform"
+              ],
+              "default": ""
+            },
+            "collectionFormat": "csv"
+          },
+          {
+            "in": "query",
+            "name": "projection",
+            "type": "string",
+            "required": false,
+            "description": "Projection type summary or detailed",
+            "enum": [
+              "summary",
+              "detailed"
+            ],
+            "default": "summary"
+          },
+          {
+            "in": "body",
+            "name": "payload",
+            "description": "Its a JSON payload currently supports the following operations\nLogical Operators             : $and, $not, $nor, $or\nComparison Operators : $eq, $gt, $gte, $in, $lt, $lte, $ne, $nin\nExample:                           \n{\n&emsp; \\\"$and\\\": [\n&emsp;&emsp;&emsp; { \\\"$eq\\\": { \\\"mycn_status\\\":\\\"amplified\\\" } },\n&emsp;&emsp;&emsp; { \\\"$in\\\": { \\\"risk\\\": [\\\"high\\\",\\\"low\\\"] } },\n&emsp;&emsp;&emsp; { \\\"$not\\\": { \\\"$eq\\\": { \\\"stage\\\": 4 } } },\n&emsp;&emsp;&emsp; { \\\"$lt\\\": { \\\"stage\\\": 4 } },\n&emsp;&emsp;&emsp; { \\\"$or\\\": [\n&emsp;&emsp;&emsp;&emsp;&emsp; { \\\"$eq\\\": { \\\"mycn_status\\\":\\\"amplified\\\" } },\n&emsp;&emsp;&emsp;&emsp;&emsp; { \\\"stage\\\": \\\"4\\\" } ]\n&emsp;&emsp;&emsp; }\n&emsp;]\n}\n",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "example": {
+                "$eq": {
+                  "mycn_status": "amplified"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/GeneData"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/data/normalizations/{normalizations}": {
+      "post": {
+        "operationId": "getDataByTagsAndNormalizations",
+        "tags": [
+          "data"
+        ],
+        "summary": "get expression data for given sample tags and normalizations",
+        "description": "Returns expression data for given sample tags and normalizations",
+        "produces": [
+          "application/json",
+          "text/tab-separated-values"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "normalizations",
+            "type": "array",
+            "required": true,
+            "description": "Comma separated list of normalization methods",
+            "items": {
+              "type": "string",
+              "enum": [
+                "rsem",
+                "sample_abundance",
+                "sample_rsem_isoform"
+              ],
+              "default": ""
+            },
+            "collectionFormat": "csv"
+          },
+          {
+            "in": "query",
+            "name": "projection",
+            "type": "string",
+            "required": false,
+            "description": "Projection type summary or detailed",
+            "enum": [
+              "summary",
+              "detailed"
+            ],
+            "default": "summary"
+          },
+          {
+            "in": "body",
+            "name": "payload",
+            "description": "Its a JSON payload currently supports the following operations\nLogical Operators             : $and, $not, $nor, $or\nComparison Operators : $eq, $gt, $gte, $in, $lt, $lte, $ne, $nin\nExample:                           \n{\n&emsp; \\\"$and\\\": [\n&emsp;&emsp;&emsp; { \\\"$eq\\\": { \\\"mycn_status\\\":\\\"amplified\\\" } },\n&emsp;&emsp;&emsp; { \\\"$in\\\": { \\\"risk\\\": [\\\"high\\\",\\\"low\\\"] } },\n&emsp;&emsp;&emsp; { \\\"$not\\\": { \\\"$eq\\\": { \\\"stage\\\": 4 } } },\n&emsp;&emsp;&emsp; { \\\"$lt\\\": { \\\"stage\\\": 4 } },\n&emsp;&emsp;&emsp; { \\\"$or\\\": [\n&emsp;&emsp;&emsp;&emsp;&emsp; { \\\"$eq\\\": { \\\"mycn_status\\\":\\\"amplified\\\" } },\n&emsp;&emsp;&emsp;&emsp;&emsp; { \\\"stage\\\": \\\"4\\\" } ]\n&emsp;&emsp;&emsp; }\n&emsp;]\n}\n",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "example": {
+                "$eq": {
+                  "mycn_status": "amplified"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/GeneData"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "TranscriptInfo": {
+      "properties": {
+        "transcript_id": {
+          "type": "string"
+        },
+        "start": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "end": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "biotype": {
+          "type": "string"
+        },
+        "entrez_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "refseq_mrna_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "refseq_protein_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "transcript_id",
+        "start",
+        "end",
+        "biotype"
+      ]
+    },
+    "GeneInfo": {
+      "properties": {
+        "gene_id": {
+          "type": "string"
+        },
+        "gene_symbol": {
+          "type": "string"
+        },
+        "start": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "end": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "biotype": {
+          "type": "string"
+        },
+        "chr": {
+          "type": "string"
+        },
+        "strand": {
+          "type": "string"
+        },
+        "transcripts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/TranscriptInfo"
+          }
+        }
+      },
+      "required": [
+        "gene_id",
+        "gene_symbol",
+        "start",
+        "end",
+        "biotype",
+        "chr",
+        "strand",
+        "transcripts"
+      ]
+    },
+    "TranscriptWithGeneInfo": {
+      "properties": {
+        "transcript_id": {
+          "type": "string"
+        },
+        "start": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "end": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "biotype": {
+          "type": "string"
+        },
+        "entrez_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "refseq_mrna_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "refseq_protein_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "gene_id": {
+          "type": "string"
+        },
+        "gene_symbol": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "transcript_id",
+        "start",
+        "end",
+        "biotype",
+        "gene_id",
+        "gene_symbol"
+      ]
+    },
+    "RsemIsoform": {
+      "properties": {
+        "transcript_id": {
+          "type": "string"
+        },
+        "sample_id": {
+          "type": "string"
+        },
+        "length": {
+          "type": "number",
+          "format": "double"
+        },
+        "effective_length": {
+          "type": "number",
+          "format": "double"
+        },
+        "expected_count": {
+          "type": "number",
+          "format": "double"
+        },
+        "tpm": {
+          "type": "number",
+          "format": "double"
+        },
+        "fpkm": {
+          "type": "number",
+          "format": "double"
+        },
+        "isoform_percentage": {
+          "type": "number",
+          "format": "double"
+        }
+      },
+      "required": [
+        "transcript_id",
+        "sample_id"
+      ]
+    },
+    "Abundance": {
+      "properties": {
+        "transcript_id": {
+          "type": "string"
+        },
+        "sample_id": {
+          "type": "string"
+        },
+        "length": {
+          "type": "number",
+          "format": "double"
+        },
+        "effective_length": {
+          "type": "number",
+          "format": "double"
+        },
+        "expected_count": {
+          "type": "number",
+          "format": "double"
+        },
+        "tpm": {
+          "type": "number",
+          "format": "double"
+        }
+      },
+      "required": [
+        "transcript_id",
+        "sample_id"
+      ]
+    },
+    "TranscriptData": {
+      "properties": {
+        "transcript_id": {
+          "type": "string"
+        },
+        "sample_abundance": {
+          "$ref": "#/definitions/Abundance"
+        },
+        "sample_rsem_isoform": {
+          "$ref": "#/definitions/RsemIsoform"
+        }
+      },
+      "required": [
+        "transcript_id"
+      ]
+    },
+    "RsemGene": {
+      "properties": {
+        "gene_id": {
+          "type": "string"
+        },
+        "sample_id": {
+          "type": "string"
+        },
+        "length": {
+          "type": "number",
+          "format": "double"
+        },
+        "effective_length": {
+          "type": "number",
+          "format": "double"
+        },
+        "expected_count": {
+          "type": "number",
+          "format": "double"
+        },
+        "tpm": {
+          "type": "number",
+          "format": "double"
+        },
+        "fpkm": {
+          "type": "number",
+          "format": "double"
+        }
+      },
+      "required": [
+        "gene_id",
+        "sample_id"
+      ]
+    },
+    "SampleData": {
+      "properties": {
+        "sample_id": {
+          "type": "string"
+        },
+        "rsem": {
+          "$ref": "#/definitions/RsemGene"
+        },
+        "transcripts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/TranscriptData"
+          }
+        }
+      },
+      "required": [
+        "sample_id"
+      ]
+    },
+    "GeneData": {
+      "properties": {
+        "gene_id": {
+          "type": "string"
+        },
+        "gene_symbol": {
+          "type": "string"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SampleData"
+          }
+        }
+      },
+      "required": [
+        "gene_id",
+        "gene_symbol",
+        "data"
+      ]
+    }
+  },
+  "info": {
+    "contact": {
+      "name": "Karthik Kalletla"
+    },
+    "description": "DiseaseXpress",
+    "title": "DiseaseXpress",
+    "version": "v1"
+  },
+  "swagger": "2.0",
+  "tags": [
+    {
+      "name": "samples"
+    },
+    {
+      "name": "data"
+    },
+    {
+      "name": "genes"
+    },
+    {
+      "name": "transcripts"
+    },
+    {
+      "name": "studies"
+    }
+  ]
+}
