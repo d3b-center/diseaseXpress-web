@@ -3,7 +3,7 @@
   "description": "",
   "author": "",
   "license": "",
-  "version":"1.0.0",
+  "version": "1.0.0",
   "scripts": {
     "start": "cross-env NODE_ENV=development webpack-dev-server  --hot --inline",
     "clean": "rimraf dist tsDist common-dist",
@@ -102,7 +102,8 @@
     "victory": "0.24.1",
     "webpack": "^3.10.0",
     "cross-env": "^3.1.4",
-    "copy-webpack-plugin": "^4.0.1"
+    "copy-webpack-plugin": "^4.0.1",
+    "better-react-spinkit": "^2.0.0-6"
   },
   "devDependencies": {
     "colors": "^1.1.2",

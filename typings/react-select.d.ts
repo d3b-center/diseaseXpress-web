@@ -120,6 +120,7 @@ declare module 'react-select'
 		valueKey?: string,           // path of the label value in option objects
 		valueRenderer?: (option:ReactSelectOption<T>, i:number) => React.ReactNode, // valueRenderer: function (option) {}
 		wrapperStyle?: object,       // optional style to apply to the component wrapper
+		closeOnSelect?:boolean
 	}
 
 	export interface ReactSelectCreatableProps<T> extends ReactSelectProps<T>

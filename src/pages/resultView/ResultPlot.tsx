@@ -12,17 +12,26 @@ const Select = require('react-select');
 import Plot from 'react-plotly.js';
 
 export interface IBoxContentProps {
-	queryParams: {
-		geneSymbols: string[],
+	queryParams:{
+		geneY: string,
+		geneX?: string,
 		studies: string[],
-		normalizations: Normalization[]
+		normalization: Normalization
 	}
+	handleParamsChange: (params:any) => void;
 	chartType:string;
 	data: {
         [sampleId: string]: {
             [id: string]: any;
         };
-    };
+	};
+	selections:{
+		tumorSubset?:string,
+		logScale?:boolean,
+		category?:string,
+		collapsedStudy?:string,
+		reference?:string
+	}
 }
 
 export const CORRELATION = [{
@@ -68,64 +77,82 @@ export const SAMPLE_SUBSET = [{
 export class ResultPlot extends React.Component<IBoxContentProps, {}> {
 
 
-	@observable gene1:string;
-	@observable gene2:string;
-	@observable studies:string[];
-	@observable normalization:Normalization;
+	private geneY:string;
+	private geneX?:string;
+	private studies:string[];
+	private normalization:Normalization;
 	
 
 	constructor(props: IBoxContentProps) {
 		super();
-		let genes = props.queryParams.geneSymbols;
-		if(genes.length==2){
-			this.gene1 = genes[0]
-			this.gene2 = genes[1]
-		} else{
-			this.gene1 = genes[0]
-		}
+		this.geneY = props.queryParams.geneY
+		this.geneX = props.queryParams.geneX
 		this.studies = props.queryParams.studies;
-		this.normalization = props.queryParams.normalizations[0]
+		this.normalization = props.queryParams.normalization
 
 		this.handleTumorSubsetChange = this.handleTumorSubsetChange.bind(this)
 		this.logScaleChange = this.logScaleChange.bind(this)
 		this.handleCollapseStudyChange = this.handleCollapseStudyChange.bind(this)
-		this.handlePivotChange = this.handlePivotChange.bind(this)
+		this.handleCategoryChange = this.handleCategoryChange.bind(this)
 		this.handleReferenceChange = this.handleReferenceChange.bind(this)
+
+		if (props.selections.tumorSubset) {
+			this.selectedTumorSubset = props.selections.tumorSubset;
+		}
+		if (!_.isUndefined(props.selections.logScale)) {
+			this.logScale = props.selections.logScale;
+		}
+		if (props.selections.category) {
+			this.selectedCategory = CATEGORIES.find(obj => obj.value == props.selections.category) || CATEGORIES[0];
+		}
+		if (props.selections.reference) {
+			this.selectedReference = props.selections.reference;
+		}
+		if (props.selections.collapsedStudy) {
+			this.selectedCollapsedStudy = props.selections.collapsedStudy;
+		}
+
 	}
 
 	@observable private logScale: boolean = false;	
 	@observable selectedCategory = CATEGORIES[0];
-	@observable selectedCollapsedStudy: string|null
+	@observable selectedCollapsedStudy: string|undefined
 	@observable selectedTumorSubset = SAMPLE_SUBSET[0].value
-	@observable selectedReference: string|null
+	@observable selectedReference: string|undefined
 
 	@observable selectedCorrelation = CORRELATION[0];
 
 
 	handleTumorSubsetChange(selectedOption: SelectOption) {
 		this.selectedTumorSubset = selectedOption.value;
+		this.props.handleParamsChange({tumorSubset:selectedOption.value})
 	}
 
 	logScaleChange(evt: any) {
 		this.logScale = !this.logScale;
+		this.props.handleParamsChange({logScale:this.logScale})
 	}
 
-	public handlePivotChange(selection: any){
+	public handleCategoryChange(selection: any){
 		this.selectedCategory = selection
+		this.props.handleParamsChange({category:this.selectedCategory.value})
 	}
 
 	handleCollapseStudyChange(selectedOption: SelectOption) {
 		if(selectedOption)
 			this.selectedCollapsedStudy = selectedOption.value;
 		else
-			this.selectedCollapsedStudy = null
+			this.selectedCollapsedStudy = undefined
+		this.props.handleParamsChange({collapsedStudy:this.selectedCollapsedStudy})
 	}
 
 	handleReferenceChange(selectedOption: SelectOption) {
 		if(selectedOption)
 			this.selectedReference = selectedOption.value;
 		else
-			this.selectedReference = null
+			this.selectedReference = undefined
+
+		this.props.handleParamsChange({reference:this.selectedReference})
 	}
 
 
@@ -157,9 +184,9 @@ export class ResultPlot extends React.Component<IBoxContentProps, {}> {
 	@computed get stageData_2() {
 		return this.stageData_1.map(obj => {
 			let toReturn = $.extend({},obj)
-			toReturn.y = this.logScale ? Math.log2(obj[this.gene1] + 1) : obj[this.gene1];
-			if(this.props.chartType===ChartType.SCATTER){
-				toReturn.x = this.logScale ? Math.log2(obj[this.gene2] + 1) : obj[this.gene2];
+			toReturn.y = this.logScale ? Math.log2(obj[this.geneY] + 1) : obj[this.geneY];
+			if(this.props.chartType===ChartType.SCATTER && this.geneX){
+				toReturn.x = this.logScale ? Math.log2(obj[this.geneX] + 1) : obj[this.geneX];
 			}
 			return toReturn;
 		})
@@ -346,7 +373,7 @@ export class ResultPlot extends React.Component<IBoxContentProps, {}> {
 						{
 							this.categories.map((option, i) => {
 								return <Radio 	checked={option.value === this.selectedCategory.value}
-												onChange={(event) => this.selectedCategory = option }
+												onChange={(event)=>this.handleCategoryChange(option) }
 												inline
 												key={i}>{option.label}</Radio>
 							})
@@ -423,7 +450,7 @@ export class ResultPlot extends React.Component<IBoxContentProps, {}> {
 		let xTitle = this.selectedCategory.label
 
 		if(this.props.chartType === ChartType.SCATTER){
-			xTitle =`${this.gene2}, ${this.normalization.label}${this.logScale ? '(Log2)' : ''}`;
+			xTitle =`${this.geneX}, ${this.normalization.label}${this.logScale ? '(Log2)' : ''}`;
 		}
 		var layout = {
 			//title: `${this.props.gene1} ${this.props.normalization.label}${this.logScale ? '(Log2)' : '' } vs ${this.selectedCategory.label}`,
@@ -432,7 +459,7 @@ export class ResultPlot extends React.Component<IBoxContentProps, {}> {
 				title: xTitle
 			},
 			yaxis: {
-				title: `${this.gene1}, ${this.normalization.label}${this.logScale ? '(Log2)' : ''}`
+				title: `${this.geneY}, ${this.normalization.label}${this.logScale ? '(Log2)' : ''}`
 			},
 			autosize:true
 		};

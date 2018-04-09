@@ -32,28 +32,41 @@ export class QueryStore {
 
 	@observable chartType:ChartType = ChartType.BOX;
 
+	@observable isValidated = false;
+
 	@observable parameters: {
-		geneSymbols: string[],
+		geneY: string,
+		geneX?: string,
 		studies: string[],
-		normalizations: Normalization[]
-	}
+		normalization: Normalization
+	} = {} as any
 	previousLoadedKey: string
 
 	@action handleSubmit(queryParams: {
-		geneSymbols: string[],
+		geneY: string,
+		geneX?: string,
 		studies: string[],
-		normalizations: Normalization[]
+		normalization: Normalization
 	}) {
+		this.isValidated = true
 		this.parameters = queryParams;
 	}
 
 	readonly geneRemoteData = remoteData({
 		invoke: () => {
-			if (this.parameters) {
+			if (this.isValidated &&
+				this.parameters &&
+				this.parameters.geneY &&
+				this.parameters.normalization &&
+				this.parameters.studies) {
+				let geneSymbols = [this.parameters.geneY]
+				if(this.parameters.geneX){
+					geneSymbols.push(this.parameters.geneX)
+				}
 				let data = {
-					geneSymbols: this.parameters.geneSymbols.join(','),
+					geneSymbols: geneSymbols.join(','),
 					studies: this.parameters.studies.join(','),
-					normalizations: this.parameters.normalizations.map(obj => obj.value)
+					normalizations: [this.parameters.normalization.value]
 				}
 				return client.getDataByGeneSymbolsAndStudiesAndNormalizations(data)
 			}

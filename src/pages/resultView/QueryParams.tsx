@@ -3,49 +3,64 @@ import { observer } from "mobx-react";
 import styles from './styles.module.scss';
 import ReactSelect from 'react-select';
 import { QueryStore, ChartType, NORMALIZATIONS, SelectOption, NormalizationType, Normalization } from './QueryStore';
-import { observable, computed } from 'mobx';
+import { observable, computed, action } from 'mobx';
 import { debounceAsync } from 'mobxpromise';
 const Select = require('react-select');
 import * as _ from 'lodash';
 
 export interface IQueryParamsProps {
 	store: QueryStore;
+	handleParamsChange: (params:any) => void;
 }
 
 @observer
 export class QueryParams extends React.Component<IQueryParamsProps, {}> {
 	@observable selectedStudies: string[] = []
 	@observable selectedNormalization = NORMALIZATIONS[0]
-	@observable selectedGeneSymbol1: SelectOption
-	@observable selectedGeneSymbol2: SelectOption
+	@observable geneY: SelectOption
+	@observable geneX: SelectOption
 
 	constructor(props: IQueryParamsProps) {
-		super();
+		super(props);
 		this.handleStudiesChange = this.handleStudiesChange.bind(this);
 		this.handleSubmit = this.handleSubmit.bind(this);
+
+		if(props.store.parameters.geneY){
+			this.geneY = { value: props.store.parameters.geneY, label: props.store.parameters.geneY } 
+		}
+
+		if(props.store.parameters.geneX){
+			this.geneX = { value: props.store.parameters.geneX, label: props.store.parameters.geneX } 
+		}
+
+		if(props.store.parameters.studies){
+			this.selectedStudies = props.store.parameters.studies
+		}
+
+		if(props.store.parameters.normalization){
+			this.selectedNormalization = NORMALIZATIONS.find(obj => obj.value == props.store.parameters.normalization.value) ||  NORMALIZATIONS[0]
+		}
+		this.handleSubmit(false)
 	}
 
-	@observable queryParams: {
-		geneSymbols: string[],
+	@observable selectedParams: {
+		geneY: string,
+		geneX?: string,
 		studies: string[],
-		normalizations: Normalization[]
+		normalization: Normalization
 	}
 
 	@computed get submitEnabled() {
 		let validGeneSymbols = false;
-		let geneSymbols: string[] = []
 
-		if (this.selectedGeneSymbol1) {
+		if (this.geneY) {
 			validGeneSymbols = true;
-			geneSymbols.push(this.selectedGeneSymbol1.value);
 		}
 
-		if (validGeneSymbols && this.props.store.chartType === ChartType.SCATTER) {
-			if (this.selectedGeneSymbol2) {
-				geneSymbols.push(this.selectedGeneSymbol2.value);
-			} else {
+		if (validGeneSymbols &&
+			this.props.store.chartType === ChartType.SCATTER &&
+			!this.geneX) {
 				validGeneSymbols = false;
-			}
 		}
 
 		return (validGeneSymbols &&
@@ -53,28 +68,37 @@ export class QueryParams extends React.Component<IQueryParamsProps, {}> {
 			this.selectedStudies.length > 0 &&
 			this.selectedNormalization &&
 			(JSON.stringify({
-				geneSymbols: geneSymbols,
+				geneY: this.geneY.value,
+				geneX: this.props.store.chartType === ChartType.SCATTER ? this.geneX.value : undefined,
 				studies: this.selectedStudies,
-				normalizations: [this.selectedNormalization]
-			}) !== JSON.stringify(this.queryParams)));
+				normalization: this.selectedNormalization
+			}) !== JSON.stringify(this.selectedParams)));
 	}
 
 	private handleStudiesChange(selectedOption: any) {
 		this.selectedStudies = _.map(selectedOption as SelectOption[], obj => obj.value);
+		
 	}
 
-	private handleSubmit() {
+	@action private handleSubmit(updateRoute:boolean=true) {
 		if(this.submitEnabled){
-			let geneSymbols = this.props.store.chartType === ChartType.SCATTER ? [this.selectedGeneSymbol1.value,this.selectedGeneSymbol2.value]:[this.selectedGeneSymbol1.value];
-			let filters = {
-				geneSymbols: geneSymbols,
+			if(updateRoute){
+				this.props.handleParamsChange({
+					geneY: this.geneY.value,
+					geneX: this.props.store.chartType === ChartType.SCATTER ? this.geneX.value : undefined,
+					studies: this.selectedStudies.join(','),
+					normalization: this.selectedNormalization.value,
+					tumorSubset:undefined
+				})
+			}
+			this.selectedParams = {
+				geneY: this.geneY.value,
+				geneX: this.props.store.chartType === ChartType.SCATTER ? this.geneX.value : undefined,
 				studies: this.selectedStudies,
-				normalizations: [this.selectedNormalization]
-			};
-			this.queryParams = filters;
-			this.props.store.handleSubmit(this.queryParams);
+				normalization: this.selectedNormalization
+			}
+			this.props.store.handleSubmit(this.selectedParams);
 		}
-
 	}
 
 	private invokeGenesLater = debounceAsync(
@@ -105,13 +129,15 @@ export class QueryParams extends React.Component<IQueryParamsProps, {}> {
 					<div>
 						<Select.Async
 							className={styles.Select}
-							value={this.selectedGeneSymbol1}
-							onChange={(obj: SelectOption) => { this.selectedGeneSymbol1 = obj }}
+							value={this.geneY}
+							onChange={(obj: SelectOption) => this.geneY = obj }
 							loadOptions={this.invokeGenesLater}
 							cache={false}
+							valueKey={'value'}
 						/>
 					</div>
 				</div>
+				
 			}
 			{this.props.store.chartType === ChartType.SCATTER &&
 				<div>
@@ -120,8 +146,8 @@ export class QueryParams extends React.Component<IQueryParamsProps, {}> {
 						<div>
 							<Select.Async
 								className={styles.Select}
-								value={this.selectedGeneSymbol1}
-								onChange={(obj: SelectOption) => { this.selectedGeneSymbol1 = obj }}
+								value={this.geneY}
+								onChange={(obj: SelectOption) => { this.geneY = obj }}
 								loadOptions={this.invokeGenesLater}
 								cache={false}
 							/>
@@ -132,8 +158,8 @@ export class QueryParams extends React.Component<IQueryParamsProps, {}> {
 						<div>
 							<Select.Async
 								className={styles.Select}
-								value={this.selectedGeneSymbol2}
-								onChange={(obj: SelectOption) => { this.selectedGeneSymbol2 = obj }}
+								value={this.geneX}
+								onChange={(obj: SelectOption) => { this.geneX = obj }}
 								loadOptions={this.invokeGenesLater}
 								cache={false}
 							/>
@@ -151,6 +177,7 @@ export class QueryParams extends React.Component<IQueryParamsProps, {}> {
 						multi
 						options={this.props.store.studiesOption}
 						placeholder="Select Studies"
+						closeOnSelect={false}
 						onChange={this.handleStudiesChange} />
 				</div>
 			</div>
@@ -169,7 +196,7 @@ export class QueryParams extends React.Component<IQueryParamsProps, {}> {
 			</div>
 
 			<div className={styles.flexRow}>
-				<button onClick={this.handleSubmit}
+				<button onClick={(event:any) => {this.handleSubmit()}}
 					className='btn btn-primary'
 					disabled={!this.submitEnabled} >
 					Submit

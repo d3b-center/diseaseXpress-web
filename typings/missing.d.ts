@@ -6,3 +6,4 @@ declare module '*.json';
 declare module 'victory';
 declare module 'jStat';
 declare module 'react-plotly.js';
+declare module 'better-react-spinkit';
