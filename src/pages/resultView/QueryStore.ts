@@ -94,7 +94,7 @@ export class QueryStore {
 							sampleData['definition'] &&
 							sampleData['definition'] !== "Solid Tissue Normal" &&
 							sampleObj.rsem &&
-							sampleObj.rsem.fpkm) {
+							!_.isUndefined(sampleObj.rsem.fpkm)) {
 							sampleData[obj.gene_symbol] = sampleObj.rsem.fpkm;
 							samplesDataSet[sampleObj.sample_id] = sampleData
 						}
