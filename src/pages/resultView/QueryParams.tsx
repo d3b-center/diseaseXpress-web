@@ -26,11 +26,23 @@ export class QueryParams extends React.Component<IQueryParamsProps, {}> {
 		this.handleSubmit = this.handleSubmit.bind(this);
 
 		if(props.store.parameters.geneY){
-			this.geneY = { value: props.store.parameters.geneY, label: props.store.parameters.geneY } 
+			let input = props.store.parameters.geneY.toUpperCase();
+			for (let geneSymbol of this.props.store.globalStores.genes) {
+				if (geneSymbol.toUpperCase() === input) {
+					this.geneY = { value: input, label: input };
+					break;
+				}
+			}
 		}
 
 		if(props.store.parameters.geneX){
-			this.geneX = { value: props.store.parameters.geneX, label: props.store.parameters.geneX } 
+			let input = props.store.parameters.geneX.toUpperCase();
+			for (let geneSymbol of this.props.store.globalStores.genes) {
+				if (geneSymbol.toUpperCase() === input) {
+					this.geneX = { value: input, label: input };
+					break;
+				}
+			}
 		}
 
 		if(props.store.parameters.studies){

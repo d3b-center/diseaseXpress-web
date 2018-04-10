@@ -74,27 +74,30 @@ export default class BoxPlotView extends React.Component<IResultsPageProps, {}> 
   render() {
     return (
       <div className={styles.ContentWidth}>
-				<div className={styles.ColumnOne}>
+			<div className={styles.ColumnOne}>
+				{
+					this.store.globalStores.geneSymbols.isComplete &&
+					this.store.globalStores.studies.isComplete &&
 					<QueryParams store={this.store} handleParamsChange={this.handleParamsChange}/>
-				</div>
+				}
+			</div>
 
-				<div className={styles.ColumnTwo}>
-					{
-						this.store.geneData.isComplete && 
-						!_.isEmpty(this.store.geneData.result) &&
-						<ResultPlot
-								queryParams={this.store.parameters}
-								chartType ={this.store.chartType}
-								data={this.store.geneData.result}
-								handleParamsChange={this.handleParamsChange}
-								selections={this.selections}/> 
-					}
-					{
-							(this.store.geneData.isPending) && (
-									<ThreeBounce className="center-block text-center" />
-							)
-					}
-				</div>
+			<div className={styles.ColumnTwo}>
+				{
+					this.store.geneData.isComplete && 
+					!_.isEmpty(this.store.geneData.result) &&
+					<ResultPlot
+							queryParams={this.store.parameters}
+							chartType ={this.store.chartType}
+							data={this.store.geneData.result}
+							handleParamsChange={this.handleParamsChange}
+							selections={this.selections}/> 
+				}
+				{
+					(this.store.geneData.isPending) &&
+					(<ThreeBounce className="center-block text-center" />)
+				}
+			</div>
       </div>
     )
   }

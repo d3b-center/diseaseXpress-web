@@ -26,7 +26,8 @@ export default class ScatterPlotView extends React.Component<IScatterPlotViewPro
 		logScale?:boolean,
 		category?:string,
 		reference?:string,
-		collapsedStudy?:string
+		collapsedStudy?:string,
+		correlation?:string
 	} = {}
 	constructor(props:IScatterPlotViewProps) {
 		super();
@@ -64,6 +65,9 @@ export default class ScatterPlotView extends React.Component<IScatterPlotViewPro
 			if ('collapsedStudy' in query) {
 				this.selections.collapsedStudy = query.collapsedStudy;
 			}
+			if ('correlation' in query) {
+				this.selections.correlation = query.correlation;
+			}
 		}
 	}
 
@@ -76,7 +80,11 @@ export default class ScatterPlotView extends React.Component<IScatterPlotViewPro
     return (
       <div className={styles.ContentWidth}>
 				<div className={styles.ColumnOne}>
-					<QueryParams store={this.store} handleParamsChange={this.handleParamsChange}/>
+					{
+						this.store.globalStores.geneSymbols.isComplete &&
+						this.store.globalStores.studies.isComplete &&
+						<QueryParams store={this.store} handleParamsChange={this.handleParamsChange}/>
+					}
 				</div>
 				<div className={styles.ColumnTwo}>
 					{

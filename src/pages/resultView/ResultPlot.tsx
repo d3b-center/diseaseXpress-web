@@ -10,6 +10,8 @@ import { ButtonGroup, Radio } from 'react-bootstrap';
 import { COLORS } from 'shared/components/global/GlobalStores';
 const Select = require('react-select');
 import Plot from 'react-plotly.js';
+import ReactTable from 'react-table'
+import 'react-table/react-table.css'
 
 export interface IBoxContentProps {
 	queryParams:{
@@ -30,7 +32,8 @@ export interface IBoxContentProps {
 		logScale?:boolean,
 		category?:string,
 		collapsedStudy?:string,
-		reference?:string
+		reference?:string,
+		correlation?:string
 	}
 }
 
@@ -112,6 +115,10 @@ export class ResultPlot extends React.Component<IBoxContentProps, {}> {
 			this.selectedCollapsedStudy = props.selections.collapsedStudy;
 		}
 
+		if (props.selections.correlation) {
+			this.selectedCorrelation =CORRELATION.find(obj => obj.value == props.selections.correlation) || CORRELATION[0];
+		}
+
 	}
 
 	@observable private logScale: boolean = false;	
@@ -133,9 +140,14 @@ export class ResultPlot extends React.Component<IBoxContentProps, {}> {
 		this.props.handleParamsChange({logScale:this.logScale})
 	}
 
-	public handleCategoryChange(selection: any){
+	private handleCategoryChange(selection: any){
 		this.selectedCategory = selection
 		this.props.handleParamsChange({category:this.selectedCategory.value})
+	}
+
+	private handleCorrelationChange(selection: any){
+		this.selectedCorrelation = selection
+		this.props.handleParamsChange({correlation:this.selectedCorrelation.value})
 	}
 
 	handleCollapseStudyChange(selectedOption: SelectOption) {
@@ -242,11 +254,11 @@ export class ResultPlot extends React.Component<IBoxContentProps, {}> {
 		for (let category in categorizedData) {
 			let ySeries = _.map(categorizedData[category], obj => obj['y'] as number)
 			let studyId = categorizedData[category][0]['study_id']
-			let name = this.selectedCategory.showCollapseContorl && this.props.chartType===ChartType.BOX ? studyId : category
-			let showlegend = legends[name]?false:true;
+			let legendgroup = this.selectedCategory.showCollapseContorl && this.props.chartType===ChartType.BOX ? studyId : category
+			let showlegend = legends[legendgroup]?false:true;
 
 			if(showlegend){
-				legends[name]=COLORS[count]
+				legends[legendgroup]=COLORS[count]
 				count = count+1;
 				if(count === COLORS.length) count=0;
 			}
@@ -265,12 +277,12 @@ export class ResultPlot extends React.Component<IBoxContentProps, {}> {
 				y: ySeries,
 				x:xSeries,
 				median: median,
-				name: name,
+				name: legendgroup,
 				category:category,
 				marker:{
-					color: legends[name]
+					color: legends[legendgroup]
 				},
-				legendgroup: studyId, 
+				legendgroup: legendgroup, 
 				type: this.props.chartType===ChartType.SCATTER ? 'scattergl' : 'box',
 				boxpoints: 'Outliers',
 				mode: 'markers',
@@ -304,6 +316,34 @@ export class ResultPlot extends React.Component<IBoxContentProps, {}> {
 			}
 			return  [...result, ...filteredData.sort((a,b) => a.median-b.median)];
 		}
+	}
+
+	@computed get correlationTableData() {
+		let data = this.stageData_5;
+		if (this.props.chartType === ChartType.SCATTER) {
+			return data.map(obj => {
+				let correlation: number;
+				let pValue: number = 0;
+				let fpValue: number = 0;
+				if (this.selectedCorrelation.value == "spearman") {
+					correlation = jStat.spearmancoeff(obj.x, obj.y);
+				} else {
+					correlation = jStat.corrcoeff(obj.x, obj.y);
+				}
+				let N = obj.x.length;
+				let t = correlation * (Math.sqrt((N - 2) / (1 - (correlation * correlation))));
+				pValue = jStat.ttest(t, N);
+
+				return {
+						name: obj.name,
+						correlation: correlation.toFixed(4) as any,
+						pValue: pValue.toExponential(4) as any
+					};
+			})
+		} else {
+			return [];
+		}
+
 	}
 
 	@computed get collapsedStudies() {
@@ -427,7 +467,8 @@ export class ResultPlot extends React.Component<IBoxContentProps, {}> {
 									CORRELATION.map((option, i) => {
 										return <Radio
 											checked={option.value === this.selectedCorrelation.value}
-											onChange={(event) => this.selectedCorrelation = option }
+											onChange={(event)=>this.handleCorrelationChange(option) }
+											//onChange={(event) => this.selectedCorrelation = option }
 											inline
 											key={i}
 										>{option.label}</Radio>
@@ -438,14 +479,25 @@ export class ResultPlot extends React.Component<IBoxContentProps, {}> {
 					</div>
 
 				}
-				
-					
 			</div>
 		)
 	}
 	
 	render()
 	{
+		  const columns = [{
+			Header: this.normalization.label,
+			accessor: 'name',
+			filterMethod: (filter:any, row:any) =>
+                    row[filter.id].toLowerCase().includes(filter.value.toLowerCase()),
+			filterable: true
+		  }, {
+			Header: 'Correlation',
+			accessor: 'correlation'
+		  }, {
+			Header: 'P-value',
+			accessor: 'pValue'
+		  }]
 		let data = this.stageData_5
 		let xTitle = this.selectedCategory.label
 
@@ -468,11 +520,22 @@ export class ResultPlot extends React.Component<IBoxContentProps, {}> {
 			return (
 				<div>
 					{ this.controls() }
-					<Plot className={styles.boxPlot}
-								data={data}
-								layout={layout}
-								useResizeHandler={true} />
-					</div>
+					<Plot
+					    className={styles.boxPlot}
+						data={data}
+						layout={layout}
+						useResizeHandler={true} />
+					{
+						(this.props.chartType === ChartType.SCATTER) &&
+						<ReactTable
+							data={this.correlationTableData}
+							columns={columns}
+							defaultPageSize={5}
+							minRows={0}
+							className={styles.table}
+							defaultSorted={[ { id: "name" } ]} />
+					}
+				</div>
 			)
 		}
 		return (<div></div>)
