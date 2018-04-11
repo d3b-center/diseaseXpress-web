@@ -72,7 +72,7 @@ var config = {
     devtool: "source-map",
 
     plugins: [
-        new HtmlWebpackPlugin({cache: false, template: 'index.html'}),
+        new HtmlWebpackPlugin({cache: false, template: 'index.html', favicon: 'favicon.png', title: 'DiseaseXpress'}),
         new webpack.ProvidePlugin({
             $: "jquery",
             jQuery: "jquery"
@@ -274,7 +274,7 @@ if (isDev || isTest) {
 
     // force hot module reloader to hit absolute path so it can load
     // from dev server
-    config.output.publicPath = '//localhost:4000/';
+    //config.output.publicPath = '//localhost:4000/';
 
 } else {
 

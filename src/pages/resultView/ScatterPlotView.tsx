@@ -9,6 +9,7 @@ import { GlobalStores } from 'shared/components/global/GlobalStores';
 import { ResultPlot } from './ResultPlot';
 import { QueryParams } from './QueryParams';
 import {ThreeBounce} from 'better-react-spinkit';
+import ReactGA from 'react-ga';
 
 export interface IScatterPlotViewProps {
 	routing: any;
@@ -31,6 +32,8 @@ export default class ScatterPlotView extends React.Component<IScatterPlotViewPro
 	} = {}
 	constructor(props:IScatterPlotViewProps) {
 		super();
+		(window as any).document.title = "DiseaseXpress::Scatter plot"
+		ReactGA.pageview(window.location.hash)
 		this.store = new QueryStore();
 		this.store.chartType = ChartType.SCATTER;
 		this.store.globalStores = props.globalStores;

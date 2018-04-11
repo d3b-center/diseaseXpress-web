@@ -4,6 +4,7 @@ import { VictoryPie, VictoryContainer, VictoryTooltip, VictoryLabel } from 'vict
 import { observer } from "mobx-react";
 import { computed, observable } from 'mobx';
 import { TumorPlot } from './TumorPlot';
+import ReactGA from 'react-ga';
 
 import styles from './styles.module.scss';
 
@@ -18,6 +19,8 @@ export default class DashboardPage extends React.Component<IDashboardPageProps, 
   constructor() {
     super();
     this.store = new DashboardPageStore();
+    (window as any).document.title = "DiseaseXpress::Home"
+    ReactGA.pageview(window.location.hash)
   }
 
 

@@ -9,6 +9,7 @@ import { GlobalStores } from 'shared/components/global/GlobalStores';
 import { ResultPlot } from './ResultPlot';
 import { QueryParams } from './QueryParams';
 import {ThreeBounce} from 'better-react-spinkit';
+import ReactGA from 'react-ga';
 
 export interface IResultsPageProps {
 	routing: any;
@@ -31,6 +32,8 @@ export default class BoxPlotView extends React.Component<IResultsPageProps, {}> 
 	} = {}
 	constructor(props:IResultsPageProps) {
 		super();
+		(window as any).document.title = "DiseaseXpress::Box plot"
+		ReactGA.pageview(window.location.hash)
 		this.store = new QueryStore();
 		this.store.chartType = ChartType.BOX;
 		this.store.globalStores = props.globalStores;
