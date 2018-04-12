@@ -16,3 +16,12 @@
 .ChartHeader {
   text-align: center;
 }
+
+.donut{
+  .raphael-group-3-creditgroup{
+    display: none;
+  }
+  g[class*='-creditgroup'] {
+    display: none;
+  }
+}

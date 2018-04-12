@@ -11,6 +11,13 @@ export type TumorData = {
     y: number;
     fill?:string;
 }
+export type  category = {
+    label: string;
+    color: string;
+    value: number;
+    category?: category[];
+    valueFontColor?:string
+}
 
 export type DashBoardBarData = TumorData
 
@@ -20,6 +27,50 @@ export class DashboardPageStore {
 
     @computed get studyMap() {
         return this.samples.result;
+    }
+
+    @computed get pieData(): category[]{
+        let data = this.samples.result
+        let totalSamplesCount = data.length
+        
+        let result:category[] = [];
+        let i = -1
+
+        let studies = _.groupBy(data,obj=>obj['study_id'])
+
+        let categories:category[] = Object.keys(studies).map(studyId => {
+            i = i+1
+            let samples = studies[studyId];
+            let studySamplesCount = samples.length
+            let subsets = _.groupBy(samples, sample => sample['disease']||sample['tissue'])
+            let color = COLORS[i]
+            let categories: category[] = [] as any
+            if((studySamplesCount/totalSamplesCount)*100>1){
+                 categories = Object.keys(subsets).map(subsetType => {
+                    return {
+                        label: subsetType,
+                        color: color,
+                        value: subsets[subsetType].length,
+                        valueFontColor:"#CCCCCC",
+                    } as category;
+                });
+            }
+            
+            return {
+                label: studyId,
+                color: color,
+                value: samples.length,
+                category:categories
+            } as category;
+
+        });
+
+        return [{
+            label: "Total Samples",
+            color: "#ffffff",
+            value: data.length,
+            category:categories
+        }] as category[]
     }
 
     @computed get tumorData() {
