@@ -17,6 +17,8 @@
 .project
 .settings
 .vscode
+dist/
+common-dist/
 
 npm-debug.log*
 yarn-debug.log*

@@ -11,8 +11,19 @@
 }
 .ColumnTwo {
   width: 60%;
+  text {
+    user-select: none;
+  }
 }
 
 .ChartHeader {
   text-align: center;
+}
+
+.tipStyle{
+  display: flex;
+  color: #fff;
+  background: #000;
+  align-items: center;
+  padding: 5px;
 }

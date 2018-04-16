@@ -9,20 +9,32 @@ import ReactSelect from 'react-select';
 import { ButtonGroup, Radio } from 'react-bootstrap';
 import { COLORS } from 'shared/components/global/GlobalStores';
 const Select = require('react-select');
-const Plot = require('react-plotly.js');
+import Plot from 'react-plotly.js';
+import ReactTable from 'react-table'
+import 'react-table/react-table.css'
 
 export interface IBoxContentProps {
-	queryParams: {
-		geneSymbols: string[],
+	queryParams:{
+		geneY: string,
+		geneX?: string,
 		studies: string[],
-		normalizations: Normalization[]
+		normalization: Normalization
 	}
+	handleParamsChange: (params:any) => void;
 	chartType:string;
 	data: {
         [sampleId: string]: {
             [id: string]: any;
         };
-    };
+	};
+	selections:{
+		tumorSubset?:string,
+		logScale?:boolean,
+		category?:string,
+		collapsedStudy?:string,
+		reference?:string,
+		correlation?:string
+	}
 }
 
 export const CORRELATION = [{
@@ -68,64 +80,91 @@ export const SAMPLE_SUBSET = [{
 export class ResultPlot extends React.Component<IBoxContentProps, {}> {
 
 
-	@observable gene1:string;
-	@observable gene2:string;
-	@observable studies:string[];
-	@observable normalization:Normalization;
+	private geneY:string;
+	private geneX?:string;
+	private studies:string[];
+	private normalization:Normalization;
 	
 
 	constructor(props: IBoxContentProps) {
 		super();
-		let genes = props.queryParams.geneSymbols;
-		if(genes.length==2){
-			this.gene1 = genes[0]
-			this.gene2 = genes[1]
-		} else{
-			this.gene1 = genes[0]
-		}
+		this.geneY = props.queryParams.geneY
+		this.geneX = props.queryParams.geneX
 		this.studies = props.queryParams.studies;
-		this.normalization = props.queryParams.normalizations[0]
+		this.normalization = props.queryParams.normalization
 
 		this.handleTumorSubsetChange = this.handleTumorSubsetChange.bind(this)
 		this.logScaleChange = this.logScaleChange.bind(this)
 		this.handleCollapseStudyChange = this.handleCollapseStudyChange.bind(this)
-		this.handlePivotChange = this.handlePivotChange.bind(this)
+		this.handleCategoryChange = this.handleCategoryChange.bind(this)
 		this.handleReferenceChange = this.handleReferenceChange.bind(this)
+
+		if (props.selections.tumorSubset) {
+			this.selectedTumorSubset = props.selections.tumorSubset;
+		}
+		if (!_.isUndefined(props.selections.logScale)) {
+			this.logScale = props.selections.logScale;
+		}
+		if (props.selections.category) {
+			this.selectedCategory = CATEGORIES.find(obj => obj.value == props.selections.category) || CATEGORIES[0];
+		}
+		if (props.selections.reference) {
+			this.selectedReference = props.selections.reference;
+		}
+		if (props.selections.collapsedStudy) {
+			this.selectedCollapsedStudy = props.selections.collapsedStudy;
+		}
+
+		if (props.selections.correlation) {
+			this.selectedCorrelation =CORRELATION.find(obj => obj.value == props.selections.correlation) || CORRELATION[0];
+		}
+
 	}
 
 	@observable private logScale: boolean = false;	
 	@observable selectedCategory = CATEGORIES[0];
-	@observable selectedCollapsedStudy: string|null
+	@observable selectedCollapsedStudy: string|undefined
 	@observable selectedTumorSubset = SAMPLE_SUBSET[0].value
-	@observable selectedReference: string|null
+	@observable selectedReference: string|undefined
 
 	@observable selectedCorrelation = CORRELATION[0];
 
 
 	handleTumorSubsetChange(selectedOption: SelectOption) {
 		this.selectedTumorSubset = selectedOption.value;
+		this.props.handleParamsChange({tumorSubset:selectedOption.value})
 	}
 
 	logScaleChange(evt: any) {
 		this.logScale = !this.logScale;
+		this.props.handleParamsChange({logScale:this.logScale})
 	}
 
-	public handlePivotChange(selection: any){
+	private handleCategoryChange(selection: any){
 		this.selectedCategory = selection
+		this.props.handleParamsChange({category:this.selectedCategory.value})
+	}
+
+	private handleCorrelationChange(selection: any){
+		this.selectedCorrelation = selection
+		this.props.handleParamsChange({correlation:this.selectedCorrelation.value})
 	}
 
 	handleCollapseStudyChange(selectedOption: SelectOption) {
 		if(selectedOption)
 			this.selectedCollapsedStudy = selectedOption.value;
 		else
-			this.selectedCollapsedStudy = null
+			this.selectedCollapsedStudy = undefined
+		this.props.handleParamsChange({collapsedStudy:this.selectedCollapsedStudy})
 	}
 
 	handleReferenceChange(selectedOption: SelectOption) {
 		if(selectedOption)
 			this.selectedReference = selectedOption.value;
 		else
-			this.selectedReference = null
+			this.selectedReference = undefined
+
+		this.props.handleParamsChange({reference:this.selectedReference})
 	}
 
 
@@ -157,9 +196,9 @@ export class ResultPlot extends React.Component<IBoxContentProps, {}> {
 	@computed get stageData_2() {
 		return this.stageData_1.map(obj => {
 			let toReturn = $.extend({},obj)
-			toReturn.y = this.logScale ? Math.log2(obj[this.gene1] + 1) : obj[this.gene1];
-			if(this.props.chartType===ChartType.SCATTER){
-				toReturn.x = this.logScale ? Math.log2(obj[this.gene2] + 1) : obj[this.gene2];
+			toReturn.y = this.logScale ? Math.log2(obj[this.geneY] + 1) : obj[this.geneY];
+			if(this.props.chartType===ChartType.SCATTER && this.geneX){
+				toReturn.x = this.logScale ? Math.log2(obj[this.geneX] + 1) : obj[this.geneX];
 			}
 			return toReturn;
 		})
@@ -215,11 +254,11 @@ export class ResultPlot extends React.Component<IBoxContentProps, {}> {
 		for (let category in categorizedData) {
 			let ySeries = _.map(categorizedData[category], obj => obj['y'] as number)
 			let studyId = categorizedData[category][0]['study_id']
-			let name = this.selectedCategory.showCollapseContorl && this.props.chartType===ChartType.BOX ? studyId : category
-			let showlegend = legends[name]?false:true;
+			let legendgroup = this.selectedCategory.showCollapseContorl && this.props.chartType===ChartType.BOX ? studyId : category
+			let showlegend = legends[legendgroup]?false:true;
 
 			if(showlegend){
-				legends[name]=COLORS[count]
+				legends[legendgroup]=COLORS[count]
 				count = count+1;
 				if(count === COLORS.length) count=0;
 			}
@@ -238,12 +277,12 @@ export class ResultPlot extends React.Component<IBoxContentProps, {}> {
 				y: ySeries,
 				x:xSeries,
 				median: median,
-				name: name,
+				name: legendgroup,
 				category:category,
 				marker:{
-					color: legends[name]
+					color: legends[legendgroup]
 				},
-				legendgroup: studyId, 
+				legendgroup: legendgroup, 
 				type: this.props.chartType===ChartType.SCATTER ? 'scattergl' : 'box',
 				boxpoints: 'Outliers',
 				mode: 'markers',
@@ -277,6 +316,34 @@ export class ResultPlot extends React.Component<IBoxContentProps, {}> {
 			}
 			return  [...result, ...filteredData.sort((a,b) => a.median-b.median)];
 		}
+	}
+
+	@computed get correlationTableData() {
+		let data = this.stageData_5;
+		if (this.props.chartType === ChartType.SCATTER) {
+			return data.map(obj => {
+				let correlation: number;
+				let pValue: number = 0;
+				let fpValue: number = 0;
+				if (this.selectedCorrelation.value == "spearman") {
+					correlation = jStat.spearmancoeff(obj.x, obj.y);
+				} else {
+					correlation = jStat.corrcoeff(obj.x, obj.y);
+				}
+				let N = obj.x.length;
+				let t = correlation * (Math.sqrt((N - 2) / (1 - (correlation * correlation))));
+				pValue = jStat.ttest(t, N);
+
+				return {
+						name: obj.name,
+						correlation: correlation.toFixed(4) as any,
+						pValue: pValue.toExponential(4) as any
+					};
+			})
+		} else {
+			return [];
+		}
+
 	}
 
 	@computed get collapsedStudies() {
@@ -346,7 +413,7 @@ export class ResultPlot extends React.Component<IBoxContentProps, {}> {
 						{
 							this.categories.map((option, i) => {
 								return <Radio 	checked={option.value === this.selectedCategory.value}
-												onChange={(event) => this.selectedCategory = option }
+												onChange={(event)=>this.handleCategoryChange(option) }
 												inline
 												key={i}>{option.label}</Radio>
 							})
@@ -400,7 +467,8 @@ export class ResultPlot extends React.Component<IBoxContentProps, {}> {
 									CORRELATION.map((option, i) => {
 										return <Radio
 											checked={option.value === this.selectedCorrelation.value}
-											onChange={(event) => this.selectedCorrelation = option }
+											onChange={(event)=>this.handleCorrelationChange(option) }
+											//onChange={(event) => this.selectedCorrelation = option }
 											inline
 											key={i}
 										>{option.label}</Radio>
@@ -411,19 +479,30 @@ export class ResultPlot extends React.Component<IBoxContentProps, {}> {
 					</div>
 
 				}
-				
-					
 			</div>
 		)
 	}
 	
 	render()
 	{
+		  const columns = [{
+			Header: this.normalization.label,
+			accessor: 'name',
+			filterMethod: (filter:any, row:any) =>
+                    row[filter.id].toLowerCase().includes(filter.value.toLowerCase()),
+			filterable: true
+		  }, {
+			Header: 'Correlation',
+			accessor: 'correlation'
+		  }, {
+			Header: 'P-value',
+			accessor: 'pValue'
+		  }]
 		let data = this.stageData_5
 		let xTitle = this.selectedCategory.label
 
 		if(this.props.chartType === ChartType.SCATTER){
-			xTitle =`${this.gene2}, ${this.normalization.label}${this.logScale ? '(Log2)' : ''}`;
+			xTitle =`${this.geneX}, ${this.normalization.label}${this.logScale ? '(Log2)' : ''}`;
 		}
 		var layout = {
 			//title: `${this.props.gene1} ${this.props.normalization.label}${this.logScale ? '(Log2)' : '' } vs ${this.selectedCategory.label}`,
@@ -432,7 +511,7 @@ export class ResultPlot extends React.Component<IBoxContentProps, {}> {
 				title: xTitle
 			},
 			yaxis: {
-				title: `${this.gene1}, ${this.normalization.label}${this.logScale ? '(Log2)' : ''}`
+				title: `${this.geneY}, ${this.normalization.label}${this.logScale ? '(Log2)' : ''}`
 			},
 			autosize:true
 		};
@@ -441,11 +520,22 @@ export class ResultPlot extends React.Component<IBoxContentProps, {}> {
 			return (
 				<div>
 					{ this.controls() }
-					<Plot className={styles.boxPlot}
-								data={data}
-								layout={layout}
-								useResizeHandler={true} />
-					</div>
+					<Plot
+					    className={styles.boxPlot}
+						data={data}
+						layout={layout}
+						useResizeHandler={true} />
+					{
+						(this.props.chartType === ChartType.SCATTER) &&
+						<ReactTable
+							data={this.correlationTableData}
+							columns={columns}
+							defaultPageSize={5}
+							minRows={0}
+							className={styles.table}
+							defaultSorted={[ { id: "name" } ]} />
+					}
+				</div>
 			)
 		}
 		return (<div></div>)

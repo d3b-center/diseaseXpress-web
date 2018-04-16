@@ -8,6 +8,8 @@ import * as _ from 'lodash';
 import { GlobalStores } from 'shared/components/global/GlobalStores';
 import { ResultPlot } from './ResultPlot';
 import { QueryParams } from './QueryParams';
+import {ThreeBounce} from 'better-react-spinkit';
+import ReactGA from 'react-ga';
 
 export interface IResultsPageProps {
 	routing: any;
@@ -20,39 +22,86 @@ export interface IResultsPageProps {
 export default class BoxPlotView extends React.Component<IResultsPageProps, {}> {
 
 	store: QueryStore
+	routing : any
+	selections:{
+		tumorSubset?:string,
+		logScale?:boolean,
+		category?:string,
+		reference?:string,
+		collapsedStudy?:string
+	} = {}
 	constructor(props:IResultsPageProps) {
 		super();
+		(window as any).document.title = "DiseaseXpress::Box plot"
+		ReactGA.pageview(window.location.hash)
+		this.store = new QueryStore();
+		this.store.chartType = ChartType.BOX;
+		this.store.globalStores = props.globalStores;
+		this.routing = props.routing
+		this.handleParamsChange = this.handleParamsChange.bind(this)
 
-		const reaction1 = reaction(
-			() => props.routing.location.query,
-			query => {
-				this.store = new QueryStore();
-				this.store.chartType = ChartType.BOX;
-				this.store.globalStores = props.globalStores;
-			},
-			{ fireImmediately:true }
-	);
+		if(props.routing.location.query){
+			let query = props.routing.location.query;
+			if ('geneY' in query) {
+				this.store.parameters.geneY = query.geneY;
+			}
+			if ('studies' in query) {
+				this.store.parameters.studies = (query.studies as string).split(',');
+			}
+			if ('normalization' in query) {
+				this.store.parameters.studies = (query.studies as string).split(',');
+			}
+			if ('tumorSubset' in query) {
+				this.selections.tumorSubset = query.tumorSubset;
+			}
+			if ('logScale' in query) {
+				this.selections.logScale = query.logScale;
+			}
+			if ('category' in query) {
+				this.selections.category = query.category;
+			}
+			if ('reference' in query) {
+				this.selections.reference = query.reference;
+			}
+			if ('collapsedStudy' in query) {
+				this.selections.collapsedStudy = query.collapsedStudy;
+			}
+		}
+	}
+
+	private handleParamsChange(params:any) {
+		this.props.routing.updateRoute(params);
+		this.selections = {}
 	}
 
   render() {
     return (
       <div className={styles.ContentWidth}>
-	  	<div className={styles.ColumnOne}>
-	  		<QueryParams store={this.store}/>
-		</div>
+			<div className={styles.ColumnOne}>
+				{
+					this.store.globalStores.geneSymbols.isComplete &&
+					this.store.globalStores.studies.isComplete &&
+					<QueryParams store={this.store} handleParamsChange={this.handleParamsChange}/>
+				}
+			</div>
 
-        <div className={styles.ColumnTwo}>
-			{
-				this.store.geneData.isComplete && 
-				!_.isEmpty(this.store.geneData.result) &&
-				<ResultPlot
-				    queryParams={this.store.parameters}
-						chartType ={this.store.chartType}
-						data={this.store.geneData.result} /> 
-			}
-        </div>
+			<div className={styles.ColumnTwo}>
+				{
+					this.store.geneData.isComplete && 
+					!_.isEmpty(this.store.geneData.result) &&
+					<ResultPlot
+							queryParams={this.store.parameters}
+							chartType ={this.store.chartType}
+							data={this.store.geneData.result}
+							handleParamsChange={this.handleParamsChange}
+							selections={this.selections}/> 
+				}
+				{
+					(this.store.geneData.isPending) &&
+					(<ThreeBounce className="center-block text-center" />)
+				}
+			</div>
       </div>
-
     )
   }
 }

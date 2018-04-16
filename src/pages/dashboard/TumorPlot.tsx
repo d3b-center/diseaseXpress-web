@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { VictoryChart, VictoryBar, VictoryTooltip, VictoryLabel, VictoryLegend, VictoryVoronoiContainer, VictoryAxis, VictoryTheme } from 'victory';
 import { observer } from "mobx-react";
 import { DashBoardBarData } from "./DashboardPageStore";
