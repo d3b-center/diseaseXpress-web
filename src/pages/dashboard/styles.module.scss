@@ -11,17 +11,19 @@
 }
 .ColumnTwo {
   width: 60%;
+  text {
+    user-select: none;
+  }
 }
 
 .ChartHeader {
   text-align: center;
 }
 
-.donut{
-  .raphael-group-3-creditgroup{
-    display: none;
-  }
-  g[class*='-creditgroup'] {
-    display: none;
-  }
+.tipStyle{
+  display: flex;
+  color: #fff;
+  background: #000;
+  align-items: center;
+  padding: 5px;
 }

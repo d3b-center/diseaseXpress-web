@@ -1,22 +1,17 @@
 import React, { Component } from 'react';
 import { DashboardPageStore } from './DashboardPageStore';
-import { VictoryPie, VictoryContainer, VictoryTooltip, VictoryLabel } from 'victory';
 import { observer, inject } from "mobx-react";
-import { computed, observable } from 'mobx';
-import { TumorPlot } from './TumorPlot';
+import { computed, observable, action } from 'mobx';
 import ReactGA from 'react-ga';
-import ReactFC from 'react-fusioncharts';
-import FusionCharts from 'fusioncharts';
-import Charts from 'fusioncharts/fusioncharts.charts';
-import Powercharts from 'fusioncharts/fusioncharts.powercharts';
-import {Sunburst} from 'react-vis';
-Powercharts(FusionCharts);
+import { Sunburst, LabelSeries, Hint } from 'react-vis';
+import * as _ from 'lodash';
+import '../../../node_modules/react-vis/dist/main.scss'
 
 import styles from './styles.module.scss';
 import { GlobalStores } from 'shared/components/global/GlobalStores';
 
 interface IDashboardPageProps {
-	globalStores:GlobalStores;
+  globalStores: GlobalStores;
 }
 
 @inject('globalStores')
@@ -24,228 +19,137 @@ interface IDashboardPageProps {
 export default class DashboardPage extends React.Component<IDashboardPageProps, {}> {
 
 
-  store:DashboardPageStore
-  constructor(props:IDashboardPageProps) {
+  store: DashboardPageStore
+  constructor(props: IDashboardPageProps) {
     super(props);
     this.store = new DashboardPageStore();
-    (window as any).document.title = "DiseaseXpress::Home"
-    ReactGA.pageview(window.location.hash)
+    (window as any).document.title = "DiseaseXpress::Home";
+    ReactGA.pageview(window.location.hash);
+    this.onValueMouseOver = this.onValueMouseOver.bind(this);
+    this.onValueMouseOut = this.onValueMouseOut.bind(this);
   }
 
+  @observable path: string[] = [];
+  @observable hoveredCell: any | undefined = undefined;
 
-  render() {
-    const chartConfigs = {
-      type: 'multilevelpie',
-        width: '450',
-        height: '450',
-        dataFormat: 'json',
-        dataSource: {
-            "chart": {
-                "bgColor": "#ffffff",
-                "showBorder": "0",
-                "showPercentValues": "1",
-                "piefillalpha": "80",
-          "pieborderthickness": "2",
-          "piebordercolor": "#FFFFFF",
-          "hoverfillcolor": "#CCCCCC",
-          "plottooltext": "$label, $$valueK, $percentValue",
-            },
-            "category": [{
-              "label": "Products",
-              "color": "#ffffff",
-              "value": "150",
-              "category": [{
-                "label": "Food & {br}Beverages",
-                "color": "#f8bd19",
-                "value": "55.5",
-                "tooltext": "Food & Beverages, $$valueK, $percentValue",
-                "category": [{
-                  "label": "Breads",
-                  "color": "#f8bd19",
-                  "value": "11.1"
-                }, {
-                  "label": "Juice",
-                  "color": "#f8bd19",
-                  "value": "27.75"
-                }, {
-                  "label": "Noodles",
-                  "color": "#f8bd19",
-                  "value": "9.99"
-                }, {
-                  "label": "Seafood",
-                  "color": "#f8bd19",
-                  "value": "6.66"
-                }]
-              }, {
-                "label": "Apparel &{br}Accessories",
-                "color": "#33ccff",
-                "value": "42",
-                "tooltext": "Apparel & Accessories, $$valueK, $percentValue",
-                "category": [{
-                  "label": "Sun Glasses",
-                  "color": "#33ccff",
-                  "value": "10.08"
-                }, {
-                  "label": "Clothing",
-                  "color": "#33ccff",
-                  "value": "18.9"
-                }, {
-                  "label": "Handbags",
-                  "color": "#33ccff",
-                  "value": "6.3"
-                }, {
-                  "label": "Shoes",
-                  "color": "#33ccff",
-                  "value": "6.72"
-                }]
-              }, {
-                "label": "Baby {br}Products",
-                "color": "#ffcccc",
-                "value": "22.5",
-                "tooltext": "Baby Products, $$valueK, $percentValue",
-                "category": [{
-                  "label": "Bath &{br}Grooming",
-                  "color": "#ffcccc",
-                  "value": "9.45",
-                  "tooltext": "Bath & Grooming, $$valueK, $percentValue"
-                }, {
-                  "label": "Food",
-                  "color": "#ffcccc",
-                  "value": "6.3"
-                }, {
-                  "label": "Diapers",
-                  "color": "#ffcccc",
-                  "value": "6.75"
-                }]
-              }, {
-                "label": "Electronics",
-                "color": "#ccff66",
-                "value": "30",
-                "category": [{
-                  "label": "Laptops",
-                  "color": "#ccff66",
-                  "value": "8.1"
-                }, {
-                  "label": "Televisions",
-                  "color": "#ccff66",
-                  "value": "10.5"
-                }, {
-      
-                  "label": "SmartPhones",
-                  "color": "#ccff66",
-                  "value": "11.4"
-                }]
-              }]
-            }]
-        }
-      }
-    
-    let chartConfigs1 = {
-      type: 'multilevelpie',
-      width: '800',
-      height: '800',
-      dataFormat: 'json',
-      dataSource: {
-        "chart": {
-          "bgColor": "#ecf0f5 ",
-          bgAlpha:100,
-          canvasBgColor:"#ecf0f5 ",
-          "showBorder": "0",
-          "showPercentValues": "1",
-          "piefillalpha": "60",
-          "pieborderthickness": "2",
-          "piebordercolor": "#FFFFFF",
-          plotFillHoverAlpha:100,
-          plotHoverEffect:1,
-         // "hoverfillcolor": "#CCCCCC",
-          "plottooltext": "$label, $valueK, $percentValue",
-        },
-        "category": this.store.pieData
-      }
+  private getKeyPath(node: any): any {
+    if (!node.parent) {
+      return ['Total Samples'];
     }
-      return (
-      <div className={styles.ContentWidth}>
-        <div className={styles.ColumnOne}>
-          <p>Application to house RNA-Sequencing data from datasources 
-            like Genotype-Tissue Expression (GTEx), 
-            Therapeutically Applicable Research To Generate Effective Treatments (TARGET), 
-            The Cancer Genome Atlas (TCGA) that has been processed and transformed through the 
-            same pipeline. For each sample, gene and transcript level quantifications as well as sample 
-            and clinical annotation is available.</p>
-          {/* <VictoryPie 
-              containerComponent={<VictoryContainer responsive={false}  height={300} />}
-              height={270}
-              width={270}
-              padding={{ top: 40, bottom: 80, left: 40, right: 40 }}
-              data ={this.store.getStudyData}
-              sortKey="x"
-              startAngle={90}
-              endAngle={450}
-              colorScale="blue"
-              labelComponent={<CustomTooltip/>}
-              style={{
-                labels: {
-                  fontSize: 12
-                }
-              }}
-            /> */}
-
-            {/* <div className={styles.donut}>
-              <ReactFC {...chartConfigs1} fcLibrary={FusionCharts}/>
-            </div> */}
-
-        </div>
-        <div className={styles.ColumnTwo}>
-        <div className={styles.donut}>
-              <ReactFC {...chartConfigs1} fcLibrary={FusionCharts}/>
-            </div>
-          {/* <div>
-            <div className={styles.ChartHeader}>
-              <span>Tumors</span>
-            </div>
-            <div>
-              <TumorPlot 
-                data={this.store.tumorData}
-                yAxisLabel="Number of Samples"
-                xAxisLabel="Disease"
-                showLegend={true}/>
-            </div>
-          </div>
-          <div>
-            <div className={styles.ChartHeader}>
-              <span>Normals</span>
-            </div>
-            <div>
-              <TumorPlot 
-                data={this.store.normalsData}
-                yAxisLabel="Number of Samples"
-                xAxisLabel="Tissue"
-                showLegend={false}/>
-            </div>
-          </div> */}
-        </div>
-      </div>
-      
-    )
+    return [node.data && node.data.name || node.name].concat(this.getKeyPath(node.parent));
   }
-}
 
-class CustomTooltip extends React.Component {
-  static defaultEvents = VictoryTooltip.defaultEvents
+  private updateData(data: any, keyPath: { [id: string]: boolean }): any {
+    if (data.children) {
+      data.children.map((child: any) => this.updateData(child, keyPath));
+    }
+    // add a fill to all the uncolored cells
+    if (!data.color) {
+      data.style = {
+        fill: '#ecf0f5'
+      };
+    }
+    data.style = {
+      ...data.style,
+      fillOpacity: !_.isEmpty(keyPath) && !keyPath[data.name] ? 0.2 : 1
+    };
+
+    return data;
+  }
+
+  @computed get pathValue() {
+    return this.path.join(' > ');
+  }
+
+  @computed get pathAsMap(): { [id: string]: boolean } {
+    return this.path.reduce((res: { [id: string]: boolean }, row: any) => {
+      res[row] = true;
+      return res;
+    }, {});
+  }
+
+  @computed get chartData() {
+    return this.updateData(this.store.categoryData, this.pathAsMap);
+  }
+
+  @computed get centerLabels() {
+    let toReturn = [{ x: 0, y: -20, label: this.store.categoryData.label, style: { fontSize: '1.3em', textAnchor: 'middle', userSelect: 'none' } },
+    { x: 0, y: 40, label: this.store.categoryData.count, style: { fontSize: '2.5em', textAnchor: 'middle', userSelect: 'none' } }];
+
+    if (this.hoveredCell) {
+      let percentageLabel = `${((this.hoveredCell.count / this.store.categoryData.count) * 100).toFixed(2)}% of ${this.store.categoryData.count}`
+      toReturn = [{ x: 0, y: -45, label: this.hoveredCell.name, style: { fontSize: '1.3em', textAnchor: 'middle', userSelect: 'none' } },
+      { x: 0, y: -25, label: percentageLabel, style: { fontSize: '1.3em', textAnchor: 'middle', userSelect: 'none' } },
+      { x: 0, y: 40, label: this.hoveredCell.count, style: { fontSize: '2.5em', textAnchor: 'middle', userSelect: 'none' } }];
+    }
+    return toReturn;
+  }
+
+  @action
+  private onValueMouseOver(node: any) {
+    this.path = this.getKeyPath(node).reverse();
+    this.hoveredCell = node;
+  }
+  @action
+  private onValueMouseOut() {
+    this.path = [];
+    this.hoveredCell = undefined;
+  }
+
+  @computed get hoveredValuePosition() {
+    const { radius, radius0, angle, angle0 } = this.hoveredCell;
+    const truedAngle = (angle + angle0) / 2;
+    return {
+      x: radius * Math.sin(truedAngle),
+      y: radius0 * Math.cos(truedAngle)
+    };
+  }
+
   render() {
     return (
-      <g>
-        <VictoryTooltip {...this.props}
-                        pointerLength={0}
-                        x={150}
-                        y={220}
-                        orientation ={"bottom"}
-                        text={(d:any) => `Study : ${d.x}\nSamples : ${d.y} (${d.percentage}%)`}
-                        renderInPortal={false}/>
+      <div className={styles.ContentWidth}>
+        <div className={styles.ColumnOne}>
+          <p>Application to house RNA-Sequencing data from datasources
+            like Genotype-Tissue Expression (GTEx),
+            Therapeutically Applicable Research To Generate Effective Treatments (TARGET),
+            The Cancer Genome Atlas (TCGA) that has been processed and transformed through the
+            same pipeline. For each sample, gene and transcript level quantifications as well as sample
+            and clinical annotation is available.</p>
+        </div>
+        <div className={styles.ColumnTwo}>
+          {/* <div style={{height:'50px'}}>{this.pathValue}</div> */}
+          { this.chartData &&
+            this.chartData.children.length>0 &&
+            <Sunburst
+              animation
+              hideRootNode
+              data={this.chartData}
+              style={{ stroke: '#fff', 'stroke-width': 1.5 }}
+              height={700}
+              getLabel={(d: any) => d.label}
+              getSize={(d: any) => d.value}
+              getColor={(d: any) => d.color}
+              width={700}
+              onValueMouseOver={(node: any) => {
+                this.onValueMouseOver(node)
+              }}
+              onValueMouseOut={() => this.onValueMouseOut()
+              } >
 
-        <VictoryLabel {...this.props} 
-                      renderInPortal={false}/>
-      </g>
-    );
+              {
+                <LabelSeries data={this.centerLabels} />
+              }
+              {this.hoveredCell &&
+                <Hint value={this.hoveredValuePosition}>
+                  <div className={styles.tipStyle}>
+                    {this.hoveredCell.name}
+                  </div>
+                </Hint>
+              }
+            </Sunburst>
+          }
+        </div>
+      </div>
+    )
   }
 }
