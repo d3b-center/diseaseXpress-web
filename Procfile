@@ -1,1 +1,1 @@
-web: http-server --cors dist/ -p ${PORT}
+web: pushstate-server -d dist ${PORT}

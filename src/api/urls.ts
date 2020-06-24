@@ -1,3 +1,3 @@
 export function getApiUrl() {
-    return 'http://api.disease-express.cavatica-dns.org';
+    return 'https://d3b-disease-express.d3b.io';
 }

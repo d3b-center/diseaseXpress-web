@@ -7,12 +7,10 @@
   "scripts": {
     "start": "cross-env NODE_ENV=development webpack-dev-server  --hot --inline",
     "clean": "rimraf dist tsDist common-dist",
-    "build": "npm run clean && npm run buildDLL:prod  && cross-env NODE_ENV=production webpack --progress --colors",
-    "buildDLL:prod": "npm run clean && cross-env NODE_ENV=production webpack --config vendor-bundles.webpack.config.js",
-    "buildDLL:dev": "npm run clean && cross-env NODE_ENV=development webpack --config vendor-bundles.webpack.config.js",
+    "build": "npm run clean && cross-env NODE_ENV=production webpack --config vendor-bundles.webpack.config.js",
     "buildAPI": "node scripts/generate-api.js src/api/generated deAPI",
     "buildBootstrap": "sass src/globalStyles/bootstrap-entry.scss src/globalStyles/prefixed-bootstrap.min.css",
-    "heroku-postbuild": "npm run build && npm install http-server -g"
+    "heroku-postbuild": "npm run build && npm install pushstate-server -g"
   },
   "engines": {
     "npm": "5.6.0",
@@ -78,6 +76,7 @@
     "plotly.js": "^1.35.2",
     "postcss-loader": "^1.2.2",
     "precss": "^1.4.0",
+    "pushstate-server": "^3.0.1",
     "react": "^15.6.1",
     "react-addons-pure-render-mixin": "^15.4.2",
     "react-addons-test-utils": "^15.4.2",
