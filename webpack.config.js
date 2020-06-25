@@ -211,7 +211,7 @@ var config = {
     devServer: {
         contentBase: './dist',
         hot: true,
-        historyApiFallback:false,
+        historyApiFallback:true,
         noInfo:false,
         quiet:false,
         lazy:false,
