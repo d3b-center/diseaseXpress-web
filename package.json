@@ -7,7 +7,9 @@
   "scripts": {
     "start": "cross-env NODE_ENV=development webpack-dev-server  --hot --inline",
     "clean": "rimraf dist tsDist common-dist",
-    "build": "npm run clean && cross-env NODE_ENV=production webpack --config vendor-bundles.webpack.config.js",
+    "build": "npm run clean && npm run buildDLL:prod  && cross-env NODE_ENV=production webpack --progress --colors",
+    "buildDLL:prod": "npm run clean && cross-env NODE_ENV=production webpack --config vendor-bundles.webpack.config.js",
+    "buildDLL:dev": "npm run clean && cross-env NODE_ENV=development webpack --config vendor-bundles.webpack.config.js",
     "buildAPI": "node scripts/generate-api.js src/api/generated deAPI",
     "buildBootstrap": "sass src/globalStyles/bootstrap-entry.scss src/globalStyles/prefixed-bootstrap.min.css",
     "heroku-postbuild": "npm run build && npm install pushstate-server -g"
@@ -71,7 +73,7 @@
     "mobx-react-router": "^3.1.2",
     "mobx-utils": "^2.0.1",
     "mobxpromise": "^1.2.0",
-    "node-sass": "^4.3.0",
+    "node-sass": "^4.9.0",
     "parameter-validator": "^1.0.2",
     "plotly.js": "^1.35.2",
     "postcss-loader": "^1.2.2",
