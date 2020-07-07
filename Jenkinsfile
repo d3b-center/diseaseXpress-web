@@ -14,4 +14,5 @@ ecs_service_type_1_standard {
     dependencies           = "ecr"
     internal_app           = "false"
     quick_deploy           = "true"
+    friendly_dns_name      = "disease-express"
 }
